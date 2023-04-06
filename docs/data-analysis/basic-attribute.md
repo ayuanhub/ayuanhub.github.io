@@ -1,7 +1,21 @@
 ---
 sidebar_position: 1
 ---
+
+# 基本屬性
+
 ### 性別
+```jsx title="男性/女性(※ 此處可以多撰寫一些業務邏輯定義)"
+SELECT customers.Name, orders.Order_No
+FROM customers
+INNER JOIN orders
+ON customers.C_Id=orders.C_Id;
+```
+```mermaid
+erDiagram
+    CUSTOMERS ||--|{ ORDERS : Id
+``` 
+
 ### 年齡
 ### 行業類別
 ### 顧客開戶、異動留存行業類別
