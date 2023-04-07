@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: 基本屬性
 ---
 
 # 基本屬性
@@ -51,12 +52,4 @@ erDiagram
 ### 月收入推估
 ### (薪轉->繳稅推估)
 ### wallet share(%)
-
-
-
-```bash
-## ABC
-
-## CBA
-```
 
