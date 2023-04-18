@@ -8,14 +8,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
-  title: 'CVMDoc',
+  title: 'CVMDoc文件網站',
   // tagline: 'Dinosaurs are cool',
-  tagline: 'CVM Knowledge Website',
+  tagline: 'focus on your content',
+  organizationName: 'CVMDoc',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
@@ -45,11 +46,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode:{
+        defaultMode: 'dark',
+        disableSwitch: true,
+      },
       navbar: {
         title: 'CVMDoc',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-animation.svg',
         },
         items: [
           {
@@ -58,12 +63,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             position: 'left',
             label: 'Tutorial',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },        
+          { to: '/blog', label: 'Blog', position: 'left' },
         ],
-      },
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} CVMDoc, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
