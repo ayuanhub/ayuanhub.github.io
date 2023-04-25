@@ -11,14 +11,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   title: 'CVMDoc文件網站',
   // tagline: 'Dinosaurs are cool',
   tagline: 'focus on your content',
-  organizationName: 'CVMDoc',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://cvmdoc.github.io',
   baseUrl: '/',
+  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'cvmdoc', // Usually your GitHub org/user name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
   presets: [
     [
