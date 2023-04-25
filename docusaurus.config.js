@@ -13,7 +13,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   tagline: 'focus on your content',
   url: 'https://chiangchihyuan.github.io/',
   baseUrl: '/',
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'CVMDoc', // Usually your repo name.
   organizationName: 'chiangchihyuan', // Usually your GitHub org/user name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
