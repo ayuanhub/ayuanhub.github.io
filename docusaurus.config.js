@@ -47,7 +47,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     ({
       colorMode:{
         defaultMode: 'dark',
-        disableSwitch: true,
+        disableSwitch: true ,
       },
       navbar: {
         title: 'CVMDoc',
@@ -60,7 +60,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: '數據工程科',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
         ],

@@ -20,48 +20,23 @@ erDiagram
 ```
 
 ### 年齡
-
-```sql
-WITH
-  customers AS (
+```jsx title="年齡" showLineNumbers
+WITH sampleCTE (id, name, phoneNumber, age)
+AS
+-- 定義 CTE 的 Query
+(
     SELECT
-      customer_id,
-      customer_name,
-      customer_email
-    FROM
-      customers_table
-  ),
-  orders AS (
-    SELECT
-      order_id,
-      order_date,
-      customer_id
-    FROM
-      orders_table
-  ),
-  order_items AS (
-    SELECT
-      order_item_id,
-      order_id,
-      product_id,
-      quantity
-    FROM
-      order_items_table
-  )
-SELECT
-  customers.customer_name,
-  orders.order_date,
-  SUM(order_items.quantity) AS total_quantity
-FROM
-  customers
-  JOIN orders ON customers.customer_id = orders.customer_id
-  JOIN order_items ON orders.order_id = order_items.order_id
-GROUP BY
-  customers.customer_name,
-  orders.order_date
-ORDER BY
-  total_quantity DESC;
-```
+			id,
+			name,
+			phoneNumber,
+			date_part('year', NOW()) - date_part('year', dob) AS age
+    FROM member
+    WHERE phoneNumber IS NOT NULL
+-- 使用 CTE
+SELECT *
+FROM sampleCTE
+WHERE age >= 18
+``` 
 
 ### 行業類別
 
