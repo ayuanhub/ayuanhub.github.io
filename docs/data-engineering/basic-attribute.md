@@ -36,7 +36,7 @@ AS
 SELECT *
 FROM sampleCTE
 WHERE age >= 18
-``` 
+```
 
 ### 行業類別
 
