@@ -69,5 +69,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      footer:{
+        copyright:`Copyright © ${new Date().getFullYear()} 客群經營部<br>檔案為機密文件，請勿外流！`,
+      },
     }),
 });
