@@ -3,8 +3,6 @@ sidebar_position: 1
 title: 系統代碼表
 ---
 
-# 系統代碼表
-
 | 系統代碼                                        | System Code 中文                            |
 | :---------------------------------------------- | :------------------------------------------ |
 | [BRBN](/docs/data-dicionary/tableschema/BRBN)   | 分行系統                                    |
