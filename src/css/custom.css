@@ -23,6 +23,10 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+.navbar--fixed-top {
+  border-bottom: thick double #e3e3e3;
+}
+
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
