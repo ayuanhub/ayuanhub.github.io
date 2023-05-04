@@ -4,6 +4,7 @@ title: 代碼表
 ---
 
 ### VW_ODS_D_SAMASTER
+#### SAMST_CUST_STAT
 | 欄位名稱               | 值域 ID | 值域中文說明                        |
 | ---------------------- | ------- | ----------------------------------- |
 | SAMST_CUST_STAT        | 00      | 正常戶                              |
@@ -12,13 +13,25 @@ title: 代碼表
 | SAMST_CUST_STAT        | 05      | 移出戶                              |
 | SAMST_CUST_STAT        | 04      | 錯誤消除戶                          |
 | SAMST_CUST_STAT        | 09      | 轉換前靜止專戶                      |
+
+#### SAMST_OD_STAT
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_OD_STAT          | 0       | 非透支戶                            |
 | SAMST_OD_STAT          | 1       | 透支戶                              |
 | SAMST_OD_STAT          | 2       | 透支轉催收                          |
 | SAMST_OD_STAT          | 7       | 暫時取消                            |
 | SAMST_OD_STAT          | 8       | 永久取消                            |
+
+#### SAMST_TXN_STOP_STAT
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_TXN_STOP_STAT    | 0       | 正常                                |
 | SAMST_TXN_STOP_STAT    | 1       | 暫停                                |
+
+#### SAMST_WASH_NOCHK_MARK
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_WASH_NOCHK_MARK  | 1       | 百貨公司                            |
 | SAMST_WASH_NOCHK_MARK  | 2       | 量販店                              |
 | SAMST_WASH_NOCHK_MARK  | 3       | 連販超商                            |
@@ -26,15 +39,31 @@ title: 代碼表
 | SAMST_WASH_NOCHK_MARK  | 5       | 醫療院所                            |
 | SAMST_WASH_NOCHK_MARK  | 6       | 交通運輸業                          |
 | SAMST_WASH_NOCHK_MARK  | 7       | 餐飲旅館業                          |
+
+#### SAMST_SKL_ATM_USE_FLAG
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_SKL_ATM_USE_FLAG | 0       | 非保貸戶的其他活存帳戶 (非 55 科目) |
 | SAMST_SKL_ATM_USE_FLAG | 1       | 可使用                              |
 | SAMST_SKL_ATM_USE_FLAG | 2       | 核貸中                              |
 | SAMST_SKL_ATM_USE_FLAG | 9       | 已撤銷                              |
+
+#### SAMST_OPEN_KIND
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_OPEN_KIND        | 0       | 是                                  |
 | SAMST_OPEN_KIND        | 1       | 否                                  |
+
+#### SAMST_NOTICE_KIND
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_NOTICE_KIND      | 1       | 聯絡                                |
 | SAMST_NOTICE_KIND      | 2       | 不聯絡                              |
 | SAMST_NOTICE_KIND      | 9       | 秘密戶                              |
+
+#### SAMST_CHK_SHEET_CODE
+| 欄位名稱               | 值域 ID | 值域中文說明                        |
+| ---------------------- | ------- | ----------------------------------- |
 | SAMST_CHK_SHEET_CODE   | 0       | 寄                                  |
 | SAMST_CHK_SHEET_CODE   | 1       | 不寄                                |
 | SAMST_CHK_SHEET_CODE   | 2       | 自取                                |
@@ -68,6 +97,7 @@ title: 代碼表
 | LNLNP_CRINS_MARK | 4    | 直接信保保證 |
 
 ### VW_ODS_D_LNAPPLY
+#### LNAPL_REJECT_REASON_1、LNAPL_REJECT_REASON_2、LNAPL_REJECT_REASON_3
 | 欄位名稱                                                            | 值域 ID | 值域中文說明                                                                                                       |
 | ------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
 | LNAPL_REJECT_REASON_1、LNAPL_REJECT_REASON_2、LNAPL_REJECT_REASON_3 | 99      | 其他                                                                                                               |
@@ -180,6 +210,7 @@ title: 代碼表
 | LNAPL_REJECT_REASON_1、LNAPL_REJECT_REASON_2、LNAPL_REJECT_REASON_3 | zq      | 信保加註其他批示條件                                                                                               |
 
 ### VW_ODS_D_TR1FIL
+#### TR103
 | 欄位名稱 | 值域 ID | 值域中文說明 |
 | -------- | ------- | ------------ |
 | TR103    | 10      | 申購         |
@@ -191,6 +222,7 @@ title: 代碼表
 | TR103    | 70      | 分割         |
 
 ### VW_ODS_D_CRMTR1
+#### TN0013
 | 欄位名稱 | 值域 ID | 值域中文說明 |
 | -------- | ------- | ------------ |
 | TN0013 | 空值 | 臨櫃           |
