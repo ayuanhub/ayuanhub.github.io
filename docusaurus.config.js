@@ -18,7 +18,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
-  deploymentBranch: 'main',
   trailingSlash: false,
   plugins: [require.resolve('docusaurus-lunr-search')],
   presets: [
