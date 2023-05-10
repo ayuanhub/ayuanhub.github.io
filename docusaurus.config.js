@@ -20,9 +20,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   favicon: 'img/logo.png',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  plugins: [[ require.resolve('docusaurus-lunr-search'), {
-    languages: ['en', 'zh'] // language codes
-  }]],
+  plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        language: ['en', 'zh'],
+      },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
