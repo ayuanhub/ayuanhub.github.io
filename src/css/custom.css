@@ -13,7 +13,15 @@
   --ifm-color-primary-light: #aeabdd;
   --ifm-color-primary-lighter: #bbb8e2;
   --ifm-color-primary-lightest: #dfdef2;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 95%; 
+}
+[data-theme='dark'] {
+  --aa-primary-color-rgb: 227, 227, 227 !important;
+  --aa-muted-color-rgb: 227, 227, 227 !important;
+}
+
+button.aa-DetachedSearchButton {
+  width:12rem;
 }
 
 .docusaurus-highlight-code-line {
