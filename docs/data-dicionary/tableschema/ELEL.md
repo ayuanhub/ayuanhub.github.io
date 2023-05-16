@@ -2766,39 +2766,39 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
-|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
+|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態_如:核准,緩議...                                                                            |   |
+|    | LOAN_CLOSEDECISION                       | NUMBER(4, 0)          | 結案狀態_如: 核准, 緩議...                                                                            |   |
 |    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
 |    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行代號)                                                                               |   |
 |    | ROLEID_FINALLYCHECKLEVEL_SYSPROPOSE      | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
 |    | BRANCHID_FINALLYCHECKLEVEL_SYSPROPOSE    | VARCHAR2(4 char)     | 系統建議值_最終審核層級(分行代號)                                                                         |   |
-|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure.Date_TurnOn)                                               |   |
+|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure. Date_TurnOn)                                               |   |
 |    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
 |    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
 |    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
 |    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
 |    | IS_BEFORE_GRANTLOAN                      | VARCHAR2(1 char)     | 新貸案是否為撥貸前                                                                                  |   |
 |    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成?                                                                                 |   |
-|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時,儲存AO人員所選擇的提交方式如-_1:照原流程一層一層提交2:AO直接提交審核員，後續關卡依照原流程一層一層提交3:AO直接提交給原發出補件清單之主管       |   |
-|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1)null:尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                     |   |
-|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1)null:尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                     |   |
+|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時, 儲存AO人員所選擇的提交方式如-_1: 照原流程一層一層提交2: AO直接提交審核員，後續關卡依照原流程一層一層提交3: AO直接提交給原發出補件清單之主管       |   |
+|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1)null: 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                     |   |
+|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1)null: 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                     |   |
 |    | IS_SENDTOCORE                            | VARCHAR2(1 char)     | 此案件的資料是否已上傳至核心(0：未上傳，1：已上傳)                                                                |   |
-|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性,急件,快速審理案件)                                                                        |   |
+|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性, 急件, 快速審理案件)                                                                        |   |
 |    | CASE_VERSION                             | INTEGER              | 案件的改版次數                                                                                    |   |
 |    | ISFINISH_OPJOB                           | VARCHAR2(1 char)     | OP工作是否已完成？                                                                                 |   |
 |    | STATUS_SUGGEST                           | VARCHAR2(1 char)     | 總行以上之待辦事項，需有顯示審核說明的欄位(建議核准、建議婉拒、建議退回補件)                                                    |   |
-|    | FLOW_SEQNO_LIMITSET                      | INTEGER              | 額度,利率費用分開設定                                                                                |   |
+|    | FLOW_SEQNO_LIMITSET                      | INTEGER              | 額度, 利率費用分開設定                                                                                |   |
 |    | FLOW_SEQNO_RATESET                       | INTEGER              | 利、費率設定                                                                                     |   |
 |    | DATE_FINALLYCHECKLEVEL                   | TIMESTAMP            | 最終準駁日期                                                                                     |   |
 |    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
 |    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
 |    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
-|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
+|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
 |    | ORIGIN_CHECKER                           | VARCHAR2(5 char)     | 原始派件的審查員(for取消提交後再送至審查員時使用)                                                                |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
@@ -2815,11 +2815,11 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
 |    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案/是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態                                                                                       |   |
+|    | LOAN_CLOSEDECISION                       | NUMBER(4, 0)          | 結案狀態                                                                                       |   |
 |    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級_角色代號                                                                                |   |
 |    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級_分行                                                                                  |   |
 |    | ROLEID_FINALCHECKLEVEL_SYSPROPOSE        | VARCHAR2(3 char)     | 系統建議值_最終審核層級_角色                                                                            |   |
@@ -2861,8 +2861,8 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
 |    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案/是否同意                                                                                  |   |
 |    | LOAN_CLOSEDECISION                       | INTEGER              | 結案狀態                                                                                       |   |
@@ -2894,19 +2894,17 @@ title: E-LOAN 徵審系統(ELEL)
 
 #### 房貸徵授信作業流程檔
 
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
 |    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案/是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態                                                                                       |   |
+|    | LOAN_CLOSEDECISION                       | NUMBER(4, 0)          | 結案狀態                                                                                       |   |
 |    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級_角色代號                                                                                |   |
 |    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級_分行                                                                                  |   |
 |    | ROLEID_FINALCHECKLEVEL_SYSPROPOSE        | VARCHAR2(3 char)     | 系統建議值_最終審核層級_角色                                                                            |   |
@@ -2935,41 +2933,44 @@ title: E-LOAN 徵審系統(ELEL)
 
 #### 授信覆審追蹤作業
 
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
-|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
+|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | INTEGER              | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | INTEGER              | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
-|    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案/是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態                                                                                       |   |
-|    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級_角色代號                                                                                |   |
-|    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級_分行                                                                                  |   |
-|    | ROLEID_FINALCHECKLEVEL_SYSPROPOSE        | VARCHAR2(3 char)     | 系統建議值_最終審核層級_角色                                                                            |   |
-|    | BRANCHID_FINALCHECKLEVEL_SYSPROPOSE      | VARCHAR2(4 char)     | 系統建議值_最終審核層級_分行                                                                            |   |
-|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本                                                                                     |   |
-|    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係                                                                             |   |
-|    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停                                                                                 |   |
-|    | IS_OVERTAKE_RAISESELF                    | VARCHAR2(1 char)     | 自撤案件是否已追上原案件                                                                               |   |
+|    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
+|    | LOAN_CLOSEDECISION                       | INTEGER              | 結案狀態_如: 核准, 緩議...                                                                            |   |
+|    | ATTENTION                                | VARCHAR2(3000 char)  | 注意事項(提交審核)(目前此欄位不再使用_欄位仍在)                                                                 |   |
+|    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
+|    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行代號)                                                                               |   |
+|    | ROLEID_FINALLYCHECKLEVEL_SYSTEMPROPOSE   | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
+|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure. Date_TurnOn)                                               |   |
+|    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
+|    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
+|    | IS_OVERTAKE_RAISESELF                    | VARCHAR2(1 char)     | 當發生自撤案件時, 自撤案件是否已追上原案件_1: 代表追上_0代表沒有追上!                                                      |   |
 |    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
-|    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號或公司統編                                                                               |   |
-|    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成                                                                                  |   |
-|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 儲存AO人員所選擇的提交方式                                                                             |   |
-|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記                                                                            |   |
-|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記                                                                            |   |
-|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性                                                                                       |   |
+|    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
+|    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成?                                                                                 |   |
+|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時, 儲存AO人員所選擇的提交方式如-_1: 照原流程一層一層提交3: AO直接提交給原發出補件清單之主管                                  |   |
+|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1)null: 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                     |   |
+|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1)null: 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                     |   |
+|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性, 急件, 快速審理案件)                                                                        |   |
 |    | CASE_VERSION                             | INTEGER              | 案件的改版次數                                                                                    |   |
 |    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
 |    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
 |    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
-|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
+|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
-|    | ISFORWARD                                | VARCHAR2(1 char)     | 是否提授審會                                                                                     |   |
+|    | ISFORWARD                                | VARCHAR2(1 char)     | 是否提授審會?                                                                                    |   |
+|    | ISHANDLEFREE                             | VARCHAR2(1 char)     | 是否免辦理                                                                                      |   |
+|    | HANDLEFREEREASON                         | VARCHAR2(2 char)     | 免辦理原因                                                                                      |   |
+|    | ISTRANSFER                               | VARCHAR2(1 char)     | 是否轉籍                                                                                       |   |
+|    | TRANSFERBRANCHID                         | VARCHAR2(4 char)     | 轉籍至那家分行                                                                                    |   |
+|    | HANDLEFREEREASON_OTHER                   | VARCHAR2(4000 char)  | 免辦理其他原因                                                                                    |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_FLOW_CASEDETAIL_LOAN_CAR
@@ -2978,44 +2979,42 @@ title: E-LOAN 徵審系統(ELEL)
 
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
-| PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
-|    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
-|    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
-|    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
-|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
-|    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | INTEGER              | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | INTEGER              | 最近的流程狀態代碼                                                                                  |   |
-|    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
-|    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | INTEGER              | 結案狀態_如:核准,緩議...                                                                            |   |
-|    | ATTENTION                                | VARCHAR2(3000 char)  | 注意事項(提交審核)(目前此欄位不再使用_欄位仍在)                                                                 |   |
-|    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
-|    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行代號)                                                                               |   |
-|    | ROLEID_FINALLYCHECKLEVEL_SYSTEMPROPOSE   | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
-|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure.Date_TurnOn)                                               |   |
-|    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
-|    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
-|    | IS_OVERTAKE_RAISESELF                    | VARCHAR2(1 char)     | 當發生自撤案件時,自撤案件是否已追上原案件_1:代表追上_0代表沒有追上!                                                      |   |
-|    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
-|    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
-|    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成?                                                                                 |   |
-|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時,儲存AO人員所選擇的提交方式如-_1:照原流程一層一層提交3:AO直接提交給原發出補件清單之主管                                  |   |
-|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1)null:尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                     |   |
-|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1)null:尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                     |   |
-|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性,急件,快速審理案件)                                                                        |   |
-|    | CASE_VERSION                             | INTEGER              | 案件的改版次數                                                                                    |   |
-|    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
-|    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
-|    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
-|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
-|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
-|    | ISFORWARD                                | VARCHAR2(1 char)     | 是否提授審會?                                                                                    |   |
-|    | ISHANDLEFREE                             | VARCHAR2(1 char)     | 是否免辦理                                                                                      |   |
-|    | HANDLEFREEREASON                         | VARCHAR2(2 char)     | 免辦理原因                                                                                      |   |
-|    | ISTRANSFER                               | VARCHAR2(1 char)     | 是否轉籍                                                                                       |   |
-|    | TRANSFERBRANCHID                         | VARCHAR2(4 char)     | 轉籍至那家分行                                                                                    |   |
-|    | HANDLEFREEREASON_OTHER                   | VARCHAR2(4000 char)  | 免辦理其他原因                                                                                    |   |
+| PK | FLOW_UID                                 | VARCHAR2(36 char)    | 流程記錄主鍵                                                                                     |   |
+|    | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
+|    | CREATE_DATE                              | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
+|    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
+|    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間(案件流程還未送出)                                                                        |   |
+|    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
+|    | FLOW_SEQNO                               | NUMBER(5, 0)          | 案件流程步驟累計(流程流水號)                                                                            |   |
+|    | FLOW_STATUS                              | NUMBER(5, 0)          | 流程狀態代碼                                                                                     |   |
+|    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
+|    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
+|    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
+|    | TEAMID                                   | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
+|    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 0：此流程檔未結束；1：此流程檔已結束                                                                        |   |
+|    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 當為_1_時, 代表同群組(角色代號+分行代號)下, 皆可看到案件_反之, 則否!                                                     |   |
+|    | FLOW_DECISION                            | NUMBER(4, 0)          | 審核意見(核准, 緩議, 自撤, 撤案, 退件, 婉拒, 退回補件, 退回清單)                                                          |   |
+|    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
+|    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
+|    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
+|    | NEXT_TEAMID                              | VARCHAR2(6 char)     | 下一審核人員(部門, 或是分行下的小組ID)                                                                      |   |
+|    | AGENT_EMPROLE                            | VARCHAR2(3 char)     | 代理人的角色                                                                                     |   |
+|    | AGENT_EMPID                              | VARCHAR2(5 char)     | 代理人的員編                                                                                     |   |
+|    | AGENT_BRANCHID                           | VARCHAR2(4 char)     | 代理人所屬分行別                                                                                   |   |
+|    | AGENT_TEAMID                             | VARCHAR2(6 char)     | 代理人所屬(部門, 或是分行下的小組ID)                                                                       |   |
+|    | REJECT_TYPE                              | VARCHAR2(2 char)     | 婉拒原因(大類)                                                                                   |   |
+|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原「新增此筆流程的時間」                                                                               |   |
+|    | ORIGIN_FIRST_DATE                        | TIMESTAMP            | 原「第一次進入案件的時間」                                                                              |   |
+|    | ORIGIN_MODIFY_DATE                       | TIMESTAMP            | 原「流程資料的暫存時間(案件流程還未送出)」                                                                     |   |
+|    | ORIGIN_EMPROLE                           | VARCHAR2(3 char)     | 原「本流程步驟審核人員的角色」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                               |   |
+|    | ORIGIN_EMPID                             | VARCHAR2(5 char)     | 原「本流程步驟審核人員的員編」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                               |   |
+|    | ORIGIN_BRANCHID                          | VARCHAR2(4 char)     | 原「本流程步驟審核人員所屬分行別」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                             |   |
+|    | ORIGIN_TEAMID                            | VARCHAR2(6 char)     | 原「本流程步驟審核人員所屬(部門, 或是分行下的小組ID)」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                 |   |
+|    | ORIGIN_NEXT_EMPROLE                      | VARCHAR2(3 char)     | 原「下一審核人員的角色」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                                  |   |
+|    | ORIGIN_NEXT_EMPID                        | VARCHAR2(5 char)     | 原「下一審核人員的員編」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                                  |   |
+|    | ORIGIN_NEXT_BRANCHID                     | VARCHAR2(4 char)     | 原「下一審核人員所屬分行別」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                                |   |
+|    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 原「下一審核人員所屬(部門, 或是分行下的小組ID)」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                    |   |
+|    | REASONTYPE                               | INTEGER              | 1=同一關係人填表日期錯誤, 2=同一關係企業與聯徵A11有異, 3=1+2                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_FLOW_CASEDETAIL_LOAN_CONSUME
@@ -3028,61 +3027,17 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
 |    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
-|    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間(案件流程還未送出)                                                                        |   |
-|    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
-|    | FLOW_SEQNO                               | NUMBER(5,0)          | 案件流程步驟累計(流程流水號)                                                                            |   |
-|    | FLOW_STATUS                              | NUMBER(5,0)          | 流程狀態代碼                                                                                     |   |
-|    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
-|    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
-|    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
-|    | TEAMID                                   | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
-|    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 0：此流程檔未結束；1：此流程檔已結束                                                                        |   |
-|    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 當為_1_時,代表同群組(角色代號+分行代號)下,皆可看到案件_反之,則否!                                                     |   |
-|    | FLOW_DECISION                            | NUMBER(4,0)          | 審核意見(核准,緩議,自撤,撤案,退件,婉拒,退回補件,退回清單)                                                          |   |
-|    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
-|    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
-|    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
-|    | NEXT_TEAMID                              | VARCHAR2(6 char)     | 下一審核人員(部門,或是分行下的小組ID)                                                                      |   |
-|    | AGENT_EMPROLE                            | VARCHAR2(3 char)     | 代理人的角色                                                                                     |   |
-|    | AGENT_EMPID                              | VARCHAR2(5 char)     | 代理人的員編                                                                                     |   |
-|    | AGENT_BRANCHID                           | VARCHAR2(4 char)     | 代理人所屬分行別                                                                                   |   |
-|    | AGENT_TEAMID                             | VARCHAR2(6 char)     | 代理人所屬(部門,或是分行下的小組ID)                                                                       |   |
-|    | REJECT_TYPE                              | VARCHAR2(2 char)     | 婉拒原因(大類)                                                                                   |   |
-|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原「新增此筆流程的時間」                                                                               |   |
-|    | ORIGIN_FIRST_DATE                        | TIMESTAMP            | 原「第一次進入案件的時間」                                                                              |   |
-|    | ORIGIN_MODIFY_DATE                       | TIMESTAMP            | 原「流程資料的暫存時間(案件流程還未送出)」                                                                     |   |
-|    | ORIGIN_EMPROLE                           | VARCHAR2(3 char)     | 原「本流程步驟審核人員的角色」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                               |   |
-|    | ORIGIN_EMPID                             | VARCHAR2(5 char)     | 原「本流程步驟審核人員的員編」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                               |   |
-|    | ORIGIN_BRANCHID                          | VARCHAR2(4 char)     | 原「本流程步驟審核人員所屬分行別」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                             |   |
-|    | ORIGIN_TEAMID                            | VARCHAR2(6 char)     | 原「本流程步驟審核人員所屬(部門,或是分行下的小組ID)」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                 |   |
-|    | ORIGIN_NEXT_EMPROLE                      | VARCHAR2(3 char)     | 原「下一審核人員的角色」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                                  |   |
-|    | ORIGIN_NEXT_EMPID                        | VARCHAR2(5 char)     | 原「下一審核人員的員編」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                                  |   |
-|    | ORIGIN_NEXT_BRANCHID                     | VARCHAR2(4 char)     | 原「下一審核人員所屬分行別」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                                |   |
-|    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 原「下一審核人員所屬(部門,或是分行下的小組ID)」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                    |   |
-|    | REASONTYPE                               | INTEGER              | 1=同一關係人填表日期錯誤,2=同一關係企業與聯徵A11有異,3=1+2                                                       |   |
-|    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
-### VW_ODS_D_FLOW_CASEDETAIL_LOAN_ENTERPRISE
-
-#### 企金徵授信作業流程記錄檔
-
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
-| PK | FLOW_UID                                 | VARCHAR2(36 char)    | 流程記錄主鍵                                                                                     |   |
-|    | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
-|    | CREATE_DATE                              | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
-|    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
 |    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間                                                                                  |   |
 |    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
-|    | FLOW_SEQNO                               | NUMBER(5,0)          | 案件流程步驟累計                                                                                   |   |
-|    | FLOW_STATUS                              | NUMBER(5,0)          | 流程狀態代碼                                                                                     |   |
+|    | FLOW_SEQNO                               | NUMBER(5, 0)          | 案件流程步驟累計                                                                                   |   |
+|    | FLOW_STATUS                              | NUMBER(5, 0)          | 流程狀態代碼                                                                                     |   |
 |    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
 |    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
 |    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
 |    | TEAMID                                   | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
 |    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 目前狀態                                                                                       |   |
 |    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 是否為群組檢視關卡                                                                                  |   |
-|    | FLOW_DECISION                            | NUMBER(4,0)          | 審核意見                                                                                       |   |
+|    | FLOW_DECISION                            | NUMBER(4, 0)          | 審核意見                                                                                       |   |
 |    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
 |    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
 |    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
@@ -3105,6 +3060,49 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 下一審核人員所屬部門或分行下的小組ID                                                                        |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
+### VW_ODS_D_FLOW_CASEDETAIL_LOAN_ENTERPRISE
+
+#### 企金徵授信作業流程記錄檔
+
+| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
+| --- | --------- | ------------------- | ------------ | ---- |
+| PK | FLOW_UID                                 | VARCHAR2(36 char)    | 流程記錄主鍵                                                                                     |   |
+|    | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
+|    | CREATE_DATE                              | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
+|    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
+|    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間                                                                                  |   |
+|    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
+|    | FLOW_SEQNO                               | NUMBER(5, 0)          | 案件流程步驟累計                                                                                   |   |
+|    | FLOW_STATUS                              | NUMBER(5, 0)          | 流程狀態代碼                                                                                     |   |
+|    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
+|    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
+|    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
+|    | TEAMID                                   | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
+|    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 目前狀態                                                                                       |   |
+|    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 是否為群組檢視關卡                                                                                  |   |
+|    | FLOW_DECISION                            | NUMBER(4, 0)          | 審核意見                                                                                       |   |
+|    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
+|    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
+|    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
+|    | NEXT_TEAMID                              | VARCHAR2(6 char)     | 下一審核人員                                                                                     |   |
+|    | AGENT_EMPROLE                            | VARCHAR2(3 char)     | 代理人的角色                                                                                     |   |
+|    | AGENT_EMPID                              | VARCHAR2(5 char)     | 代理人的員編                                                                                     |   |
+|    | AGENT_BRANCHID                           | VARCHAR2(4 char)     | 代理人所屬分行別                                                                                   |   |
+|    | AGENT_TEAMID                             | VARCHAR2(6 char)     | 代理人所屬                                                                                      |   |
+|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
+|    | ORIGIN_FIRST_DATE                        | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
+|    | ORIGIN_MODIFY_DATE                       | TIMESTAMP            | 流程資料的暫存時間                                                                                  |   |
+|    | ORIGIN_EMPROLE                           | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
+|    | ORIGIN_EMPID                             | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
+|    | ORIGIN_BRANCHID                          | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
+|    | ORIGIN_TEAMID                            | VARCHAR2(6 char)     | 本流程步驟審核人員所屬部門或分行下的小組ID                                                                     |   |
+|    | ORIGIN_NEXT_EMPROLE                      | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
+|    | ORIGIN_NEXT_EMPID                        | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
+|    | ORIGIN_NEXT_BRANCHID                     | VARCHAR2(4 char)     | 下一審核人員所屬分行別                                                                                |   |
+|    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 下一審核人員所屬部門或分行下的小組ID                                                                        |   |
+|    | ISAGREE                                  | VARCHAR2(1 char)     | 審查說明欄位                                                                                     |   |
+|    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
+
 ### VW_ODS_D_FLOW_CASEDETAIL_LOAN_HOUSE
 
 #### 房貸徵授信作業流程記錄檔
@@ -3117,15 +3115,15 @@ title: E-LOAN 徵審系統(ELEL)
 |    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
 |    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間                                                                                  |   |
 |    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
-|    | FLOW_SEQNO                               | NUMBER(5,0)          | 案件流程步驟累計                                                                                   |   |
-|    | FLOW_STATUS                              | NUMBER(5,0)          | 流程狀態代碼                                                                                     |   |
+|    | FLOW_SEQNO                               | NUMBER(5, 0)          | 案件流程步驟累計                                                                                   |   |
+|    | FLOW_STATUS                              | NUMBER(5, 0)          | 流程狀態代碼                                                                                     |   |
 |    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
 |    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
 |    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
 |    | TEAMID                                   | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
 |    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 目前狀態                                                                                       |   |
 |    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 是否為群組檢視關卡                                                                                  |   |
-|    | FLOW_DECISION                            | NUMBER(4,0)          | 審核意見                                                                                       |   |
+|    | FLOW_DECISION                            | NUMBER(4, 0)          | 審核意見                                                                                       |   |
 |    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
 |    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
 |    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
@@ -3154,41 +3152,10 @@ title: E-LOAN 徵審系統(ELEL)
 
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
-| PK | FLOW_UID                                 | VARCHAR2(36 char)    | 流程記錄主鍵                                                                                     |   |
-|    | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
-|    | CREATE_DATE                              | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
-|    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
-|    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間                                                                                  |   |
-|    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
-|    | FLOW_SEQNO                               | NUMBER(5,0)          | 案件流程步驟累計                                                                                   |   |
-|    | FLOW_STATUS                              | NUMBER(5,0)          | 流程狀態代碼                                                                                     |   |
-|    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
-|    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
-|    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
-|    | TEAMID                                   | VARCHAR2(6 char)     | 部門或是分行下的小組ID                                                                               |   |
-|    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 目前狀態                                                                                       |   |
-|    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 是否為群組檢視關卡                                                                                  |   |
-|    | FLOW_DECISION                            | NUMBER(4,0)          | 審核意見                                                                                       |   |
-|    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
-|    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
-|    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
-|    | NEXT_TEAMID                              | VARCHAR2(6 char)     | 下一審核人員                                                                                     |   |
-|    | AGENT_EMPROLE                            | VARCHAR2(3 char)     | 代理人的角色                                                                                     |   |
-|    | AGENT_EMPID                              | VARCHAR2(5 char)     | 代理人的員編                                                                                     |   |
-|    | AGENT_BRANCHID                           | VARCHAR2(4 char)     | 代理人所屬分行別                                                                                   |   |
-|    | AGENT_TEAMID                             | VARCHAR2(6 char)     | 代理人所屬                                                                                      |   |
-|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 新增此筆流程的時間                                                                                  |   |
-|    | ORIGIN_FIRST_DATE                        | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
-|    | ORIGIN_MODIFY_DATE                       | TIMESTAMP            | 流程資料的暫存時間                                                                                  |   |
-|    | ORIGIN_EMPROLE                           | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
-|    | ORIGIN_EMPID                             | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
-|    | ORIGIN_BRANCHID                          | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
-|    | ORIGIN_TEAMID                            | VARCHAR2(6 char)     | 本流程步驟審核人員所屬部門或分行下的小組ID                                                                     |   |
-|    | ORIGIN_NEXT_EMPROLE                      | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
-|    | ORIGIN_NEXT_EMPID                        | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
-|    | ORIGIN_NEXT_BRANCHID                     | VARCHAR2(4 char)     | 下一審核人員所屬分行別                                                                                |   |
-|    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 下一審核人員所屬部門或分行下的小組ID                                                                        |   |
-|    | ISAGREE                                  | VARCHAR2(1 char)     | 審查說明欄位                                                                                     |   |
+| PK | LANGUAGETYPE                             | VARCHAR2(10 char)    | 多國語系的代碼                                                                                    |   |
+| PK | XMLTAG_NAME                              | VARCHAR2(50 char)    | 流程控制檔的Tag名稱                                                                                |   |
+| PK | PROPERTY_ID                              | VARCHAR2(50 char)    | 該Tag下所支援的屬性名稱                                                                              |   |
+|    | PROPERTY_DESC                            | VARCHAR2(50 char)    | 該Tag下所支援的屬性名稱說明                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_FLOW_CONFIGURE_STATUSID_DESC
@@ -3198,27 +3165,15 @@ title: E-LOAN 徵審系統(ELEL)
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
 | PK | LANGUAGETYPE                             | VARCHAR2(10 char)    | 多國語系的代碼                                                                                    |   |
-| PK | XMLTAG_NAME                              | VARCHAR2(50 char)    | 流程控制檔的Tag名稱                                                                                |   |
-| PK | PROPERTY_ID                              | VARCHAR2(50 char)    | 該Tag下所支援的屬性名稱                                                                              |   |
-|    | PROPERTY_DESC                            | VARCHAR2(50 char)    | 該Tag下所支援的屬性名稱說明                                                                            |   |
+| PK | FLOWTYPE                                 | VARCHAR2(80 char)    | 案件流程的種類                                                                                    |   |
+| PK | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程設定檔的版本                                                                                 |   |
+| PK | STATUSID_XMLCONFIG                       | NUMBER(5, 0)          | flow_xml_file_status_id                                                                    |   |
+|    | STATUSID_DESC                            | VARCHAR2(50 char)    | flow_xml_file_status_id的描述說明                                                               |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_FLOWCASE_FIXEDAST_ESTM_BRANCH
 
 #### 不動產鑑價案件流程主檔-分行送件
-
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
-| PK | LANGUAGETYPE                             | VARCHAR2(10 char)    | 多國語系的代碼                                                                                    |   |
-| PK | FLOWTYPE                                 | VARCHAR2(80 char)    | 案件流程的種類                                                                                    |   |
-| PK | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程設定檔的版本                                                                                 |   |
-| PK | STATUSID_XMLCONFIG                       | NUMBER(5,0)          | flow_xml_file_status_id                                                                    |   |
-|    | STATUSID_DESC                            | VARCHAR2(50 char)    | flow_xml_file_status_id的描述說明                                                               |   |
-|    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
-### VW_ODS_D_FLOWCASE_FIXEDAST_ESTM_HO
-
-#### 不動產鑑價案件流程主檔-總行送件
 
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
@@ -3228,11 +3183,11 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
 |    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門/分行下的小組ID                                                                                |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態                                                                                       |   |
+|    | LOAN_CLOSEDECISION                       | NUMBER(4, 0)          | 結案狀態                                                                                       |   |
 |    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
 |    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行別)                                                                                |   |
 |    | ROLEID_FINALLYCHECKLEVEL_SYSPROPOSE      | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
@@ -3252,130 +3207,122 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-### VW_ODS_D_FLOWCASE_LOANHOUSE_MCD_BRANCH
+### VW_ODS_D_FLOWCASE_FIXEDAST_ESTM_HO
 
-#### 房貸案件分行批覆書階段流程主檔
+#### 不動產鑑價案件流程主檔-總行送件
 
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
-|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
+|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | INTEGER              | 結案狀態_如:核准,緩議...                                                                            |   |
+|    | LOAN_CLOSEDECISION                       | INTEGER              | 結案狀態_如: 核准, 緩議...                                                                            |   |
 |    | ATTENTION                                | VARCHAR2(1000 char)  | 注意事項(提交審核)                                                                                 |   |
 |    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
 |    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     |                                                                                            |   |
 |    | ROLEID_FINALLYCHECKLEVEL_SYSTEMPROPOSE   | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
 |    | BRANCHID_FINALLYCHECKLEVEL_SYSTEMPROPOSE | VARCHAR2(4 char)     |                                                                                            |   |
-|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure.Date_TurnOn)                                               |   |
+|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure. Date_TurnOn)                                               |   |
 |    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
 |    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
-|    | IS_OVERTAKE_RAISESELF                    | VARCHAR2(1 char)     | 當發生自撤案件時,自撤案件是否已追上原案件_1:代表追上_0代表沒有追上!                                                      |   |
+|    | IS_OVERTAKE_RAISESELF                    | VARCHAR2(1 char)     | 當發生自撤案件時, 自撤案件是否已追上原案件_1: 代表追上_0代表沒有追上!                                                      |   |
 |    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
 |    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
-|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1)null:尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                     |   |
-|    | CASE_VERSION                             | NUMBER(10,0)         | 鑑價案件的改版次數                                                                                  |   |
+|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1)null: 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                     |   |
+|    | CASE_VERSION                             | NUMBER(10, 0)         | 鑑價案件的改版次數                                                                                  |   |
 |    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
 |    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
 |    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
-|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
+|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
+### VW_ODS_D_FLOWCASE_LOANHOUSE_MCD_BRANCH
+
+#### 房貸案件分行批覆書階段流程主檔
+
+| PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
+|    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
+|    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
+|    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
+|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
+|    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
+|    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
+|    | LOAN_CLOSEDECISION                       | NUMBER(4, 0)          | 結案狀態_如: 核准, 緩議...                                                                            |   |
+|    | ATTENTION                                | VARCHAR2(1000 char)  | 注意事項(提交審核)                                                                                 |   |
+|    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
+|    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行代號)                                                                               |   |
+|    | ROLEID_FINALLYCHECKLEVEL_SYSTEMPROPOSE   | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
+|    | BRANCHID_FINALLYCHECKLEVEL_SYSTEMPROPOS  | VARCHAR2(4 char)     | 系統建議值_最終審核層級(分行代號)                                                                         |   |
+|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure. Date_TurnOn)                                               |   |
+|    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
+|    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
+|    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
+|    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
+|    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成?                                                                                 |   |
+|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時, 儲存AO人員所選擇的提交方式如-_1: 照原流程一層一層提交3: AO直接提交給原發出補件清單之主管                                  |   |
+|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1): 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                         |   |
+|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1): 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                         |   |
+|    | IS_SENDTOCORE                            | VARCHAR2(1 char)     | 此案件的資料是否已上傳至核心                                                                             |   |
+|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性, 急件, 快速審理案件)                                                                        |   |
+|    | CASE_VERSION                             | INTEGER              | 案件的改版次數                                                                                    |   |
+|    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
+|    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
+|    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
+|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
+|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
+|    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_FLOWCASE_LOANHOUSE_MCD_HO
 
 #### 房貸案件總行批覆書階段流程主檔
 
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
-|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
+|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
+|    | LAST_FLOW_SEQNO                          | NUMBER(5, 0)          | 最近的流程流水號                                                                                   |   |
+|    | LAST_FLOW_STATUS                         | NUMBER(5, 0)          | 最近的流程狀態代碼                                                                                  |   |
 |    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
 |    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態_如:核准,緩議...                                                                            |   |
+|    | LOAN_CLOSEDECISION                       | NUMBER(4, 0)          | 結案狀態_如: 核准, 緩議...                                                                            |   |
 |    | ATTENTION                                | VARCHAR2(1000 char)  | 注意事項(提交審核)                                                                                 |   |
 |    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
 |    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行代號)                                                                               |   |
 |    | ROLEID_FINALLYCHECKLEVEL_SYSTEMPROPOSE   | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
 |    | BRANCHID_FINALLYCHECKLEVEL_SYSTEMPROPOS  | VARCHAR2(4 char)     | 系統建議值_最終審核層級(分行代號)                                                                         |   |
-|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure.Date_TurnOn)                                               |   |
+|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure. Date_TurnOn)                                               |   |
 |    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
 |    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
 |    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
 |    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
 |    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成?                                                                                 |   |
-|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時,儲存AO人員所選擇的提交方式如-_1:照原流程一層一層提交3:AO直接提交給原發出補件清單之主管                                  |   |
-|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1):尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                         |   |
-|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1):尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                         |   |
+|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時, 儲存AO人員所選擇的提交方式如-_1: 照原流程一層一層提交3: AO直接提交給原發出補件清單之主管                                  |   |
+|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1): 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                         |   |
+|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1): 尚未發生_(2)0: 已發出, 尚未審核!(3)1: 已審核通過!                                         |   |
 |    | IS_SENDTOCORE                            | VARCHAR2(1 char)     | 此案件的資料是否已上傳至核心                                                                             |   |
-|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性,急件,快速審理案件)                                                                        |   |
+|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性, 急件, 快速審理案件)                                                                        |   |
 |    | CASE_VERSION                             | INTEGER              | 案件的改版次數                                                                                    |   |
 |    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
 |    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
 |    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
-|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
+|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門, 或是分行下的小組ID                                                                              |   |
 |    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_FLOWCASEDTL_FIXEDAST_ESTM_BRANCH
 
 #### 不動產鑑價案件流程明細檔-分行送件
-
-| Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
-| --- | --------- | ------------------- | ------------ | ---- |
-| PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
-|    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
-|    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
-|    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
-|    | CREATE_TEAMID                            | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
-|    | CREATE_DATE                              | TIMESTAMP            | 建立案件的時間                                                                                    |   |
-|    | LAST_FLOW_SEQNO                          | NUMBER(5,0)          | 最近的流程流水號                                                                                   |   |
-|    | LAST_FLOW_STATUS                         | NUMBER(5,0)          | 最近的流程狀態代碼                                                                                  |   |
-|    | LAST_FLOW_UPDATE_DATE                    | TIMESTAMP            | 最近的流程狀態更新時間                                                                                |   |
-|    | LOAN_CLOSESTATUS                         | VARCHAR2(1 char)     | 是否結案_是否同意                                                                                  |   |
-|    | LOAN_CLOSEDECISION                       | NUMBER(4,0)          | 結案狀態_如:核准,緩議...                                                                            |   |
-|    | ATTENTION                                | VARCHAR2(1000 char)  | 注意事項(提交審核)                                                                                 |   |
-|    | ROLEID_FINALLYCHECKLEVEL                 | VARCHAR2(3 char)     | 最終審核層級(角色代號)                                                                               |   |
-|    | BRANCHID_FINALLYCHECKLEVEL               | VARCHAR2(4 char)     | 最終審核層級(分行代號)                                                                               |   |
-|    | ROLEID_FINALLYCHECKLEVEL_SYSTEMPROPOSE   | VARCHAR2(3 char)     | 系統建議值_最終審核層級(角色代號)                                                                         |   |
-|    | BRANCHID_FINALLYCHECKLEVEL_SYSTEMPROPOS  | VARCHAR2(4 char)     | 系統建議值_最終審核層級(分行代號)                                                                         |   |
-|    | VERSION_FLOWTYPE                         | VARCHAR2(8 char)     | 案件流程版本_即案件流程的啟用日(Flow_Configure.Date_TurnOn)                                               |   |
-|    | IS_RELATION_OTHERLOANUID                 | VARCHAR2(1 char)     | 該筆案件是否與其他案件有關係?                                                                            |   |
-|    | ISPAUSE_FLOW                             | VARCHAR2(1 char)     | 本案件流程是否被暫停?                                                                                |   |
-|    | CASENO                                   | VARCHAR2(20 char)    | 案件編號                                                                                       |   |
-|    | CUSTOMERID_OR_COMPANYID                  | VARCHAR2(11 char)    | 客戶身份證字號_或是公司統編                                                                             |   |
-|    | IS_FINISHED_LIST_ROLLBACK                | VARCHAR2(1 char)     | 退回清單是否已完成?                                                                                 |   |
-|    | CHOICE_SENDTYPE_LIST_ROLLBACK            | VARCHAR2(1 char)     | 若發生補件清單時,儲存AO人員所選擇的提交方式如-_1:照原流程一層一層提交3:AO直接提交給原發出補件清單之主管                                  |   |
-|    | IS_APPROVED_FINISHED_RENEW_ROLLBACK      | VARCHAR2(1 char)     | 記錄當時主管發出退回補件的註記_(1):尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                         |   |
-|    | IS_APPROVED_FINISHED_LIST_ROLLBACK       | VARCHAR2(1 char)     | 記錄當時主管發出補件清單的註記_(1):尚未發生_(2)0:已發出,尚未審核!(3)1:已審核通過!                                         |   |
-|    | IS_SENDTOCORE                            | VARCHAR2(1 char)     | 此案件的資料是否已上傳至核心                                                                             |   |
-|    | CASE_PROPERTY                            | VARCHAR2(1 char)     | 案件屬性(一般性,急件,快速審理案件)                                                                        |   |
-|    | CASE_VERSION                             | INTEGER              | 案件的改版次數                                                                                    |   |
-|    | ORIGIN_CREATE_EMPROLE                    | VARCHAR2(3 char)     | 原建立人員角色                                                                                    |   |
-|    | ORIGIN_CREATE_EMPID                      | VARCHAR2(5 char)     | 原建立人員員編                                                                                    |   |
-|    | ORIGIN_CREATE_BRANCHID                   | VARCHAR2(4 char)     | 原建立人員分行別                                                                                   |   |
-|    | ORIGIN_CREATE_TEAMID                     | VARCHAR2(6 char)     | 部門,或是分行下的小組ID                                                                              |   |
-|    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原建立案件的時間                                                                                   |   |
-|    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
-### VW_ODS_D_HOUSE_ACCOUNT
-
-#### 房貸申請額度資料
 
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
@@ -3385,19 +3332,19 @@ title: E-LOAN 徵審系統(ELEL)
 |    | FIRST_DATE                               | TIMESTAMP            | 第一次進入案件的時間                                                                                 |   |
 |    | MODIFY_DATE                              | TIMESTAMP            | 流程資料的暫存時間(案件流程還未送出)                                                                        |   |
 |    | APPROVE_DATE                             | TIMESTAMP            | 流程的核定時間                                                                                    |   |
-|    | FLOW_SEQNO                               | NUMBER(5,0)          | 案件流程步驟累計(流程流水號)                                                                            |   |
-|    | FLOW_STATUS                              | NUMBER(5,0)          | 流程狀態代碼                                                                                     |   |
+|    | FLOW_SEQNO                               | NUMBER(5, 0)          | 案件流程步驟累計(流程流水號)                                                                            |   |
+|    | FLOW_STATUS                              | NUMBER(5, 0)          | 流程狀態代碼                                                                                     |   |
 |    | EMPROLE                                  | VARCHAR2(3 char)     | 本流程步驟審核人員的角色                                                                               |   |
 |    | EMPID                                    | VARCHAR2(5 char)     | 本流程步驟審核人員的員編                                                                               |   |
 |    | BRANCHID                                 | VARCHAR2(4 char)     | 本流程步驟審核人員所屬分行別                                                                             |   |
 |    | TEAMID                                   | VARCHAR2(6 char)     | 部門/分行下的小組ID                                                                                |   |
 |    | STATUS_RIGHTNOW                          | VARCHAR2(1 char)     | 檔案目前狀態                                                                                     |   |
 |    | ISREAD_GROUP                             | VARCHAR2(1 char)     | 群組角色讀取權限                                                                                   |   |
-|    | FLOW_DECISION                            | NUMBER(4,0)          | 審核意見                                                                                       |   |
+|    | FLOW_DECISION                            | NUMBER(4, 0)          | 審核意見                                                                                       |   |
 |    | NEXT_EMPROLE                             | VARCHAR2(3 char)     | 下一審核人員的角色                                                                                  |   |
 |    | NEXT_EMPID                               | VARCHAR2(5 char)     | 下一審核人員的員編                                                                                  |   |
 |    | NEXT_BRANCHID                            | VARCHAR2(4 char)     | 下一審核人員所屬的分行別                                                                               |   |
-|    | NEXT_TEAMID                              | VARCHAR2(6 char)     | 下一審核人員(部門,或是分行下的小組ID)                                                                      |   |
+|    | NEXT_TEAMID                              | VARCHAR2(6 char)     | 下一審核人員(部門, 或是分行下的小組ID)                                                                      |   |
 |    | AGENT_EMPROLE                            | VARCHAR2(3 char)     | 代理人的角色                                                                                     |   |
 |    | AGENT_EMPID                              | VARCHAR2(5 char)     | 代理人的員編                                                                                     |   |
 |    | AGENT_BRANCHID                           | VARCHAR2(4 char)     | 代理人所屬分行別                                                                                   |   |
@@ -3405,14 +3352,81 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ORIGIN_CREATE_DATE                       | TIMESTAMP            | 原「新增此筆流程的時間」                                                                               |   |
 |    | ORIGIN_FIRST_DATE                        | TIMESTAMP            | 原「第一次進入案件的時間」                                                                              |   |
 |    | ORIGIN_MODIFY_DATE                       | TIMESTAMP            | 原「流程資料的暫存時間(案件流程還未送出)」                                                                     |   |
-|    | ORIGIN_EMPROLE                           | VARCHAR2(3 char)     | 原「本流程步驟審核人員的角色」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                               |   |
-|    | ORIGIN_EMPID                             | VARCHAR2(5 char)     | 原「本流程步驟審核人員的員編」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                               |   |
-|    | ORIGIN_BRANCHID                          | VARCHAR2(4 char)     | 原「本流程步驟審核人員所屬分行別」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                             |   |
-|    | ORIGIN_TEAMID                            | VARCHAR2(6 char)     | 原「本流程步驟審核人員所屬(部門,或是分行下的小組ID)」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                 |   |
-|    | ORIGIN_NEXT_EMPROLE                      | VARCHAR2(3 char)     | 原「下一審核人員的角色」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                                  |   |
-|    | ORIGIN_NEXT_EMPID                        | VARCHAR2(5 char)     | 原「下一審核人員的員編」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                                  |   |
-|    | ORIGIN_NEXT_BRANCHID                     | VARCHAR2(4 char)     | 原「下一審核人員所屬分行別」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                                |   |
-|    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 原「下一審核人員所屬(部門,或是分行下的小組ID)」(註:本欄位於案件移交時_或是分行合併,消滅時,才使用!)                                    |   |
+|    | ORIGIN_EMPROLE                           | VARCHAR2(3 char)     | 原「本流程步驟審核人員的角色」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                               |   |
+|    | ORIGIN_EMPID                             | VARCHAR2(5 char)     | 原「本流程步驟審核人員的員編」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                               |   |
+|    | ORIGIN_BRANCHID                          | VARCHAR2(4 char)     | 原「本流程步驟審核人員所屬分行別」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                             |   |
+|    | ORIGIN_TEAMID                            | VARCHAR2(6 char)     | 原「本流程步驟審核人員所屬(部門, 或是分行下的小組ID)」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                 |   |
+|    | ORIGIN_NEXT_EMPROLE                      | VARCHAR2(3 char)     | 原「下一審核人員的角色」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                                  |   |
+|    | ORIGIN_NEXT_EMPID                        | VARCHAR2(5 char)     | 原「下一審核人員的員編」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                                  |   |
+|    | ORIGIN_NEXT_BRANCHID                     | VARCHAR2(4 char)     | 原「下一審核人員所屬分行別」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                                |   |
+|    | ORIGIN_NEXT_TEAMID                       | VARCHAR2(6 char)     | 原「下一審核人員所屬(部門, 或是分行下的小組ID)」(註: 本欄位於案件移交時_或是分行合併, 消滅時, 才使用!)                                    |   |
+|    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
+
+### VW_ODS_D_HOUSE_ACCOUNT
+
+#### 房貸申請額度資料
+
+| PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
+| PK | ACCOUNT_UID                              | VARCHAR2(36 char)    | FK                                                                                         |   |
+|    | ACCOUNT_NO                               | VARCHAR2(50 char)    | 申請號碼                                                                                       |   |
+|    | MARGIN_CENTER                            | VARCHAR2(4 char)     | 利潤中心                                                                                       |   |
+|    | COLLATERAL_MARK                          | VARCHAR2(1 char)     | 擔保註記(0：純信用，1：擔保，2：副擔保)                                                                     |   |
+|    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
+|    | TYPE                                     | VARCHAR2(1 char)     | 授信科目大項(1：直接授信，2：間接受信，3：外匯授信)                                                               |   |
+|    | SUBJECT                                  | VARCHAR2(3 char)     | 授信科目細項                                                                                     |   |
+|    | AMOUNT                                   | NUMBER(18, 3)         | 額度                                                                                         |   |
+|    | PROJECT_NO                               | VARCHAR2(5 char)     | 專案代號                                                                                       |   |
+|    | PERIOD                                   | VARCHAR2(9 char)     | 授信期間                                                                                       |   |
+|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1: 年, 2: 月, 3: 日, 4: 特定日)                                                                  |   |
+|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1: 循環, 2:ㄧ次撥貸, 3: 多次撥貸)                                                                   |   |
+|    | AVAILABLE_PERIOD                         | VARCHAR2(9 char)     | 批覆書有效期限                                                                                    |   |
+|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1: 月, 2: 年，3: 特定日)                                                                   |   |
+|    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
+|    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
+|    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
+|    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立人員分行別                                                                                    |   |
+|    | CREATE_DATE                              | TIMESTAMP            | 建立時間                                                                                       |   |
+|    | LASTUPDATE_EMPROLE                       | VARCHAR2(3 char)     | 最後更新人員角色                                                                                   |   |
+|    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 最後更新人員員編                                                                                   |   |
+|    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 最後更新人員分行別                                                                                  |   |
+|    | LASTUPDATE_DATE                          | TIMESTAMP            | 最後更新人員分行別                                                                                  |   |
+|    | COMPARE_DESC                             | VARCHAR2(1000 char)  | 利害關係人檢核表_其他說明                                                                              |   |
+|    | PURPOSE                                  | VARCHAR2(3 char)     | 授信用途                                                                                       |   |
+|    | PURPOSE_OTHER                            | VARCHAR2(200 char)   | 授信用途_其他說明                                                                                  |   |
+|    | PAYMENT                                  | VARCHAR2(2 char)     | 還款方式                                                                                       |   |
+|    | PAYMENT_OTHER                            | VARCHAR2(200 char)   | 還款方式_其他說明                                                                                  |   |
+|    | PAY_SOURCE                               | VARCHAR2(100 char)   | 還款財源                                                                                       |   |
+|    | PAY_SOURCE_OTHER                         | VARCHAR2(200 char)   | 還款財源_其他說明                                                                                  |   |
+|    | SUBJECT_DETAIL                           | VARCHAR2(3 char)     | 科目子目                                                                                       |   |
+|    | LIMIT_PERIOD                             | VARCHAR2(9 char)     | 寬限期間                                                                                       |   |
+|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1: 月, 2: 年，3: 特定日)                                                                        |   |
+|    | EXT_APRV_NO                              | VARCHAR2(12 char)    | 若是展期案件，要輸入舊核號                                                                              |   |
+|    | EXPENSES_DATE                            | TIMESTAMP            | 預定用款日期                                                                                     |   |
+|    | DEADLINE                                 | VARCHAR2(5 char)     | 借款期限                                                                                       |   |
+|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1: 個月, 2: 年)                                                                          |   |
+|    | DEBT_USE                                 | VARCHAR2(3 char)     | 借款用途                                                                                       |   |
+|    | DEBT_USE_OTHER                           | VARCHAR2(200 char)   | 借款用途_其他說明                                                                                  |   |
+|    | RESTRICT_REFUND                          | VARCHAR2(3 char)     | 限制提前清償                                                                                     |   |
+|    | RESTRICT_ALTER                           | VARCHAR2(3 char)     | 限制塗銷                                                                                       |   |
+|    | REMARK                                   | VARCHAR2(1000 char)  | 擬承作條件                                                                                      |   |
+|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1: 核准2: 緩議)                                                                               |   |
+|    | QUERY_UID_6E027                          | VARCHAR2(36 char)    | 發動6E027的query_uid                                                                          |   |
+|    | STATUS_6E027                             | VARCHAR2(1 char)     | 6E027狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
+|    | QUERY_UID_6E030                          | VARCHAR2(36 char)    | 發動6E030的query_uid                                                                          |   |
+|    | STATUS_6E030                             | VARCHAR2(1 char)     | 6E030狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
+|    | QUERY_UID_6C001                          | VARCHAR2(36 char)    | 發動6C001的query_uid                                                                          |   |
+|    | STATUS_6C001                             | VARCHAR2(1 char)     | 6C001狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
+|    | IS_PAY                                   | VARCHAR2(1 char)     | 本案是否代償                                                                                     |   |
+|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0: 否, 1: 是)                                                                              |   |
+|    | ACCOUNT_NO_NEW                           | VARCHAR2(12 char)    | 新申請號碼                                                                                      |   |
+|    | LIMIT_REFUND                             | VARCHAR2(9 char)     | 限制清償                                                                                       |   |
+|    | REFUND_UNIT                              | VARCHAR2(1 char)     | 限制清償_單位(1－個月；2－年；3－特定日_4：不限制)                                                              |   |
+|    | LIMIT_ALTER                              | VARCHAR2(9 char)     | 限制塗銷                                                                                       |   |
+|    | ALTER_UNIT                               | VARCHAR2(1 char)     | 限制塗銷_單位(1－個月；2－年；3－特定日_4：不限制)                                                              |   |
+|    | PAY_SOURCE_MAIN                          | VARCHAR2(3 char)     | 主要還款財源                                                                                     |   |
+|    | ISDBR22                                  | VARCHAR2(1 char)     | 本筆核准額度是否應計入DBR22倍規範之金額                                                                     |   |
+|    | DBR22_AMOUNT                             | NUMBER(18, 3)         | 應計入DBR22倍規範之金額                                                                             |   |
+|    | DBR22_REASON                             | VARCHAR2(2 char)     | 不計入DBR22倍規範之原因                                                                             |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_HOUSE_ACCOUNT_EXAMINE
@@ -3429,13 +3443,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | TYPE                                     | VARCHAR2(1 char)     | 授信科目大項(1：直接授信，2：間接受信，3：外匯授信)                                                               |   |
 |    | SUBJECT                                  | VARCHAR2(3 char)     | 授信科目細項                                                                                     |   |
-|    | AMOUNT                                   | NUMBER(18,3)         | 額度                                                                                         |   |
+|    | AMOUNT                                   | NUMBER(18, 3)         | 額度                                                                                         |   |
 |    | PROJECT_NO                               | VARCHAR2(5 char)     | 專案代號                                                                                       |   |
 |    | PERIOD                                   | VARCHAR2(9 char)     | 授信期間                                                                                       |   |
-|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1:年,2:月,3:日,4:特定日)                                                                  |   |
-|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1:循環,2:ㄧ次撥貸,3:多次撥貸)                                                                   |   |
+|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1: 年, 2: 月, 3: 日, 4: 特定日)                                                                  |   |
+|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1: 循環, 2:ㄧ次撥貸, 3: 多次撥貸)                                                                   |   |
 |    | AVAILABLE_PERIOD                         | VARCHAR2(9 char)     | 批覆書有效期限                                                                                    |   |
-|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1:月,2:年，3:特定日)                                                                   |   |
+|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1: 月, 2: 年，3: 特定日)                                                                   |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
@@ -3454,17 +3468,17 @@ title: E-LOAN 徵審系統(ELEL)
 |    | PAY_SOURCE_OTHER                         | VARCHAR2(200 char)   | 還款財源_其他說明                                                                                  |   |
 |    | SUBJECT_DETAIL                           | VARCHAR2(3 char)     | 科目子目                                                                                       |   |
 |    | LIMIT_PERIOD                             | VARCHAR2(9 char)     | 寬限期間                                                                                       |   |
-|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1:月,2:年，3:特定日)                                                                        |   |
+|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1: 月, 2: 年，3: 特定日)                                                                        |   |
 |    | EXT_APRV_NO                              | VARCHAR2(12 char)    | 若是展期案件，要輸入舊核號                                                                              |   |
 |    | EXPENSES_DATE                            | TIMESTAMP            | 預定用款日期                                                                                     |   |
 |    | DEADLINE                                 | VARCHAR2(5 char)     | 借款期限                                                                                       |   |
-|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1:個月,2:年)                                                                          |   |
+|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1: 個月, 2: 年)                                                                          |   |
 |    | DEBT_USE                                 | VARCHAR2(3 char)     | 借款用途                                                                                       |   |
 |    | DEBT_USE_OTHER                           | VARCHAR2(200 char)   | 借款用途_其他說明                                                                                  |   |
 |    | RESTRICT_REFUND                          | VARCHAR2(3 char)     | 限制提前清償                                                                                     |   |
 |    | RESTRICT_ALTER                           | VARCHAR2(3 char)     | 限制塗銷                                                                                       |   |
 |    | REMARK                                   | VARCHAR2(1000 char)  | 擬承作條件                                                                                      |   |
-|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1:核准2:緩議)                                                                               |   |
+|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1: 核准2: 緩議)                                                                               |   |
 |    | QUERY_UID_6E027                          | VARCHAR2(36 char)    | 發動6E027的query_uid                                                                          |   |
 |    | STATUS_6E027                             | VARCHAR2(1 char)     | 6E027狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
 |    | QUERY_UID_6E030                          | VARCHAR2(36 char)    | 發動6E030的query_uid                                                                          |   |
@@ -3472,18 +3486,17 @@ title: E-LOAN 徵審系統(ELEL)
 |    | QUERY_UID_6C001                          | VARCHAR2(36 char)    | 發動6C001的query_uid                                                                          |   |
 |    | STATUS_6C001                             | VARCHAR2(1 char)     | 6C001狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
 |    | IS_PAY                                   | VARCHAR2(1 char)     | 本案是否代償                                                                                     |   |
-|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0:否,1:是)                                                                              |   |
+|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0: 否, 1: 是)                                                                              |   |
 |    | ACCOUNT_NO_NEW                           | VARCHAR2(12 char)    | 新申請號碼                                                                                      |   |
 |    | LIMIT_REFUND                             | VARCHAR2(9 char)     | 限制清償                                                                                       |   |
-|    | REFUND_UNIT                              | VARCHAR2(1 char)     | 限制清償_單位(1－個月；2－年；3－特定日_4：不限制)                                                              |   |
-|    | LIMIT_ALTER                              | VARCHAR2(9 char)     | 限制塗銷                                                                                       |   |
-|    | ALTER_UNIT                               | VARCHAR2(1 char)     | 限制塗銷_單位(1－個月；2－年；3－特定日_4：不限制)                                                              |   |
+|    | REFUND_UNIT                              | VARCHAR2(1 char)     | 限制清償_單位                                                                                    |   |
+|    | LIMIT_ALTER                              | VARCHAR2(9 char)     | 限制清償                                                                                       |   |
+|    | ALTER_UNIT                               | VARCHAR2(1 char)     | 限制清償_單位                                                                                    |   |
 |    | PAY_SOURCE_MAIN                          | VARCHAR2(3 char)     | 主要還款財源                                                                                     |   |
 |    | ISDBR22                                  | VARCHAR2(1 char)     | 本筆核准額度是否應計入DBR22倍規範之金額                                                                     |   |
-|    | DBR22_AMOUNT                             | NUMBER(18,3)         | 應計入DBR22倍規範之金額                                                                             |   |
+|    | DBR22_AMOUNT                             | NUMBER(18, 3)         | 應計入DBR22倍規範之金額                                                                             |   |
 |    | DBR22_REASON                             | VARCHAR2(2 char)     | 不計入DBR22倍規範之原因                                                                             |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_HOUSE_ACCOUNT_NEW
 
@@ -3499,13 +3512,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | TYPE                                     | VARCHAR2(1 char)     | 授信科目大項(1：直接授信，2：間接受信，3：外匯授信)                                                               |   |
 |    | SUBJECT                                  | VARCHAR2(3 char)     | 授信科目細項                                                                                     |   |
-|    | AMOUNT                                   | NUMBER(18,3)         | 額度                                                                                         |   |
+|    | AMOUNT                                   | NUMBER(18, 3)         | 額度                                                                                         |   |
 |    | PROJECT_NO                               | VARCHAR2(5 char)     | 專案代號                                                                                       |   |
 |    | PERIOD                                   | VARCHAR2(9 char)     | 授信期間                                                                                       |   |
-|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1:年,2:月,3:日,4:特定日)                                                                  |   |
-|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1:循環,2:ㄧ次撥貸,3:多次撥貸)                                                                   |   |
+|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1: 年, 2: 月, 3: 日, 4: 特定日)                                                                  |   |
+|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1: 循環, 2:ㄧ次撥貸, 3: 多次撥貸)                                                                   |   |
 |    | AVAILABLE_PERIOD                         | VARCHAR2(9 char)     | 批覆書有效期限                                                                                    |   |
-|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1:月,2:年，3:特定日)                                                                   |   |
+|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1: 月, 2: 年，3: 特定日)                                                                   |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
@@ -3524,17 +3537,17 @@ title: E-LOAN 徵審系統(ELEL)
 |    | PAY_SOURCE_OTHER                         | VARCHAR2(200 char)   | 還款財源_其他說明                                                                                  |   |
 |    | SUBJECT_DETAIL                           | VARCHAR2(3 char)     | 科目子目                                                                                       |   |
 |    | LIMIT_PERIOD                             | VARCHAR2(9 char)     | 寬限期間                                                                                       |   |
-|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1:月,2:年，3:特定日)                                                                        |   |
+|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1: 月, 2: 年，3: 特定日)                                                                        |   |
 |    | EXT_APRV_NO                              | VARCHAR2(12 char)    | 若是展期案件，要輸入舊核號                                                                              |   |
 |    | EXPENSES_DATE                            | TIMESTAMP            | 預定用款日期                                                                                     |   |
 |    | DEADLINE                                 | VARCHAR2(5 char)     | 借款期限                                                                                       |   |
-|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1:個月,2:年)                                                                          |   |
+|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1: 個月, 2: 年)                                                                          |   |
 |    | DEBT_USE                                 | VARCHAR2(3 char)     | 借款用途                                                                                       |   |
 |    | DEBT_USE_OTHER                           | VARCHAR2(200 char)   | 借款用途_其他說明                                                                                  |   |
 |    | RESTRICT_REFUND                          | VARCHAR2(3 char)     | 限制提前清償                                                                                     |   |
 |    | RESTRICT_ALTER                           | VARCHAR2(3 char)     | 限制塗銷                                                                                       |   |
 |    | REMARK                                   | VARCHAR2(1000 char)  | 擬承作條件                                                                                      |   |
-|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1:核准2:緩議)                                                                               |   |
+|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1: 核准2: 緩議)                                                                               |   |
 |    | QUERY_UID_6E027                          | VARCHAR2(36 char)    | 發動6E027的query_uid                                                                          |   |
 |    | STATUS_6E027                             | VARCHAR2(1 char)     | 6E027狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
 |    | QUERY_UID_6E030                          | VARCHAR2(36 char)    | 發動6E030的query_uid                                                                          |   |
@@ -3542,7 +3555,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | QUERY_UID_6C001                          | VARCHAR2(36 char)    | 發動6C001的query_uid                                                                          |   |
 |    | STATUS_6C001                             | VARCHAR2(1 char)     | 6C001狀態(1：上傳成功，2：上傳失敗，3：上傳中)                                                               |   |
 |    | IS_PAY                                   | VARCHAR2(1 char)     | 本案是否代償                                                                                     |   |
-|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0:否,1:是)                                                                              |   |
+|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0: 否, 1: 是)                                                                              |   |
 |    | ACCOUNT_NO_NEW                           | VARCHAR2(12 char)    | 新申請號碼                                                                                      |   |
 |    | LIMIT_REFUND                             | VARCHAR2(9 char)     | 限制清償                                                                                       |   |
 |    | REFUND_UNIT                              | VARCHAR2(1 char)     | 限制清償_單位                                                                                    |   |
@@ -3550,7 +3563,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ALTER_UNIT                               | VARCHAR2(1 char)     | 限制清償_單位                                                                                    |   |
 |    | PAY_SOURCE_MAIN                          | VARCHAR2(3 char)     | 主要還款財源                                                                                     |   |
 |    | ISDBR22                                  | VARCHAR2(1 char)     | 本筆核准額度是否應計入DBR22倍規範之金額                                                                     |   |
-|    | DBR22_AMOUNT                             | NUMBER(18,3)         | 應計入DBR22倍規範之金額                                                                             |   |
+|    | DBR22_AMOUNT                             | NUMBER(18, 3)         | 應計入DBR22倍規範之金額                                                                             |   |
 |    | DBR22_REASON                             | VARCHAR2(2 char)     | 不計入DBR22倍規範之原因                                                                             |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
@@ -3568,13 +3581,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | TYPE                                     | VARCHAR2(1 char)     | 授信科目大項(1：直接授信，2：間接受信，3：外匯授信)                                                               |   |
 |    | SUBJECT                                  | VARCHAR2(3 char)     | 授信科目細項                                                                                     |   |
-|    | AMOUNT                                   | NUMBER(18,3)         | 額度                                                                                         |   |
+|    | AMOUNT                                   | NUMBER(18, 3)         | 額度                                                                                         |   |
 |    | PROJECT_NO                               | VARCHAR2(5 char)     | 專案代號                                                                                       |   |
 |    | PERIOD                                   | VARCHAR2(9 char)     | 授信期間                                                                                       |   |
-|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1:年,2:月,3:日,4:特定日)                                                                  |   |
-|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1:循環,2:ㄧ次撥貸,3:多次撥貸)                                                                   |   |
+|    | PERIOD_UNIT                              | VARCHAR2(1 char)     | 授信期間單位(1: 年, 2: 月, 3: 日, 4: 特定日)                                                                  |   |
+|    | USEWAY                                   | VARCHAR2(1 char)     | 動用方式(1: 循環, 2:ㄧ次撥貸, 3: 多次撥貸)                                                                   |   |
 |    | AVAILABLE_PERIOD                         | VARCHAR2(9 char)     | 批覆書有效期限                                                                                    |   |
-|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1:月,2:年，3:特定日)                                                                   |   |
+|    | AVAILABLE_PERIOD_UNIT                    | VARCHAR2(1 char)     | 批覆書有效期限單位(1: 月, 2: 年，3: 特定日)                                                                   |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
@@ -3593,19 +3606,19 @@ title: E-LOAN 徵審系統(ELEL)
 |    | PAY_SOURCE_OTHER                         | VARCHAR2(200 char)   | 還款財源_其他說明                                                                                  |   |
 |    | SUBJECT_DETAIL                           | VARCHAR2(3 char)     | 科目子目                                                                                       |   |
 |    | LIMIT_PERIOD                             | VARCHAR2(9 char)     | 寬限期間                                                                                       |   |
-|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1:月,2:年，3:特定日)                                                                        |   |
+|    | LIMIT_PERIOD_UNIT                        | VARCHAR2(1 char)     | 寬限期間(1: 月, 2: 年，3: 特定日)                                                                        |   |
 |    | EXT_APRV_NO                              | VARCHAR2(12 char)    | 若是展期案件，要輸入舊核號                                                                              |   |
 |    | EXPENSES_DATE                            | TIMESTAMP            | 預定用款日期                                                                                     |   |
 |    | DEADLINE                                 | VARCHAR2(5 char)     | 借款期限                                                                                       |   |
-|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1:個月,2:年)                                                                          |   |
+|    | DEADLINE_UNIT                            | VARCHAR2(1 char)     | 借款期限_單位(1: 個月, 2: 年)                                                                          |   |
 |    | DEBT_USE                                 | VARCHAR2(3 char)     | 借款用途                                                                                       |   |
 |    | DEBT_USE_OTHER                           | VARCHAR2(200 char)   | 借款用途_其他說明                                                                                  |   |
 |    | RESTRICT_REFUND                          | VARCHAR2(3 char)     | 限制提前清償                                                                                     |   |
 |    | RESTRICT_ALTER                           | VARCHAR2(3 char)     | 限制塗銷                                                                                       |   |
 |    | REMARK                                   | VARCHAR2(1000 char)  | 擬承作條件                                                                                      |   |
-|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1:核准2:緩議)                                                                               |   |
+|    | ACCOUNT_STATUS                           | VARCHAR2(1 char)     | 狀態(1: 核准2: 緩議)                                                                               |   |
 |    | IS_PAY                                   | VARCHAR2(1 char)     | 本案是否代償                                                                                     |   |
-|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0:否,1:是)                                                                              |   |
+|    | IS_CANCEL                                | VARCHAR2(1 char)     | 是否註銷(0: 否, 1: 是)                                                                              |   |
 |    | ACCOUNT_NO_NEW                           | VARCHAR2(12 char)    | 新申請號碼                                                                                      |   |
 |    | LIMIT_REFUND                             | VARCHAR2(9 char)     | 限制清償                                                                                       |   |
 |    | REFUND_UNIT                              | VARCHAR2(1 char)     | 限制清償_單位                                                                                    |   |
@@ -3613,10 +3626,9 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ALTER_UNIT                               | VARCHAR2(1 char)     | 限制清償_單位                                                                                    |   |
 |    | PAY_SOURCE_MAIN                          | VARCHAR2(3 char)     | 主要還款財源                                                                                     |   |
 |    | ISDBR22                                  | VARCHAR2(1 char)     | 本筆核准額度是否應計入DBR22倍規範之金額                                                                     |   |
-|    | DBR22_AMOUNT                             | NUMBER(18,3)         | 應計入DBR22倍規範之金額                                                                             |   |
+|    | DBR22_AMOUNT                             | NUMBER(18, 3)         | 應計入DBR22倍規範之金額                                                                             |   |
 |    | DBR22_REASON                             | VARCHAR2(2 char)     | 不計入DBR22倍規範之原因                                                                             |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_HOUSE_CHECK_REPORT_GUARANTEE
 
@@ -3625,7 +3637,7 @@ title: E-LOAN 徵審系統(ELEL)
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件pk                                                                                     |   |
-| PK | BUS_TYPE                                 | VARCHAR2(50 char)    | 業務別(1:分行審核表,2:總行審核表,3:批覆書)                                                                 |   |
+| PK | BUS_TYPE                                 | VARCHAR2(50 char)    | 業務別(1: 分行審核表, 2: 總行審核表, 3: 批覆書)                                                                 |   |
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | RCV_AO                                   | VARCHAR2(5 char)     | 承作AO編號                                                                                     |   |
 |    | RCV_AO_NAME                              | VARCHAR2(50 char)    | 承作AO姓名                                                                                     |   |
@@ -3636,13 +3648,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | SALES_BR_CODE                            | VARCHAR2(11 char)    | 推廣單位                                                                                       |   |
 |    | SALESMAN_ID                              | VARCHAR2(5 char)     | 推廣人員編號                                                                                     |   |
 |    | SALESMAN_NAME                            | VARCHAR2(50 char)    | 推廣人員姓名                                                                                     |   |
-|    | ISRELATED                                | VARCHAR2(5 char)     | 是否為本行利害關係人(0:否1:是)                                                                         |   |
+|    | ISRELATED                                | VARCHAR2(5 char)     | 是否為本行利害關係人(0: 否1: 是)                                                                         |   |
 |    | MEETING_YEAR                             | INTEGER              | 授審會_年                                                                                      |   |
 |    | MEETING_MONTH                            | INTEGER              | 授審會_月                                                                                      |   |
 |    | MEETING_DAY                              | INTEGER              | 授審會_日                                                                                      |   |
 |    | MEETING_SEQNO                            | INTEGER              | 授審會_次                                                                                      |   |
 |    | SUBTOTAL_CURRENCY                        | VARCHAR2(3 char)     | 額度合計幣別                                                                                     |   |
-|    | SUBTOTAL                                 | NUMBER(18,3)         | 額度合計                                                                                       |   |
+|    | SUBTOTAL                                 | NUMBER(18, 3)         | 額度合計                                                                                       |   |
 |    | APPROVE_DATE                             | TIMESTAMP            | 核准日期                                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
@@ -3654,12 +3666,11 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
 |    | IMM_DEBTTYPE                             | VARCHAR2(1 char)     | 設定抵押權種類_大項(0：普通抵押權1：最高限額抵押權)                                                               |   |
-|    | ISORIGIN_SET                             | VARCHAR2(1 char)     | 援用貴行原設定之債務範圍(0:否1:是)                                                                       |   |
-|    | ISLNREL_NEAR                             | VARCHAR2(1 char)     | 是否為準利害關係人(0:否1:是)                                                                          |   |
+|    | ISORIGIN_SET                             | VARCHAR2(1 char)     | 援用貴行原設定之債務範圍(0: 否1: 是)                                                                       |   |
+|    | ISLNREL_NEAR                             | VARCHAR2(1 char)     | 是否為準利害關係人(0: 否1: 是)                                                                          |   |
 |    | ORIGIN_LOAN_WAY                          | VARCHAR2(2 char)     | 授信方式ID(參考Maintain_Loan_Way)                                                                |   |
 |    | RESOURCEX                                | VARCHAR2(4 char)     | 案件來源                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_HOUSE_CSCA
 
@@ -3670,14 +3681,14 @@ title: E-LOAN 徵審系統(ELEL)
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件pk                                                                                     |   |
 | PK | CUST_UID                                 | VARCHAR2(36 char)    | 客戶pk                                                                                       |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    | 還款能力pk                                                                                     |   |
-|    | CUST_TYPE                                | VARCHAR2(1 char)     | 客戶別(1:主要借款人3:保證人)                                                                          |   |
+|    | CUST_TYPE                                | VARCHAR2(1 char)     | 客戶別(1: 主要借款人3: 保證人)                                                                          |   |
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
-|    | YEAR_SAL                                 | NUMBER(18,3)         | 年收入                                                                                        |   |
+|    | YEAR_SAL                                 | NUMBER(18, 3)         | 年收入                                                                                        |   |
 |    | DEBT_UNNORMAL                            | VARCHAR2(1 char)     | 聯徵中心、票據查詢及本行記錄(0：異常1：正常)                                                                   |   |
-|    | JCIC_CREDIT                              | NUMBER(18,3)         | 聯徵借款額度                                                                                     |   |
-|    | JCIC_BALANCE                             | NUMBER(18,3)         | 聯徵借款餘額                                                                                     |   |
-|    | YEAR_PAYS                                | NUMBER(18,3)         | 本次貸款年付金                                                                                    |   |
-|    | OTHER_YEAR_PAYS                          | NUMBER(18,3)         | 其他貸款年付金                                                                                    |   |
+|    | JCIC_CREDIT                              | NUMBER(18, 3)         | 聯徵借款額度                                                                                     |   |
+|    | JCIC_BALANCE                             | NUMBER(18, 3)         | 聯徵借款餘額                                                                                     |   |
+|    | YEAR_PAYS                                | NUMBER(18, 3)         | 本次貸款年付金                                                                                    |   |
+|    | OTHER_YEAR_PAYS                          | NUMBER(18, 3)         | 其他貸款年付金                                                                                    |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員                                                                                       |   |
@@ -3687,10 +3698,9 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 更新人員                                                                                       |   |
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
-|    | YEAR_WORK                                | NUMBER(18,3)         |                                                                                            |   |
-|    | YEAR_OTHER                               | NUMBER(18,3)         |                                                                                            |   |
+|    | YEAR_WORK                                | NUMBER(18, 3)         |                                                                                            |   |
+|    | YEAR_OTHER                               | NUMBER(18, 3)         |                                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_HOUSE_CUSTOMER_MAIN
 
@@ -3711,11 +3721,11 @@ title: E-LOAN 徵審系統(ELEL)
 |    | RESPONSEMSG                              | VARCHAR2(200 char)   | 回傳訊息                                                                                       |   |
 |    | PARSESTATUS                              | VARCHAR2(1 char)     | 解析狀態                                                                                       |   |
 |    | SCORING_R                                | VARCHAR2(1 char)     | 評分結果                                                                                       |   |
-|    | SCORING_S                                | NUMBER(19,6)         | 評分分數                                                                                       |   |
+|    | SCORING_S                                | NUMBER(19, 6)         | 評分分數                                                                                       |   |
 |    | SCORING_K                                | INTEGER              | 評分等級                                                                                       |   |
-|    | SCORING_P                                | NUMBER(19,6)         | 違約率                                                                                        |   |
-|    | CUTOFFSTATUS                             | VARCHAR2(1 char)     | 0:達評分標準1:未達評分標準                                                                            |   |
-|    | DELETE_STATUS                            | VARCHAR2(1 char)     | 狀態(0:有效1:無效)                                                                               |   |
+|    | SCORING_P                                | NUMBER(19, 6)         | 違約率                                                                                        |   |
+|    | CUTOFFSTATUS                             | VARCHAR2(1 char)     | 0: 達評分標準1: 未達評分標準                                                                            |   |
+|    | DELETE_STATUS                            | VARCHAR2(1 char)     | 狀態(0: 有效1: 無效)                                                                               |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     |                                                                                            |   |
 |    | CREATE_BRANCHID                          | VARCHAR2(4 char)     | 建立者所屬分行代碼                                                                                  |   |
 |    | CREATE_EMPID                             | VARCHAR2(10 char)    | 建立者員編                                                                                      |   |
@@ -3769,7 +3779,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | FILL_DATE                                | VARCHAR2(8 char)     | 同一關係人填表日期                                                                                  |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_HOUSE_INTEREST_DETAIL_NEW
 
 #### 房貸額度利率細明檔
@@ -3778,12 +3787,12 @@ title: E-LOAN 徵審系統(ELEL)
 | --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
 | PK | ACCOUNT_UID                              | VARCHAR2(36 char)    | 額度主鍵                                                                                       |   |
-| PK | BUS_TYPE                                 | VARCHAR2(1 char)     | 業務別(1:AO,2:審查員,3:批覆書,4:利害關係人檢核表)                                                           |   |
+| PK | BUS_TYPE                                 | VARCHAR2(1 char)     | 業務別(1: AO, 2: 審查員, 3: 批覆書, 4: 利害關係人檢核表)                                                           |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
 |    | FEE_ID                                   | VARCHAR2(50 char)    | 手續費ID                                                                                      |   |
 |    | FEE_OTHER                                | VARCHAR2(200 char)   | 手續費其他_說明                                                                                   |   |
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
-|    | AMOUNT                                   | NUMBER(18,3)         | 金額                                                                                         |   |
+|    | AMOUNT                                   | NUMBER(18, 3)         | 金額                                                                                         |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
@@ -3796,7 +3805,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | FLAG                                     | VARCHAR2(1 char)     | 註記是否在批覆書階段新增                                                                               |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_HOUSE_INTEREST_NEW
 
 #### 房貸額度利率主檔
@@ -3804,15 +3812,15 @@ title: E-LOAN 徵審系統(ELEL)
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
 | PK | LOAN_UID                                 | VARCHAR2(36 char)    | 系統案件主鍵                                                                                     |   |
-| PK | INTEREST_UID                             | VARCHAR2(36 char)    | House_Interest.Uid(利率主檔UID)                                                                |   |
+| PK | INTEREST_UID                             | VARCHAR2(36 char)    | House_Interest. Uid(利率主檔UID)                                                                |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
-|    | SECTION                                  | INTEGER              | 第N段利率(1:第一段2:第2段3:第3段4:第4段)                                                                |   |
+|    | SECTION                                  | INTEGER              | 第N段利率(1: 第一段2: 第2段3: 第3段4: 第4段)                                                                |   |
 |    | MS                                       | VARCHAR2(3 char)     | 起始月份                                                                                       |   |
 |    | ME                                       | VARCHAR2(3 char)     | 結束月份                                                                                       |   |
-|    | IS_FIXRATE                               | VARCHAR2(1 char)     | 是否為固定利率(0:固定利率1:加碼利率)                                                                      |   |
-|    | ADDRATE                                  | NUMBER(18,3)         | 加碼利率                                                                                       |   |
-|    | POLICE                                   | NUMBER(18,3)         | 政策性補貼息                                                                                     |   |
-|    | APPLY                                    | NUMBER(18,3)         | 適用利率                                                                                       |   |
+|    | IS_FIXRATE                               | VARCHAR2(1 char)     | 是否為固定利率(0: 固定利率1: 加碼利率)                                                                      |   |
+|    | ADDRATE                                  | NUMBER(18, 3)         | 加碼利率                                                                                       |   |
+|    | POLICE                                   | NUMBER(18, 3)         | 政策性補貼息                                                                                     |   |
+|    | APPLY                                    | NUMBER(18, 3)         | 適用利率                                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員員編                                                                                     |   |
@@ -3823,7 +3831,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 最後更新人員分行別                                                                                  |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 最後更新人員分行別                                                                                  |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_HOUSE_PERSON_PHONENUM
 
@@ -3835,8 +3842,8 @@ title: E-LOAN 徵審系統(ELEL)
 | PK | ACCOUNT_UID                              | VARCHAR2(36 char)    | 額度主鍵                                                                                       |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
 |    | INTEREST_ID                              | VARCHAR2(4 char)     | 牌告利率ID                                                                                     |   |
-|    | RATE                                     | NUMBER(18,3)         | 指標利率                                                                                       |   |
-|    | TOTAL_SECTION                            | INTEGER              | 分段別(1:一段式2:二段式3:三段式4:四段式)                                                                  |   |
+|    | RATE                                     | NUMBER(18, 3)         | 指標利率                                                                                       |   |
+|    | TOTAL_SECTION                            | INTEGER              | 分段別(1: 一段式2: 二段式3: 三段式4: 四段式)                                                                  |   |
 |    | RATE_PHRASE                              | VARCHAR2(1000 char)  | 利率條件                                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立人員角色                                                                                     |   |
@@ -3848,7 +3855,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 最後更新人員分行別                                                                                  |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 最後更新人員分行別                                                                                  |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_APPL_BASE
 
@@ -3867,12 +3873,12 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 最後更新時間                                                                                     |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | zh-TW_zh-CN_en-US                                                                          |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    |                                                                                            |   |
-|    | TYPE                                     | VARCHAR2(1 char)     | 電話類別(1:戶籍電話2:現居電話3:手機4:公司電話)                                                               |   |
+|    | TYPE                                     | VARCHAR2(1 char)     | 電話類別(1: 戶籍電話2: 現居電話3: 手機4: 公司電話)                                                               |   |
 |    | TEL_AREA                                 | VARCHAR2(3 char)     | 電話區碼                                                                                       |   |
 |    | TEL_NO                                   | VARCHAR2(10 char)    | 電號號碼                                                                                       |   |
 |    | TEL_EXTN                                 | VARCHAR2(10 char)    | 電話分機碼                                                                                      |   |
 |    | MOBILE                                   | VARCHAR2(10 char)    | 行動電話                                                                                       |   |
-| PK | HOUSE_PERSON_BASEDATA_UID                | VARCHAR2(36 char)    | Consume_Person_BaseData.UID                                                                |   |
+| PK | HOUSE_PERSON_BASEDATA_UID                | VARCHAR2(36 char)    | Consume_Person_BaseData. UID                                                                |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_IMMOVABLE_APPL_BUILD
@@ -3915,8 +3921,8 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ID_TYPE                                  | VARCHAR2(1 char)     | 身份別                                                                                        |   |
 |    | BORROWERID                               | VARCHAR2(10 char)    | 借款人身分證字號                                                                                   |   |
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
-|    | LOANAMOUNT                               | NUMBER(18,3)         | 申貸金額                                                                                       |   |
-|    | LOANAMOUNT_OLD                           | NUMBER(18,3)         | 申貸金額(舊)                                                                                    |   |
+|    | LOANAMOUNT                               | NUMBER(18, 3)         | 申貸金額                                                                                       |   |
+|    | LOANAMOUNT_OLD                           | NUMBER(18, 3)         | 申貸金額(舊)                                                                                    |   |
 |    | LOANAMOUNT_R                             | VARCHAR2(500 char)   | 申貸金額(R)                                                                                    |   |
 |    | BORROWERTEL_AREA_1                       | VARCHAR2(3 char)     | 借款人電話區碼1                                                                                   |   |
 |    | BORROWERTEL_NO_1                         | VARCHAR2(10 char)    | 借款人電話1                                                                                     |   |
@@ -3947,20 +3953,20 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CONTACTTEL_AREA_3                        | VARCHAR2(10 char)    | 聯絡人電話區碼3                                                                                   |   |
 |    | CONTACTTEL_NO_3                          | VARCHAR2(20 char)    | 聯絡人電話3                                                                                     |   |
 |    | CONTACTTEL_EXTN_3                        | VARCHAR2(10 char)    | 聯絡人電話分機3                                                                                   |   |
-|    | ATTACH_1                                 | VARCHAR2(1 char)     | 土地謄本正本(1:已備0:免附)                                                                           |   |
-|    | ATTACH_2                                 | VARCHAR2(1 char)     | 建物謄本正本(1:已備0:免附)                                                                           |   |
-|    | ATTACH_3                                 | VARCHAR2(1 char)     | 地籍圖正本(1:已備0:免附)                                                                            |   |
-|    | ATTACH_4                                 | VARCHAR2(1 char)     | 平面圖正本（含公設平面圖）(1:已備0:免附)                                                                    |   |
-|    | ATTACH_5                                 | VARCHAR2(1 char)     | 前次鑑價報告(1:已備0:免附)                                                                           |   |
-|    | ATTACH_6                                 | VARCHAR2(1 char)     | 分區使用證明書正本(1:已備0:免附)                                                                        |   |
-|    | ATTACH_7                                 | VARCHAR2(1 char)     | 不動產買賣契約影本(1:已備0:免附)                                                                        |   |
-|    | ATTACH_8                                 | VARCHAR2(1 char)     | 車位證明書影本或分管協議書(1:已備0:免附)                                                                    |   |
-|    | ATTACH_9                                 | VARCHAR2(1 char)     | 租賃契約影本(1:已備0:免附)                                                                           |   |
-|    | ATTACH_10                                | VARCHAR2(1 char)     | 興建計畫書或建照(1:已備0:免附)                                                                         |   |
-|    | ATTACH_11                                | VARCHAR2(1 char)     | 其它(1:已備0:免附)                                                                               |   |
+|    | ATTACH_1                                 | VARCHAR2(1 char)     | 土地謄本正本(1: 已備0: 免附)                                                                           |   |
+|    | ATTACH_2                                 | VARCHAR2(1 char)     | 建物謄本正本(1: 已備0: 免附)                                                                           |   |
+|    | ATTACH_3                                 | VARCHAR2(1 char)     | 地籍圖正本(1: 已備0: 免附)                                                                            |   |
+|    | ATTACH_4                                 | VARCHAR2(1 char)     | 平面圖正本（含公設平面圖）(1: 已備0: 免附)                                                                    |   |
+|    | ATTACH_5                                 | VARCHAR2(1 char)     | 前次鑑價報告(1: 已備0: 免附)                                                                           |   |
+|    | ATTACH_6                                 | VARCHAR2(1 char)     | 分區使用證明書正本(1: 已備0: 免附)                                                                        |   |
+|    | ATTACH_7                                 | VARCHAR2(1 char)     | 不動產買賣契約影本(1: 已備0: 免附)                                                                        |   |
+|    | ATTACH_8                                 | VARCHAR2(1 char)     | 車位證明書影本或分管協議書(1: 已備0: 免附)                                                                    |   |
+|    | ATTACH_9                                 | VARCHAR2(1 char)     | 租賃契約影本(1: 已備0: 免附)                                                                           |   |
+|    | ATTACH_10                                | VARCHAR2(1 char)     | 興建計畫書或建照(1: 已備0: 免附)                                                                         |   |
+|    | ATTACH_11                                | VARCHAR2(1 char)     | 其它(1: 已備0: 免附)                                                                               |   |
 |    | APPRAISENO                               | VARCHAR2(10 char)    | 鑑價編號                                                                                       |   |
-|    | ISCHARGE                                 | VARCHAR2(1 char)     | 是否收費(0:否1:是)                                                                               |   |
-|    | IMMOVABLE_MAIN_UID                       | VARCHAR2(36 char)    | Immovable_Main.UID                                                                         |   |
+|    | ISCHARGE                                 | VARCHAR2(1 char)     | 是否收費(0: 否1: 是)                                                                               |   |
+|    | IMMOVABLE_MAIN_UID                       | VARCHAR2(36 char)    | Immovable_Main. UID                                                                         |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_IMMOVABLE_APPL_LAND
@@ -3991,7 +3997,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | BUILDNO                                  | VARCHAR2(256 char)   | 建號                                                                                         |   |
 |    | IMMOVABLE_APPL_BASE_UID                  | VARCHAR2(36 char)    | FK                                                                                         |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_AUTH_REPORT_BASE
 
@@ -4036,10 +4041,9 @@ title: E-LOAN 徵審系統(ELEL)
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
 |    | AUTHENTICATEDATE                         | TIMESTAMP            | 估價日期                                                                                       |   |
 |    | GETDATE                                  | TIMESTAMP            | 取得日期                                                                                       |   |
-|    | MIX_DIV                                  | VARCHAR2(1 char)     | 0:分別鑑估法1:合併鑑估法                                                                             |   |
-|    | NETUSUFRUCTUARYVALUE                     | NUMBER(18,0)         | 『鑑價淨值(出租關係減值)』                                                                             |   |
+|    | MIX_DIV                                  | VARCHAR2(1 char)     | 0: 分別鑑估法1: 合併鑑估法                                                                             |   |
+|    | NETUSUFRUCTUARYVALUE                     | NUMBER(18, 0)         | 『鑑價淨值(出租關係減值)』                                                                             |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_AUTH_REPORT_BUILD_SUB
 
@@ -4075,34 +4079,33 @@ title: E-LOAN 徵審系統(ELEL)
 |    | BUILDTOTALLEVEL                          | INTEGER              | 總樓層                                                                                        |   |
 |    | BUILDLEVEL                               | VARCHAR2(500 char)   | 擔保品所在樓層                                                                                    |   |
 |    | MAINTAIN_BUILDPURPOSE_ID                 | VARCHAR2(2 char)     | 使用類別(主要用途)                                                                                 |   |
-|    | SCRAPVALUERATE                           | NUMBER(18,0)         | 調整後殘值率(%)                                                                                  |   |
-|    | USERSERVICERATE                          | NUMBER(18,2)         | 公設比(使用者自己輸入的)                                                                              |   |
-|    | USEDSTATE                                | VARCHAR2(2 char)     | 使用現況(01.自住02.閒置03.投資04.出租05.無償供人使用09.其他)                                                   |   |
-|    | COMMERCEPRICE                            | NUMBER(18,3)         | 買賣契約價格                                                                                     |   |
+|    | SCRAPVALUERATE                           | NUMBER(18, 0)         | 調整後殘值率(%)                                                                                  |   |
+|    | USERSERVICERATE                          | NUMBER(18, 2)         | 公設比(使用者自己輸入的)                                                                              |   |
+|    | USEDSTATE                                | VARCHAR2(2 char)     | 使用現況(01. 自住02. 閒置03. 投資04. 出租05. 無償供人使用09. 其他)                                                   |   |
+|    | COMMERCEPRICE                            | NUMBER(18, 3)         | 買賣契約價格                                                                                     |   |
 |    | COMMERCEDATE                             | TIMESTAMP            | 買賣契約日期                                                                                     |   |
 |    | JCICBUILDMATERIALID                      | VARCHAR2(2 char)     | 建物主要建材ID                                                                                   |   |
 |    | JCICBUILDPURPOSEID                       | VARCHAR2(2 char)     | 主建物主要用途ID                                                                                  |   |
 |    | JCICBUILDPURPOSEMARK                     | VARCHAR2(100 char)   | 主建物主要用途空白格                                                                                 |   |
 |    | OTHERBUILDPURPOSE                        | VARCHAR2(500 char)   | 附屬建物主要用途                                                                                   |   |
-|    | DIVIDEADJUSTRATE                         | NUMBER(18,2)         | 土地、建物分別估價法調整率,四捨五入至整位數(最高不得逾50%)                                                           |   |
-|    | UNITPRICE                                | NUMBER(18,3)         | 建坪單價(土地、建物合併鑑估法用)                                                                          |   |
-|    | STALLPRICE                               | NUMBER(18,3)         | 車位價格(土地、建物合併鑑估法用)                                                                          |   |
+|    | DIVIDEADJUSTRATE                         | NUMBER(18, 2)         | 土地、建物分別估價法調整率, 四捨五入至整位數(最高不得逾50%)                                                           |   |
+|    | UNITPRICE                                | NUMBER(18, 3)         | 建坪單價(土地、建物合併鑑估法用)                                                                          |   |
+|    | STALLPRICE                               | NUMBER(18, 3)         | 車位價格(土地、建物合併鑑估法用)                                                                          |   |
 |    | STALLNUM                                 | INTEGER              | 車位數(土地、建物合併鑑估法用)                                                                           |   |
-|    | STALLAREASIZE                            | NUMBER(18,2)         | 車位坪數(土地、建物合併鑑估法用)                                                                          |   |
-|    | DEPOSIT                                  | NUMBER(18,0)         | 出租押金                                                                                       |   |
-|    | RENT                                     | NUMBER(18,0)         | 出租月租金                                                                                      |   |
+|    | STALLAREASIZE                            | NUMBER(18, 2)         | 車位坪數(土地、建物合併鑑估法用)                                                                          |   |
+|    | DEPOSIT                                  | NUMBER(18, 0)         | 出租押金                                                                                       |   |
+|    | RENT                                     | NUMBER(18, 0)         | 出租月租金                                                                                      |   |
 |    | TENANCY_S                                | TIMESTAMP            | 租期_起                                                                                       |   |
 |    | TENANCY_E                                | TIMESTAMP            | 租期_迄                                                                                       |   |
 | PK | IMMOVABLE_AUTH_REPORT_BASE_UID           | VARCHAR2(36 char)    | FK                                                                                         |   |
-|    | TOTALAREASIZE                            | NUMBER(18,2)         | 建物總坪數=fn_Immovable_BuildAreaSize(結案更新)                                                     |   |
-|    | NETVALUE                                 | NUMBER(18,3)         | 建物淨值=dbo.fn_Immovable_DivideBuildValue(結案更新)                                               |   |
-|    | COMBINEVALUE                             | NUMBER(18,3)         | 合併鑑估法_鑑價總值                                                                                 |   |
-|    | MAINTAIN_BUILDINGVALUE                   | NUMBER(18,0)         | 估價標準                                                                                       |   |
-|    | INCREASE                                 | NUMBER(18,0)         | 調整加成                                                                                       |   |
+|    | TOTALAREASIZE                            | NUMBER(18, 2)         | 建物總坪數=fn_Immovable_BuildAreaSize(結案更新)                                                     |   |
+|    | NETVALUE                                 | NUMBER(18, 3)         | 建物淨值=dbo.fn_Immovable_DivideBuildValue(結案更新)                                               |   |
+|    | COMBINEVALUE                             | NUMBER(18, 3)         | 合併鑑估法_鑑價總值                                                                                 |   |
+|    | MAINTAIN_BUILDINGVALUE                   | NUMBER(18, 0)         | 估價標準                                                                                       |   |
+|    | INCREASE                                 | NUMBER(18, 0)         | 調整加成                                                                                       |   |
 |    | USEYEAR                                  | INTEGER              | 使用年數                                                                                       |   |
-|    | DEPRECIATIONAMOUNT                       | NUMBER(18,2)         | 折舊金額                                                                                       |   |
+|    | DEPRECIATIONAMOUNT                       | NUMBER(18, 2)         | 折舊金額                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_AUTH_REPORT_LAND_MAIN
 
@@ -4123,13 +4126,13 @@ title: E-LOAN 徵審系統(ELEL)
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
 |    | REGISTERPURPOSE                          | VARCHAR2(2 char)     | 登記用途                                                                                       |   |
 |    | REGISTERPURPOSEMARK                      | VARCHAR2(50 char)    | 其它登記用途填寫用                                                                                  |   |
-|    | ISSERVICE                                | VARCHAR2(1 char)     | 列入公設比計算(1:列入0:不列入)                                                                         |   |
+|    | ISSERVICE                                | VARCHAR2(1 char)     | 列入公設比計算(1: 列入0: 不列入)                                                                         |   |
 |    | SYMBOL                                   | VARCHAR2(1 char)     |                                                                                            |   |
 |    | BUILDNO                                  | VARCHAR2(8 char)     | 建號                                                                                         |   |
-|    | AREASIZE                                 | NUMBER(18,2)         | 標示面積(平方公尺)                                                                                 |   |
-|    | RIGHTSRANG_ALL                           | VARCHAR2(1 char)     | 權利範圍_全部(1:是_0:否)                                                                           |   |
-|    | RIGHTSRANG_DENOMINATOR                   | NUMBER(18,0)         | 權利範圍分母                                                                                     |   |
-|    | RIGHTSRANG_NUMERATOR                     | NUMBER(18,0)         | 權利範圍分子                                                                                     |   |
+|    | AREASIZE                                 | NUMBER(18, 2)         | 標示面積(平方公尺)                                                                                 |   |
+|    | RIGHTSRANG_ALL                           | VARCHAR2(1 char)     | 權利範圍_全部(1: 是_0: 否)                                                                           |   |
+|    | RIGHTSRANG_DENOMINATOR                   | NUMBER(18, 0)         | 權利範圍分母                                                                                     |   |
+|    | RIGHTSRANG_NUMERATOR                     | NUMBER(18, 0)         | 權利範圍分子                                                                                     |   |
 |    | OWNERID                                  | VARCHAR2(11 char)    | 所有權人ID                                                                                     |   |
 |    | OWNERNAME                                | VARCHAR2(50 char)    | 所有權人姓名                                                                                     |   |
 |    | STALLNUM                                 | INTEGER              | 車位數                                                                                        |   |
@@ -4164,13 +4167,12 @@ title: E-LOAN 徵審系統(ELEL)
 |    | USETYPEID                                | VARCHAR2(2 char)     | 土地編定使用地類別                                                                                  |   |
 |    | PUBLICVALUEDATE                          | TIMESTAMP            | 公告現值年份                                                                                     |   |
 |    | OTHER                                    | VARCHAR2(16000 char) | 其他                                                                                         |   |
-|    | UNITPRICE                                | NUMBER(18,3)         | 土地單價(土地、建物分別鑑估法計算用)                                                                        |   |
+|    | UNITPRICE                                | NUMBER(18, 3)         | 土地單價(土地、建物分別鑑估法計算用)                                                                        |   |
 | PK | IMMOVABLE_AUTH_REPORT_BASE_UID           | VARCHAR2(36 char)    | FK                                                                                         |   |
-|    | TOTALAREASIZE                            | NUMBER(18,2)         | 總坪數=fn_Immovable_LandAreaSize(結案更新)                                                        |   |
-|    | LANDINCREMENTTAX                         | NUMBER(18,3)         | 土地增值稅=fn_Immovable_LandIncrementTax(結案更新)                                                  |   |
-|    | DIVIDELANDVALUE                          | NUMBER(18,2)         | 取得「土地、建物分別鑑估法」的案件土地鑑價總值或單一筆土地鑑價總值。                                                         |   |
+|    | TOTALAREASIZE                            | NUMBER(18, 2)         | 總坪數=fn_Immovable_LandAreaSize(結案更新)                                                        |   |
+|    | LANDINCREMENTTAX                         | NUMBER(18, 3)         | 土地增值稅=fn_Immovable_LandIncrementTax(結案更新)                                                  |   |
+|    | DIVIDELANDVALUE                          | NUMBER(18, 2)         | 取得「土地、建物分別鑑估法」的案件土地鑑價總值或單一筆土地鑑價總值。                                                         |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_LAND_DEVELOP
 
@@ -4192,19 +4194,18 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | LANDNO                                   | VARCHAR2(8 char)     | 地號                                                                                         |   |
 |    | OUTLINEID                                | VARCHAR2(2 char)     | 地目代碼                                                                                       |   |
-|    | AREASIZE                                 | NUMBER(18,2)         | 標示面積(平方公尺)                                                                                 |   |
-|    | RIGHTSRANG_DENOMINATOR                   | NUMBER(18,0)         | 權利範圍分母                                                                                     |   |
-|    | RIGHTSRANG_NUMERATOR                     | NUMBER(18,0)         | 權利範圍分子                                                                                     |   |
+|    | AREASIZE                                 | NUMBER(18, 2)         | 標示面積(平方公尺)                                                                                 |   |
+|    | RIGHTSRANG_DENOMINATOR                   | NUMBER(18, 0)         | 權利範圍分母                                                                                     |   |
+|    | RIGHTSRANG_NUMERATOR                     | NUMBER(18, 0)         | 權利範圍分子                                                                                     |   |
 |    | OWNERID                                  | VARCHAR2(11 char)    | 所有權人ID                                                                                     |   |
 |    | OWNERNAME                                | VARCHAR2(50 char)    | 所有權人姓名                                                                                     |   |
-|    | PUBLICVALUE                              | NUMBER(18,3)         | 公告現值(仟元/平方公尺)                                                                              |   |
-|    | LASTVALUE                                | NUMBER(18,3)         | 前次移轉現值(仟元/平方公尺)                                                                            |   |
+|    | PUBLICVALUE                              | NUMBER(18, 3)         | 公告現值(仟元/平方公尺)                                                                              |   |
+|    | LASTVALUE                                | NUMBER(18, 3)         | 前次移轉現值(仟元/平方公尺)                                                                            |   |
 |    | REGISTERDATE                             | TIMESTAMP            | 登記日期                                                                                       |   |
-|    | PRICEINDEX                               | NUMBER(18,1)         | 物價指數                                                                                       |   |
-|    | MARK                                     | VARCHAR2(2 char)     | 備註(1:道路用地2:計劃道路3:既成道路4:不予估價)                                                               |   |
+|    | PRICEINDEX                               | NUMBER(18, 1)         | 物價指數                                                                                       |   |
+|    | MARK                                     | VARCHAR2(2 char)     | 備註(1: 道路用地2: 計劃道路3: 既成道路4: 不予估價)                                                               |   |
 | PK | IMMOVABLE_AUTH_REPORT_LAND_MAIN_UID      | VARCHAR2(36 char)    | FK                                                                                         |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_LANDLOANREPORT
 
@@ -4224,49 +4225,48 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | zh-TW_zh-CN_en-US                                                                          |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
 |    | TARGETNAME                               | VARCHAR2(200 char)   | 標的                                                                                         |   |
-|    | REWARD_PARKING                           | NUMBER(18,2)         | 獎勵停車                                                                                       |   |
-|    | REWARD_SPACE                             | NUMBER(18,2)         | 開放空間獎勵                                                                                     |   |
-|    | REWARD_VOLUME                            | NUMBER(18,2)         | 容積移轉獎勵                                                                                     |   |
-|    | REWARD_CITYRENEW                         | NUMBER(18,2)         | 都市更新獎勵                                                                                     |   |
-|    | BASEMENTDIGRATIO                         | NUMBER(18,0)         | 地下室開挖率                                                                                     |   |
-|    | ASSIZE_PARKINGPARAM                      | NUMBER(18,0)         | 法定停車位係數                                                                                    |   |
-|    | ESTIMATERATE_1                           | NUMBER(18,1)         | 本次評估比例參數1                                                                                  |   |
-|    | ESTIMATERATE_2                           | NUMBER(18,1)         | 本次評估比例參數2                                                                                  |   |
-|    | ESTIMATERATE_3                           | NUMBER(18,1)         | 本次評估比例參數3                                                                                  |   |
-|    | ESTIMATERATE_4                           | NUMBER(18,1)         | 本次評估比例參數4                                                                                  |   |
-|    | BASEAREASIZE                             | NUMBER(18,4)         | 基地面積(坪)                                                                                    |   |
+|    | REWARD_PARKING                           | NUMBER(18, 2)         | 獎勵停車                                                                                       |   |
+|    | REWARD_SPACE                             | NUMBER(18, 2)         | 開放空間獎勵                                                                                     |   |
+|    | REWARD_VOLUME                            | NUMBER(18, 2)         | 容積移轉獎勵                                                                                     |   |
+|    | REWARD_CITYRENEW                         | NUMBER(18, 2)         | 都市更新獎勵                                                                                     |   |
+|    | BASEMENTDIGRATIO                         | NUMBER(18, 0)         | 地下室開挖率                                                                                     |   |
+|    | ASSIZE_PARKINGPARAM                      | NUMBER(18, 0)         | 法定停車位係數                                                                                    |   |
+|    | ESTIMATERATE_1                           | NUMBER(18, 1)         | 本次評估比例參數1                                                                                  |   |
+|    | ESTIMATERATE_2                           | NUMBER(18, 1)         | 本次評估比例參數2                                                                                  |   |
+|    | ESTIMATERATE_3                           | NUMBER(18, 1)         | 本次評估比例參數3                                                                                  |   |
+|    | ESTIMATERATE_4                           | NUMBER(18, 1)         | 本次評估比例參數4                                                                                  |   |
+|    | BASEAREASIZE                             | NUMBER(18, 4)         | 基地面積(坪)                                                                                    |   |
 |    | USEPURPOSE                               | VARCHAR2(50 char)    | 使用分區                                                                                       |   |
-|    | COVERAGERATIO                            | NUMBER(18,2)         | 建蔽率(%)                                                                                     |   |
-|    | VOLUMERATIO                              | NUMBER(18,2)         | 容積率(%)                                                                                     |   |
-|    | REWARD_VOLUMERATIO                       | NUMBER(18,2)         | 獎勵容積(%)                                                                                    |   |
-|    | BUILDTOTALLEVEL                          | NUMBER(18,0)         | 興建樓層                                                                                       |   |
-|    | BASEMENTTOTALLEVEL                       | NUMBER(18,0)         | 地下室層數                                                                                      |   |
-|    | BUILDPERIODYEAR                          | NUMBER(18,1)         | 興建期限(年)                                                                                    |   |
-|    | GROUNDUNITAREASIZE                       | NUMBER(18,2)         | 地面層樓地板面積(坪)                                                                                |   |
-|    | GROUNDUNITPRICE                          | NUMBER(18,0)         | 地面層樓單價                                                                                     |   |
-|    | SECONDSTROYAVGPRICE                      | NUMBER(18,0)         | 二樓以上平均單價                                                                                   |   |
-|    | PARKINGUNITPRICE                         | NUMBER(18,0)         | 停車場單價                                                                                      |   |
-|    | BUILDUNITPRICE                           | NUMBER(18,0)         | 營造單價                                                                                       |   |
-|    | GAINRATE                                 | NUMBER(18,0)         | 利潤率(Ｒ)                                                                                     |   |
-|    | B_OWNCAPITAL_P                           | NUMBER(18,0)         | 建築投資_自有資金比例                                                                                |   |
-|    | B_OWNCAPITAL_R                           | NUMBER(18,2)         | 建築投資_自有資金利率                                                                                |   |
-|    | B_LOANCAPITAL_P                          | NUMBER(18,0)         | 建築投資_借貸資金比例                                                                                |   |
-|    | B_LOANCAPITAL_R                          | NUMBER(18,2)         | 建築投資_借貸資金利率                                                                                |   |
-|    | B_UNEARNEDRREVENUES_P                    | NUMBER(18,0)         | 建築投資_預售收入比例                                                                                |   |
-|    | B_UNEARNEDRREVENUES_R                    | NUMBER(18,2)         | 建築投資_預售收入利率                                                                                |   |
-|    | L_OWNCAPITAL_P                           | NUMBER(18,0)         | 土地投資-自有資金-比例                                                                               |   |
-|    | L_OWNCAPITAL_R                           | NUMBER(18,2)         | 土地投資-自有資金-利率                                                                               |   |
-|    | L_LOANCAPITAL_P                          | NUMBER(18,0)         | 土地投資-借貸資金-比例                                                                               |   |
-|    | L_LOANCAPITAL_R                          | NUMBER(18,2)         | 土地投資-借貸資金-利率                                                                               |   |
-|    | L_UNEARNEDRREVENUES_P                    | NUMBER(18,0)         | 土地投資-預售收入-比例                                                                               |   |
-|    | L_UNEARNEDRREVENUES_R                    | NUMBER(18,2)         | 土地投資-預售收入-比例                                                                               |   |
-|    | C_B_I_CAPITAL_P                          | NUMBER(18,2)         | 資本利息綜合利率_建物投資本利息_比例                                                                        |   |
-|    | C_L_I_CAPITAL_P                          | NUMBER(18,2)         | 資本利息綜合利率_土地投資本利息_比例                                                                        |   |
-|    | VERSION                                  | NUMBER(4,0)          |                                                                                            |   |
+|    | COVERAGERATIO                            | NUMBER(18, 2)         | 建蔽率(%)                                                                                     |   |
+|    | VOLUMERATIO                              | NUMBER(18, 2)         | 容積率(%)                                                                                     |   |
+|    | REWARD_VOLUMERATIO                       | NUMBER(18, 2)         | 獎勵容積(%)                                                                                    |   |
+|    | BUILDTOTALLEVEL                          | NUMBER(18, 0)         | 興建樓層                                                                                       |   |
+|    | BASEMENTTOTALLEVEL                       | NUMBER(18, 0)         | 地下室層數                                                                                      |   |
+|    | BUILDPERIODYEAR                          | NUMBER(18, 1)         | 興建期限(年)                                                                                    |   |
+|    | GROUNDUNITAREASIZE                       | NUMBER(18, 2)         | 地面層樓地板面積(坪)                                                                                |   |
+|    | GROUNDUNITPRICE                          | NUMBER(18, 0)         | 地面層樓單價                                                                                     |   |
+|    | SECONDSTROYAVGPRICE                      | NUMBER(18, 0)         | 二樓以上平均單價                                                                                   |   |
+|    | PARKINGUNITPRICE                         | NUMBER(18, 0)         | 停車場單價                                                                                      |   |
+|    | BUILDUNITPRICE                           | NUMBER(18, 0)         | 營造單價                                                                                       |   |
+|    | GAINRATE                                 | NUMBER(18, 0)         | 利潤率(Ｒ)                                                                                     |   |
+|    | B_OWNCAPITAL_P                           | NUMBER(18, 0)         | 建築投資_自有資金比例                                                                                |   |
+|    | B_OWNCAPITAL_R                           | NUMBER(18, 2)         | 建築投資_自有資金利率                                                                                |   |
+|    | B_LOANCAPITAL_P                          | NUMBER(18, 0)         | 建築投資_借貸資金比例                                                                                |   |
+|    | B_LOANCAPITAL_R                          | NUMBER(18, 2)         | 建築投資_借貸資金利率                                                                                |   |
+|    | B_UNEARNEDRREVENUES_P                    | NUMBER(18, 0)         | 建築投資_預售收入比例                                                                                |   |
+|    | B_UNEARNEDRREVENUES_R                    | NUMBER(18, 2)         | 建築投資_預售收入利率                                                                                |   |
+|    | L_OWNCAPITAL_P                           | NUMBER(18, 0)         | 土地投資-自有資金-比例                                                                               |   |
+|    | L_OWNCAPITAL_R                           | NUMBER(18, 2)         | 土地投資-自有資金-利率                                                                               |   |
+|    | L_LOANCAPITAL_P                          | NUMBER(18, 0)         | 土地投資-借貸資金-比例                                                                               |   |
+|    | L_LOANCAPITAL_R                          | NUMBER(18, 2)         | 土地投資-借貸資金-利率                                                                               |   |
+|    | L_UNEARNEDRREVENUES_P                    | NUMBER(18, 0)         | 土地投資-預售收入-比例                                                                               |   |
+|    | L_UNEARNEDRREVENUES_R                    | NUMBER(18, 2)         | 土地投資-預售收入-比例                                                                               |   |
+|    | C_B_I_CAPITAL_P                          | NUMBER(18, 2)         | 資本利息綜合利率_建物投資本利息_比例                                                                        |   |
+|    | C_L_I_CAPITAL_P                          | NUMBER(18, 2)         | 資本利息綜合利率_土地投資本利息_比例                                                                        |   |
+|    | VERSION                                  | NUMBER(4, 0)          |                                                                                            |   |
 |    | PRICETYPE                                | VARCHAR2(1 char)     |                                                                                            |   |
 |    | MARK                                     | VARCHAR2(500 char)   |                                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_IMMOVABLE_TARGETEXPLOREREPORT
 
@@ -4288,30 +4288,30 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | USEAREA                                  | VARCHAR2(50 char)    | 使用分區                                                                                       |   |
 |    | DATEX                                    | TIMESTAMP            | 日期                                                                                         |   |
-|    | COVERAGERATIO                            | NUMBER(18,2)         | 建蔽率(%)                                                                                     |   |
-|    | VOLUMERATIO                              | NUMBER(18,2)         | 容積率(%)                                                                                     |   |
-|    | WHICHSIDE                                | VARCHAR2(50 char)    | 臨路狀況:XX面臨路                                                                                 |   |
-|    | ROADWIDE                                 | VARCHAR2(50 char)    | 臨路狀況:臨X米現有道路                                                                               |   |
-|    | RADIO_1                                  | VARCHAR2(1 char)     | 出入動線(1:優2:可3:差)                                                                            |   |
-|    | RADIO_2                                  | VARCHAR2(1 char)     | 交通狀況(1:優2:可3:差)                                                                            |   |
-|    | RADIO_3                                  | VARCHAR2(1 char)     | 學校、市場、公園等設施狀況(1:有0:無)                                                                      |   |
-|    | RADIO_4                                  | VARCHAR2(1 char)     | 有無造成臨地為畸零地(1:有0:無)                                                                         |   |
-|    | RADIO_5                                  | VARCHAR2(1 char)     | 出租(1:有0:無)                                                                                 |   |
-|    | DEPOSIT                                  | NUMBER(18,3)         | 出租押金                                                                                       |   |
-|    | RENT                                     | NUMBER(18,3)         | 出租月租金                                                                                      |   |
+|    | COVERAGERATIO                            | NUMBER(18, 2)         | 建蔽率(%)                                                                                     |   |
+|    | VOLUMERATIO                              | NUMBER(18, 2)         | 容積率(%)                                                                                     |   |
+|    | WHICHSIDE                                | VARCHAR2(50 char)    | 臨路狀況: XX面臨路                                                                                 |   |
+|    | ROADWIDE                                 | VARCHAR2(50 char)    | 臨路狀況: 臨X米現有道路                                                                               |   |
+|    | RADIO_1                                  | VARCHAR2(1 char)     | 出入動線(1: 優2: 可3: 差)                                                                            |   |
+|    | RADIO_2                                  | VARCHAR2(1 char)     | 交通狀況(1: 優2: 可3: 差)                                                                            |   |
+|    | RADIO_3                                  | VARCHAR2(1 char)     | 學校、市場、公園等設施狀況(1: 有0: 無)                                                                      |   |
+|    | RADIO_4                                  | VARCHAR2(1 char)     | 有無造成臨地為畸零地(1: 有0: 無)                                                                         |   |
+|    | RADIO_5                                  | VARCHAR2(1 char)     | 出租(1: 有0: 無)                                                                                 |   |
+|    | DEPOSIT                                  | NUMBER(18, 3)         | 出租押金                                                                                       |   |
+|    | RENT                                     | NUMBER(18, 3)         | 出租月租金                                                                                      |   |
 |    | TENANCY_S                                | TIMESTAMP            | 租期_起                                                                                       |   |
 |    | TENANCY_E                                | TIMESTAMP            | 租期_迄                                                                                       |   |
 |    | NOWUSERPURPOSE                           | VARCHAR2(2000 char)  | 標的物目前用途                                                                                    |   |
-|    | POSITION_                                | VARCHAR2(2 char)     | 座(01:座東朝西02:座西朝東03:座南朝北04:座北朝南05:座東南朝西北06:座西北朝東南07:座東北朝西南08:座西南朝東北)                        |   |
-|    | RADIO_6                                  | VARCHAR2(1 char)     | 地上物、現住戶、承租戶之有無(1:有0:無)                                                                     |   |
-|    | RADIO_7                                  | VARCHAR2(1 char)     | 他人占用(1:有0:無)                                                                               |   |
-|    | RADIO_8                                  | VARCHAR2(1 char)     | 開發基地內是否有國有地、水利地等問題(1:有0:無)                                                                 |   |
-|    | RADIO_9                                  | VARCHAR2(1 char)     | 有無路權通行問題(1:有0:無)                                                                           |   |
-|    | RADIO_10                                 | VARCHAR2(1 char)     | 產權完整性(1:有0:否)                                                                              |   |
-|    | RADIO_11                                 | VARCHAR2(1 char)     | 是否為持分(1:有0:否)                                                                              |   |
-|    | RADIO_12                                 | VARCHAR2(1 char)     | 是否有限制登記(1:有0:否)                                                                            |   |
+|    | POSITION_                                | VARCHAR2(2 char)     | 座(01: 座東朝西02: 座西朝東03: 座南朝北04: 座北朝南05: 座東南朝西北06: 座西北朝東南07: 座東北朝西南08: 座西南朝東北)                        |   |
+|    | RADIO_6                                  | VARCHAR2(1 char)     | 地上物、現住戶、承租戶之有無(1: 有0: 無)                                                                     |   |
+|    | RADIO_7                                  | VARCHAR2(1 char)     | 他人占用(1: 有0: 無)                                                                               |   |
+|    | RADIO_8                                  | VARCHAR2(1 char)     | 開發基地內是否有國有地、水利地等問題(1: 有0: 無)                                                                 |   |
+|    | RADIO_9                                  | VARCHAR2(1 char)     | 有無路權通行問題(1: 有0: 無)                                                                           |   |
+|    | RADIO_10                                 | VARCHAR2(1 char)     | 產權完整性(1: 有0: 否)                                                                              |   |
+|    | RADIO_11                                 | VARCHAR2(1 char)     | 是否為持分(1: 有0: 否)                                                                              |   |
+|    | RADIO_12                                 | VARCHAR2(1 char)     | 是否有限制登記(1: 有0: 否)                                                                            |   |
 |    | COMMENTX                                 | VARCHAR2(2000 char)  | 綜合評述                                                                                       |   |
-|    | SIDETYPE                                 | VARCHAR2(1 char)     | 臨路狀況下拉選單(1:現有道路2:計畫道路)                                                                     |   |
+|    | SIDETYPE                                 | VARCHAR2(1 char)     | 臨路狀況下拉選單(1: 現有道路2: 計畫道路)                                                                     |   |
 |    | RADIO_4_MARK                             | VARCHAR2(500 char)   |                                                                                            |   |
 |    | RADIO_5_MARK                             | VARCHAR2(500 char)   |                                                                                            |   |
 |    | RADIO_6_MARK                             | VARCHAR2(500 char)   |                                                                                            |   |
@@ -4356,7 +4356,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | TRAFFICPOSITION                          | VARCHAR2(500 char)   |                                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_IMMOVABLE_VISITCASE
 
 #### 訪價案例
@@ -4376,43 +4375,43 @@ title: E-LOAN 徵審系統(ELEL)
 | PK | UIDX                                     | VARCHAR2(36 char)    |                                                                                            |   |
 |    | TARGETNAME                               | VARCHAR2(50 char)    | 標的社區或大樓名稱                                                                                  |   |
 |    | TARGETUSERATE                            | VARCHAR2(50 char)    | 標的社區或大樓使用率(四捨五入至整位數)                                                                       |   |
-|    | HAVEMANAGER                              | VARCHAR2(1 char)     | 有無管理員(1:有0:無)                                                                              |   |
+|    | HAVEMANAGER                              | VARCHAR2(1 char)     | 有無管理員(1: 有0: 無)                                                                              |   |
 |    | TARGETUSEPURPOSE                         | VARCHAR2(2 char)     | 標的目前用途                                                                                     |   |
 |    | TARGETUSEPURPOSEOTHER                    | VARCHAR2(60 char)    | 其他說明輸入框                                                                                    |   |
 |    | TARGETUSEPURPOSENOTE                     | VARCHAR2(500 char)   | 標的目前用途說明                                                                                   |   |
-|    | BUILDKIND                                | VARCHAR2(2 char)     | R1:公寓_R2:電梯大廈_R3：套房_R4：別墅_R5：透天厝_R6：樓中樓_B1：辦公_B2：店面_B3：廠房_C1：車位_99：其他                      |   |
+|    | BUILDKIND                                | VARCHAR2(2 char)     | R1: 公寓_R2: 電梯大廈_R3：套房_R4：別墅_R5：透天厝_R6：樓中樓_B1：辦公_B2：店面_B3：廠房_C1：車位_99：其他                      |   |
 |    | ROOM                                     | VARCHAR2(50 char)    | 標的隔間-房                                                                                     |   |
 |    | LIVINGROOM                               | VARCHAR2(50 char)    | 標的隔間-廳                                                                                     |   |
 |    | BATHROOM                                 | VARCHAR2(50 char)    | 標的隔間-衛                                                                                     |   |
 |    | ROOM_MARK                                | VARCHAR2(500 char)   | 標的隔間-備註                                                                                    |   |
 |    | POSITION_                                | VARCHAR2(2 char)     | 標的座向                                                                                       |   |
-|    | HAVEIMPROVE                              | VARCHAR2(1 char)     | 建築改良物個別條件(1:有0:無)                                                                          |   |
-|    | IMPROVECONDITION_01                      | VARCHAR2(1 char)     | 建築改良物個別條件_01_閒置(1:選_0:沒選)                                                                  |   |
-|    | IMPROVECONDITION_02                      | VARCHAR2(1 char)     | 建築改良物個別條件_02_邊間(1:選_0:沒選)                                                                  |   |
-|    | IMPROVECONDITION_03                      | VARCHAR2(1 char)     | 建築改良物個別條件_03_壁癌(1:選_0:沒選)                                                                  |   |
-|    | IMPROVECONDITION_04                      | VARCHAR2(1 char)     | 建築改良物個別條件_04_畚斗屋(1:選_0:沒選)                                                                 |   |
-|    | IMPROVECONDITION_05                      | VARCHAR2(1 char)     | 建築改良物個別條件_05_無水電(1:選_0:沒選)                                                                 |   |
-|    | IMPROVECONDITION_06                      | VARCHAR2(1 char)     | 建築改良物個別條件_06_地磚龜裂凸起(1:選_0:沒選)                                                              |   |
-|    | IMPROVECONDITION_07                      | VARCHAR2(1 char)     | 建築改良物個別條件_07_樓層高度低(1:選_0:沒選)                                                               |   |
-|    | IMPROVECONDITION_08                      | VARCHAR2(1 char)     | 建築改良物個別條件_08_平面格局歪斜(1:選_0:沒選)                                                              |   |
-|    | IMPROVECONDITION_09                      | VARCHAR2(1 char)     | 建築改良物個別條件_09_兩戶以上打通使用(1:選_0:沒選)                                                            |   |
-|    | IMPROVECONDITION_10                      | VARCHAR2(1 char)     | 建築改良物個別條件_10_隔間配置不當，使用率低(1:選_0:沒選)                                                         |   |
-|    | IMPROVECONDITION_11                      | VARCHAR2(1 char)     | 建築改良物個別條件_11_牆面樑柱龜裂(1:選_0:沒選)                                                              |   |
-|    | IMPROVECONDITION_12                      | VARCHAR2(1 char)     | 建築改良物個別條件_12_裝潢佳(1:選_0:沒選)                                                                 |   |
-|    | IMPROVECONDITION_13                      | VARCHAR2(1 char)     | 建築改良物個別條件_13_中央空調(1:選_0:沒選)                                                                |   |
-|    | IMPROVECONDITION_14                      | VARCHAR2(1 char)     | 建築改良物個別條件_14_挑高屋(1:選_0:沒選)                                                                 |   |
-|    | IMPROVECONDITION_14_HIGH                 | NUMBER(18,2)         | 建築改良物個別條件_挑高屋_米                                                                            |   |
-|    | IMPROVECONDITION_15                      | VARCHAR2(1 char)     | 建築改良物個別條件_15_私設夾層(1:選_0:沒選)                                                                |   |
+|    | HAVEIMPROVE                              | VARCHAR2(1 char)     | 建築改良物個別條件(1: 有0: 無)                                                                          |   |
+|    | IMPROVECONDITION_01                      | VARCHAR2(1 char)     | 建築改良物個別條件_01_閒置(1: 選_0: 沒選)                                                                  |   |
+|    | IMPROVECONDITION_02                      | VARCHAR2(1 char)     | 建築改良物個別條件_02_邊間(1: 選_0: 沒選)                                                                  |   |
+|    | IMPROVECONDITION_03                      | VARCHAR2(1 char)     | 建築改良物個別條件_03_壁癌(1: 選_0: 沒選)                                                                  |   |
+|    | IMPROVECONDITION_04                      | VARCHAR2(1 char)     | 建築改良物個別條件_04_畚斗屋(1: 選_0: 沒選)                                                                 |   |
+|    | IMPROVECONDITION_05                      | VARCHAR2(1 char)     | 建築改良物個別條件_05_無水電(1: 選_0: 沒選)                                                                 |   |
+|    | IMPROVECONDITION_06                      | VARCHAR2(1 char)     | 建築改良物個別條件_06_地磚龜裂凸起(1: 選_0: 沒選)                                                              |   |
+|    | IMPROVECONDITION_07                      | VARCHAR2(1 char)     | 建築改良物個別條件_07_樓層高度低(1: 選_0: 沒選)                                                               |   |
+|    | IMPROVECONDITION_08                      | VARCHAR2(1 char)     | 建築改良物個別條件_08_平面格局歪斜(1: 選_0: 沒選)                                                              |   |
+|    | IMPROVECONDITION_09                      | VARCHAR2(1 char)     | 建築改良物個別條件_09_兩戶以上打通使用(1: 選_0: 沒選)                                                            |   |
+|    | IMPROVECONDITION_10                      | VARCHAR2(1 char)     | 建築改良物個別條件_10_隔間配置不當，使用率低(1: 選_0: 沒選)                                                         |   |
+|    | IMPROVECONDITION_11                      | VARCHAR2(1 char)     | 建築改良物個別條件_11_牆面樑柱龜裂(1: 選_0: 沒選)                                                              |   |
+|    | IMPROVECONDITION_12                      | VARCHAR2(1 char)     | 建築改良物個別條件_12_裝潢佳(1: 選_0: 沒選)                                                                 |   |
+|    | IMPROVECONDITION_13                      | VARCHAR2(1 char)     | 建築改良物個別條件_13_中央空調(1: 選_0: 沒選)                                                                |   |
+|    | IMPROVECONDITION_14                      | VARCHAR2(1 char)     | 建築改良物個別條件_14_挑高屋(1: 選_0: 沒選)                                                                 |   |
+|    | IMPROVECONDITION_14_HIGH                 | NUMBER(18, 2)         | 建築改良物個別條件_挑高屋_米                                                                            |   |
+|    | IMPROVECONDITION_15                      | VARCHAR2(1 char)     | 建築改良物個別條件_15_私設夾層(1: 選_0: 沒選)                                                                |   |
 |    | IMPROVECONDITION_15_SIZE                 | VARCHAR2(20 char)    | 私設夾層(約坪)                                                                                   |   |
-|    | IMPROVECONDITION_16                      | VARCHAR2(1 char)     | 建築改良物個別條件_16_高級建材(1:選_0:沒選)                                                                |   |
-|    | IMPROVECONDITION_17                      | VARCHAR2(1 char)     | 建築改良物個別條件_17_陽台未登記(1:選_0:沒選)                                                               |   |
+|    | IMPROVECONDITION_16                      | VARCHAR2(1 char)     | 建築改良物個別條件_16_高級建材(1: 選_0: 沒選)                                                                |   |
+|    | IMPROVECONDITION_17                      | VARCHAR2(1 char)     | 建築改良物個別條件_17_陽台未登記(1: 選_0: 沒選)                                                               |   |
 |    | IMPROVECONDITION_17_SIZE                 | VARCHAR2(20 char)    | 陽台未登記(約坪)                                                                                  |   |
-|    | IMPROVECONDITION_18                      | VARCHAR2(1 char)     | 建築改良物個別條件_18_使用空間大於登記面積（即增建情況）(1:選_0:沒選)                                                   |   |
+|    | IMPROVECONDITION_18                      | VARCHAR2(1 char)     | 建築改良物個別條件_18_使用空間大於登記面積（即增建情況）(1: 選_0: 沒選)                                                   |   |
 |    | IMPROVECONDITION_18_TEXT                 | VARCHAR2(20 char)    | 使用空間大於登記面積（即增建約坪）                                                                          |   |
 |    | IMPROVECONDITION_18_SIZE                 | VARCHAR2(20 char)    | 使用空間大於登記面積（即增建約坪）                                                                          |   |
-|    | IMPROVECONDITION_99                      | VARCHAR2(1 char)     | 建築改良物個別條件_99_其他(1:選_0:沒選)                                                                  |   |
+|    | IMPROVECONDITION_99                      | VARCHAR2(1 char)     | 建築改良物個別條件_99_其他(1: 選_0: 沒選)                                                                  |   |
 |    | IMPROVECONDITION_MARK                    | VARCHAR2(2000 char)  | 建築改良物個別條件_說明                                                                               |   |
-|    | HAVEEXCELLENT                            | VARCHAR2(1 char)     | 優質設施(1:有0:無)                                                                               |   |
+|    | HAVEEXCELLENT                            | VARCHAR2(1 char)     | 優質設施(1: 有0: 無)                                                                               |   |
 |    | EXCELLENTCONDITION_01                    | VARCHAR2(1 char)     | 優質設施_01_學區內                                                                                |   |
 |    | EXCELLENTCONDITION_02                    | VARCHAR2(1 char)     | 優質設施_02_公園旁                                                                                |   |
 |    | EXCELLENTCONDITION_03                    | VARCHAR2(1 char)     | 優質設施_03_景觀戶                                                                                |   |
@@ -4426,13 +4425,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | EXCELLENTCONDITION_MARK                  | VARCHAR2(2000 char)  | 優質設施說明                                                                                     |   |
 |    | GARAGEFLOOR                              | VARCHAR2(100 char)   | 車庫所在樓層                                                                                     |   |
 |    | GARAGENUMBER                             | VARCHAR2(100 char)   | 車庫編號                                                                                       |   |
-|    | HAVEGARAGE                               | VARCHAR2(1 char)     | 車庫(1:有0:無)                                                                                 |   |
+|    | HAVEGARAGE                               | VARCHAR2(1 char)     | 車庫(1: 有0: 無)                                                                                 |   |
 |    | GARAGENOTE                               | VARCHAR2(500 char)   | 車庫說明                                                                                       |   |
-|    | HAVERENTOUT                              | VARCHAR2(1 char)     | 出租(1:有0:無)                                                                                 |   |
+|    | HAVERENTOUT                              | VARCHAR2(1 char)     | 出租(1: 有0: 無)                                                                                 |   |
 |    | RENTNOTE                                 | VARCHAR2(500 char)   | 出租說明                                                                                       |   |
-|    | BREAKLEAKING                             | VARCHAR2(1 char)     | 裂縫及漏水(1:有0:無)                                                                              |   |
-|    | FLOOD                                    | VARCHAR2(1 char)     | 淹水之慮(1:有0:無)                                                                               |   |
-|    | HAVEDISGUST                              | VARCHAR2(1 char)     | 嫌惡設施(1:有0:無)                                                                               |   |
+|    | BREAKLEAKING                             | VARCHAR2(1 char)     | 裂縫及漏水(1: 有0: 無)                                                                              |   |
+|    | FLOOD                                    | VARCHAR2(1 char)     | 淹水之慮(1: 有0: 無)                                                                               |   |
+|    | HAVEDISGUST                              | VARCHAR2(1 char)     | 嫌惡設施(1: 有0: 無)                                                                               |   |
 |    | DISGUSTCONDITION_01                      | VARCHAR2(1 char)     | 嫌惡設施_01_特種行業                                                                               |   |
 |    | DISGUSTCONDITION_02                      | VARCHAR2(1 char)     | 嫌惡設施_02_特定行業                                                                               |   |
 |    | DISGUSTCONDITION_03                      | VARCHAR2(1 char)     | 嫌惡設施_03_宗教建物                                                                               |   |
@@ -4460,7 +4459,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ADJUSTMARK                               | VARCHAR2(2000 char)  | 土地、建物分別估價法調整_說明                                                                            |   |
 |    | LIQUEFACTIONINFO                         | VARCHAR2(1 char)     | 土壤液化潛勢區查詢                                                                                  |   |
 |    | HASBASEMENT                              | VARCHAR2(1 char)     | 是否有地下層                                                                                     |   |
-|    | BASEMENT                                 | NUMBER(4,0)          | 地下層數                                                                                       |   |
+|    | BASEMENT                                 | NUMBER(4, 0)          | 地下層數                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
 ### VW_ODS_D_JCIC_BAM095
@@ -4481,13 +4480,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | zh-TW_zh-CN_en-US                                                                          |   |
 | PK | UIDX                                     | VARCHAR2(36 char)    | PK                                                                                         |   |
 |    | CURRENCY                                 | VARCHAR2(3 char)     | 幣別                                                                                         |   |
-|    | VISITCASETYPE                            | VARCHAR2(1 char)     | 訪價案例類型(1:本案0:其它案例)                                                                         |   |
+|    | VISITCASETYPE                            | VARCHAR2(1 char)     | 訪價案例類型(1: 本案0: 其它案例)                                                                         |   |
 |    | LAND                                     | VARCHAR2(300 char)   | 座落                                                                                         |   |
 |    | BUILD                                    | VARCHAR2(300 char)   | 門牌                                                                                         |   |
 |    | VISIT_DATE                               | TIMESTAMP            | 市調日期                                                                                       |   |
 |    | ROADWIDE                                 | VARCHAR2(20 char)    | 臨路情形                                                                                       |   |
-|    | LANDFORMS                                | VARCHAR2(2 char)     | 地形01:長方形02:正方形03:矩形04:梯形05:不規則                                                             |   |
-|    | GEOGRAPHY                                | VARCHAR2(2 char)     | 地勢01:平坦02:起伏不平03:斜削                                                                        |   |
+|    | LANDFORMS                                | VARCHAR2(2 char)     | 地形01: 長方形02: 正方形03: 矩形04: 梯形05: 不規則                                                             |   |
+|    | GEOGRAPHY                                | VARCHAR2(2 char)     | 地勢01: 平坦02: 起伏不平03: 斜削                                                                        |   |
 |    | USEAREAID                                | VARCHAR2(2 char)     | 使用分區-土地使用分區代碼                                                                              |   |
 |    | USETYPEID                                | VARCHAR2(2 char)     | 使用分區-土地編定使用地類別                                                                             |   |
 |    | MAINTAIN_BUILDMATERIAL_ID                | VARCHAR2(50 char)    | 結構材質ID                                                                                     |   |
@@ -4498,11 +4497,11 @@ title: E-LOAN 徵審系統(ELEL)
 |    | BUILDAREASIZE                            | VARCHAR2(50 char)    | 建物面積                                                                                       |   |
 |    | LANDUNITPRICE                            | VARCHAR2(30 char)    | 土地核算單價                                                                                     |   |
 |    | BUILDUNITPRICE                           | VARCHAR2(30 char)    | 建物核算單價                                                                                     |   |
-|    | PRICETYPE                                | VARCHAR2(1 char)     | 價格種類(1:評估價2:待售價3:成交價4:預售價5:拍定價9:其他)                                                        |   |
+|    | PRICETYPE                                | VARCHAR2(1 char)     | 價格種類(1: 評估價2: 待售價3: 成交價4: 預售價5: 拍定價9: 其他)                                                        |   |
 |    | TOTALVALUE                               | VARCHAR2(30 char)    | 總價                                                                                         |   |
 |    | STALLNUM                                 | VARCHAR2(50 char)    | 車位數                                                                                        |   |
 |    | STALLPRICE                               | VARCHAR2(30 char)    | 車位價格                                                                                       |   |
-|    | COMPARE                                  | VARCHAR2(1 char)     | 標地物比較(1:相當2:較標的物佳3:較標的物差)                                                                  |   |
+|    | COMPARE                                  | VARCHAR2(1 char)     | 標地物比較(1: 相當2: 較標的物佳3: 較標的物差)                                                                  |   |
 |    | MARKETLANDUNITPRICE                      | VARCHAR2(30 char)    | 查詢行情土地單價                                                                                   |   |
 |    | MARKETBUILDUNITPRICE                     | VARCHAR2(30 char)    | 查詢行情建物單價                                                                                   |   |
 |    | MARKETSTALLPRICE                         | VARCHAR2(30 char)    |                                                                                            |   |
@@ -4514,11 +4513,11 @@ title: E-LOAN 徵審系統(ELEL)
 |    | OTHER                                    | VARCHAR2(2000 char)  | 其他事項(VisitCaseType=0才會有值)                                                                  |   |
 |    | EXTERNALFIRSTAPPRAISAL                   | VARCHAR2(1 char)     | 是否有參考外部初估單                                                                                 |   |
 |    | EXTERNALAPPRAISALCOMP                    | VARCHAR2(3 char)     | 估價公司                                                                                       |   |
-|    | MAXAPPRAISALAMOUNT                       | NUMBER(18,3)         | 本部最高鑑估總價(元)                                                                                |   |
-|    | HOUSEPLUS_UNITPRICE                      | NUMBER(15,3)         |                                                                                            |   |
-|    | HOUSEPLUS_TOTALPRICE                     | NUMBER(15,3)         |                                                                                            |   |
-|    | REGIONALMARKETPRICESLOWER                | NUMBER(15,0)         | 區域行情(下界)                                                                                   |   |
-|    | REGIONALMARKETPRICESUPPER                | NUMBER(15,0)         | 區域行情(上界)                                                                                   |   |
+|    | MAXAPPRAISALAMOUNT                       | NUMBER(18, 3)         | 本部最高鑑估總價(元)                                                                                |   |
+|    | HOUSEPLUS_UNITPRICE                      | NUMBER(15, 3)         |                                                                                            |   |
+|    | HOUSEPLUS_TOTALPRICE                     | NUMBER(15, 3)         |                                                                                            |   |
+|    | REGIONALMARKETPRICESLOWER                | NUMBER(15, 0)         | 區域行情(下界)                                                                                   |   |
+|    | REGIONALMARKETPRICESUPPER                | NUMBER(15, 0)         | 區域行情(上界)                                                                                   |   |
 |    | HIGHUNITPRICEREASON                      | VARCHAR2(1000 char)  |                                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
@@ -4574,7 +4573,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | FILLER                                   | VARCHAR2(30 char)    | 保留欄位                                                                                       |   |
 |    | CURRENCYS                                | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | SORT                                     | INTEGER              | 資料排序                                                                                       |   |
-|    | DATASORT                                 | NUMBER(19,0)         | 交易排序                                                                                       |   |
+|    | DATASORT                                 | NUMBER(19, 0)         | 交易排序                                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(10 char)    | 建立人員                                                                                       |   |
@@ -4585,7 +4584,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_JCIC_KRM048
 
@@ -4622,7 +4620,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CLEAR_DATE                               | VARCHAR2(7 char)     | 不良債權結案日期                                                                                   |   |
 |    | CURRENCYS                                | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | SORT                                     | INTEGER              | 資料排序                                                                                       |   |
-|    | DATASORT                                 | NUMBER(19,0)         | 交易排序                                                                                       |   |
+|    | DATASORT                                 | NUMBER(19, 0)         | 交易排序                                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(10 char)    | 建立人員                                                                                       |   |
@@ -4633,7 +4631,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_MIXAPPLICATIONFORM
 
@@ -4676,7 +4673,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | FILLER                                   | VARCHAR2(30 char)    | 保留欄位                                                                                       |   |
 |    | CURRENCYS                                | VARCHAR2(3 char)     | 幣別                                                                                         |   |
 |    | SORT                                     | INTEGER              | 資料排序                                                                                       |   |
-|    | DATASORT                                 | NUMBER(19,0)         | 交易排序                                                                                       |   |
+|    | DATASORT                                 | NUMBER(19, 0)         | 交易排序                                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(10 char)    | 建立人員                                                                                       |   |
@@ -4688,14 +4685,13 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_PARAS_ADM_AREA
 
 #### 縣市區域代號代碼表
 
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
-| PK | AF_NO                                    | NUMBER(19,0)         |                                                                                            |   |
+| PK | AF_NO                                    | NUMBER(19, 0)         |                                                                                            |   |
 |    | LOAN_UID_HOUSE                           | VARCHAR2(36 char)    |                                                                                            |   |
 |    | LOAN_UID_CONSUME                         | VARCHAR2(36 char)    |                                                                                            |   |
 |    | LOAN_UID_CAR                             | VARCHAR2(36 char)    |                                                                                            |   |
@@ -4716,7 +4712,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CR_ADDR_ADR                              | VARCHAR2(100 char)   |                                                                                            |   |
 |    | EMAIL                                    | VARCHAR2(50 char)    |                                                                                            |   |
 |    | MARRIAGE                                 | VARCHAR2(1 char)     |                                                                                            |   |
-|    | CHILD                                    | NUMBER(10,0)         |                                                                                            |   |
+|    | CHILD                                    | NUMBER(10, 0)         |                                                                                            |   |
 |    | EDUCATION                                | VARCHAR2(1 char)     |                                                                                            |   |
 |    | SERVICE_NAME                             | VARCHAR2(50 char)    |                                                                                            |   |
 |    | SERVICE_ID                               | VARCHAR2(11 char)    |                                                                                            |   |
@@ -4727,20 +4723,20 @@ title: E-LOAN 徵審系統(ELEL)
 |    | SERVICE_TEL_NONTEL_REASON                | VARCHAR2(1 char)     |                                                                                            |   |
 |    | SERVICE_TEL                              | VARCHAR2(26 char)    |                                                                                            |   |
 |    | PROFESSION                               | VARCHAR2(20 char)    |                                                                                            |   |
-|    | SENIORITY                                | NUMBER(10,0)         |                                                                                            |   |
-|    | INCOME                                   | NUMBER(5,0)          |                                                                                            |   |
+|    | SENIORITY                                | NUMBER(10, 0)         |                                                                                            |   |
+|    | INCOME                                   | NUMBER(5, 0)          |                                                                                            |   |
 |    | INCOME_SOURCE                            | VARCHAR2(20 char)    |                                                                                            |   |
 |    | INCOME_OTHER                             | VARCHAR2(50 char)    |                                                                                            |   |
 |    | PROMOTIONS_EMPID                         | VARCHAR2(6 char)     |                                                                                            |   |
 |    | HOUSE_CHECKED                            | VARCHAR2(1 char)     |                                                                                            |   |
-|    | HOUSE_AMOUNT                             | NUMBER(5,0)          |                                                                                            |   |
-|    | HOUSE_PERIOD                             | NUMBER(10,0)         |                                                                                            |   |
+|    | HOUSE_AMOUNT                             | NUMBER(5, 0)          |                                                                                            |   |
+|    | HOUSE_PERIOD                             | NUMBER(10, 0)         |                                                                                            |   |
 |    | CONSUME_CHECKED                          | VARCHAR2(1 char)     |                                                                                            |   |
-|    | CONSUME_AMOUNT                           | NUMBER(5,0)          |                                                                                            |   |
-|    | CONSUME_PERIOD                           | NUMBER(10,0)         |                                                                                            |   |
+|    | CONSUME_AMOUNT                           | NUMBER(5, 0)          |                                                                                            |   |
+|    | CONSUME_PERIOD                           | NUMBER(10, 0)         |                                                                                            |   |
 |    | CAR_CHECKED                              | VARCHAR2(1 char)     |                                                                                            |   |
-|    | CAR_AMOUNT                               | NUMBER(5,0)          |                                                                                            |   |
-|    | CAR_PERIOD                               | NUMBER(10,0)         |                                                                                            |   |
+|    | CAR_AMOUNT                               | NUMBER(5, 0)          |                                                                                            |   |
+|    | CAR_PERIOD                               | NUMBER(10, 0)         |                                                                                            |   |
 |    | GUAR_CNAME                               | VARCHAR2(50 char)    |                                                                                            |   |
 |    | GUAR_MOBILE                              | VARCHAR2(10 char)    |                                                                                            |   |
 |    | GUAR_TEL_NONTEL_REASON                   | VARCHAR2(1 char)     |                                                                                            |   |
@@ -4752,7 +4748,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | AUTHENTICATE                             | VARCHAR2(50 char)    |                                                                                            |   |
 |    | SIGN_DATE                                | VARCHAR2(8 char)     |                                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_PARAS_ADM_CITY
 
@@ -4772,7 +4767,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | DISABLE                                  | VARCHAR2(1 char)     | 是否停用                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_PARAS_ADM_IR
 
 #### 縣市區域段小段代號代碼表
@@ -4790,7 +4784,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | DATASORT                                 | INTEGER              |                                                                                            |   |
 |    | DISABLE                                  | VARCHAR2(1 char)     | 是否停用                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_RCK_CUSTOMER_MAIN
 
@@ -4812,7 +4805,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | DISABLE                                  | VARCHAR2(1 char)     | 是否停用                                                                                       |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_RCK_LOANTR_REPORT_CO_DEBT
 
 #### 資產負債表(一般)
@@ -4823,9 +4815,9 @@ title: E-LOAN 徵審系統(ELEL)
 | PK | CUST_UID                                 | VARCHAR2(36 char)    | 借款人主鍵                                                                                      |   |
 |    | CUSTOMER_ID                              | VARCHAR2(11 char)    | 統一編號                                                                                       |   |
 |    | CNAME                                    | VARCHAR2(210 char)   | 個人姓名                                                                                       |   |
-|    | ID_TYPE                                  | VARCHAR2(1 char)     | 身份別(1:個人戶2:公司戶3:OBU)                                                                       |   |
-|    | RECHECK_TYPE                             | VARCHAR2(1 char)     | 覆審類型((1初貸覆審,2企業追蹤覆審,3重要個案實地調查,4土地、農地案件覆查,5消金信貸追蹤,6總行實地抽樣覆審))參照：Maintain_ReCheck_Parameters |   |
-|    | RPT_TYPE                                 | VARCHAR2(1 char)     | 業務分類(A分行,B法金,C小企中心,D房貸區域中心,E車貸中心,F行銷案件)參照：Maintain_ReCheck_Parameters                      |   |
+|    | ID_TYPE                                  | VARCHAR2(1 char)     | 身份別(1: 個人戶2: 公司戶3: OBU)                                                                       |   |
+|    | RECHECK_TYPE                             | VARCHAR2(1 char)     | 覆審類型((1初貸覆審, 2企業追蹤覆審, 3重要個案實地調查, 4土地、農地案件覆查, 5消金信貸追蹤, 6總行實地抽樣覆審))參照：Maintain_ReCheck_Parameters |   |
+|    | RPT_TYPE                                 | VARCHAR2(1 char)     | 業務分類(A分行, B法金, C小企中心, D房貸區域中心, E車貸中心, F行銷案件)參照：Maintain_ReCheck_Parameters                      |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員                                                                                       |   |
@@ -4841,7 +4833,6 @@ title: E-LOAN 徵審系統(ELEL)
 |    | ISLANDLOAN                               | VARCHAR2(1 char)     |                                                                                            |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
 
-
 ### VW_ODS_D_RCK_LOANTR_REPORT_CO_DEBT_B
 
 #### 資產負債表(營造)
@@ -4855,90 +4846,90 @@ title: E-LOAN 徵審系統(ELEL)
 |    | START_MM                                 | INTEGER              | 月份_起                                                                                       |   |
 |    | END_YY                                   | INTEGER              | 年度_迄                                                                                       |   |
 |    | END_MM                                   | INTEGER              | 月份_迄                                                                                       |   |
-|    | ASSET_TOTAL                              | NUMBER(18,3)         | 資產總額                                                                                       |   |
-|    | NET_TOTAL                                | NUMBER(18,3)         | 負債及淨值總額                                                                                    |   |
-|    | FLOW_ASSET                               | NUMBER(18,3)         | 流動資產                                                                                       |   |
-|    | FLOW_DEBT                                | NUMBER(18,3)         | 流動負債                                                                                       |   |
-|    | CASH                                     | NUMBER(18,3)         | 現金及銀行存款                                                                                    |   |
-|    | SHORT_LOAN                               | NUMBER(18,3)         | 短期借款                                                                                       |   |
-|    | SHORT_INVEST                             | NUMBER(18,3)         | 短期投資                                                                                       |   |
-|    | AP_SHORT_CHECK                           | NUMBER(18,3)         | 應付短期票券                                                                                     |   |
-|    | AR_CHECK                                 | NUMBER(18,3)         | 應收票據淨額                                                                                     |   |
-|    | OWNER_DEBT                               | NUMBER(18,3)         | 股東墊款                                                                                       |   |
-|    | AR_CASH                                  | NUMBER(18,3)         | 應收帳款淨額                                                                                     |   |
-|    | AP_CHECK_CASH                            | NUMBER(18,3)         | 應付票據及帳款                                                                                    |   |
-|    | OTH_AR_CASH                              | NUMBER(18,3)         | 其他應收款                                                                                      |   |
-|    | OTH_AP_CASH                              | NUMBER(18,3)         | 其他應付款                                                                                      |   |
-|    | STOCK                                    | NUMBER(18,3)         | 存貨                                                                                         |   |
-|    | LONG_DEBT_YY                             | NUMBER(18,3)         | 長期負債(一年內)                                                                                  |   |
-|    | OTH_FLOW_ASSET                           | NUMBER(18,3)         | 其他流動資產                                                                                     |   |
-|    | OTH_FLOW_DEBT                            | NUMBER(18,3)         | 其他流動負債                                                                                     |   |
-|    | LONG_INVEST                              | NUMBER(18,3)         | 基金及長期投資                                                                                    |   |
-|    | LONG_DEBT                                | NUMBER(18,3)         | 長期負債                                                                                       |   |
-|    | FIX_INVEST                               | NUMBER(18,3)         | 固定資產                                                                                       |   |
-|    | OTH_DEBT                                 | NUMBER(18,3)         | 其他負債                                                                                       |   |
-|    | LAND                                     | NUMBER(18,3)         | 土地及房屋                                                                                      |   |
-|    | EQUIP                                    | NUMBER(18,3)         | 機器及設備                                                                                      |   |
-|    | RENT_EQUIP                               | NUMBER(18,3)         | 租賃設備                                                                                       |   |
-|    | OTH_EQUIP                                | NUMBER(18,3)         | 其他設備                                                                                       |   |
-|    | PRE_PAY_EQUIP                            | NUMBER(18,3)         | 預付工程及設備                                                                                    |   |
-|    | DEPREC                                   | NUMBER(18,3)         | 減:折舊準備                                                                                     |   |
-|    | DEBT_TOTAL                               | NUMBER(18,3)         | 負債總額                                                                                       |   |
-|    | NET_VALUE                                | NUMBER(18,3)         | 淨值                                                                                         |   |
-|    | CAPITAL                                  | NUMBER(18,3)         | 資本                                                                                         |   |
-|    | REC_STOCK                                | NUMBER(18,3)         | 預收股款                                                                                       |   |
-|    | SURPLUS                                  | NUMBER(18,3)         | 公積                                                                                         |   |
-|    | ACM_PROFIT                               | NUMBER(18,3)         | 累積盈虧                                                                                       |   |
-|    | OTH_ASSET                                | NUMBER(18,3)         | 其他資產                                                                                       |   |
-|    | HOME_NET                                 | NUMBER(18,3)         | 本期損益                                                                                       |   |
+|    | ASSET_TOTAL                              | NUMBER(18, 3)         | 資產總額                                                                                       |   |
+|    | NET_TOTAL                                | NUMBER(18, 3)         | 負債及淨值總額                                                                                    |   |
+|    | FLOW_ASSET                               | NUMBER(18, 3)         | 流動資產                                                                                       |   |
+|    | FLOW_DEBT                                | NUMBER(18, 3)         | 流動負債                                                                                       |   |
+|    | CASH                                     | NUMBER(18, 3)         | 現金及銀行存款                                                                                    |   |
+|    | SHORT_LOAN                               | NUMBER(18, 3)         | 短期借款                                                                                       |   |
+|    | SHORT_INVEST                             | NUMBER(18, 3)         | 短期投資                                                                                       |   |
+|    | AP_SHORT_CHECK                           | NUMBER(18, 3)         | 應付短期票券                                                                                     |   |
+|    | AR_CHECK                                 | NUMBER(18, 3)         | 應收票據淨額                                                                                     |   |
+|    | OWNER_DEBT                               | NUMBER(18, 3)         | 股東墊款                                                                                       |   |
+|    | AR_CASH                                  | NUMBER(18, 3)         | 應收帳款淨額                                                                                     |   |
+|    | AP_CHECK_CASH                            | NUMBER(18, 3)         | 應付票據及帳款                                                                                    |   |
+|    | OTH_AR_CASH                              | NUMBER(18, 3)         | 其他應收款                                                                                      |   |
+|    | OTH_AP_CASH                              | NUMBER(18, 3)         | 其他應付款                                                                                      |   |
+|    | STOCK                                    | NUMBER(18, 3)         | 存貨                                                                                         |   |
+|    | LONG_DEBT_YY                             | NUMBER(18, 3)         | 長期負債(一年內)                                                                                  |   |
+|    | OTH_FLOW_ASSET                           | NUMBER(18, 3)         | 其他流動資產                                                                                     |   |
+|    | OTH_FLOW_DEBT                            | NUMBER(18, 3)         | 其他流動負債                                                                                     |   |
+|    | LONG_INVEST                              | NUMBER(18, 3)         | 基金及長期投資                                                                                    |   |
+|    | LONG_DEBT                                | NUMBER(18, 3)         | 長期負債                                                                                       |   |
+|    | FIX_INVEST                               | NUMBER(18, 3)         | 固定資產                                                                                       |   |
+|    | OTH_DEBT                                 | NUMBER(18, 3)         | 其他負債                                                                                       |   |
+|    | LAND                                     | NUMBER(18, 3)         | 土地及房屋                                                                                      |   |
+|    | EQUIP                                    | NUMBER(18, 3)         | 機器及設備                                                                                      |   |
+|    | RENT_EQUIP                               | NUMBER(18, 3)         | 租賃設備                                                                                       |   |
+|    | OTH_EQUIP                                | NUMBER(18, 3)         | 其他設備                                                                                       |   |
+|    | PRE_PAY_EQUIP                            | NUMBER(18, 3)         | 預付工程及設備                                                                                    |   |
+|    | DEPREC                                   | NUMBER(18, 3)         | 減: 折舊準備                                                                                     |   |
+|    | DEBT_TOTAL                               | NUMBER(18, 3)         | 負債總額                                                                                       |   |
+|    | NET_VALUE                                | NUMBER(18, 3)         | 淨值                                                                                         |   |
+|    | CAPITAL                                  | NUMBER(18, 3)         | 資本                                                                                         |   |
+|    | REC_STOCK                                | NUMBER(18, 3)         | 預收股款                                                                                       |   |
+|    | SURPLUS                                  | NUMBER(18, 3)         | 公積                                                                                         |   |
+|    | ACM_PROFIT                               | NUMBER(18, 3)         | 累積盈虧                                                                                       |   |
+|    | OTH_ASSET                                | NUMBER(18, 3)         | 其他資產                                                                                       |   |
+|    | HOME_NET                                 | NUMBER(18, 3)         | 本期損益                                                                                       |   |
 |    | FOW_ASSET_COL                            | VARCHAR2(150 char)   | 流動資產_其他                                                                                    |   |
 |    | FOW_ASSET_COL2                           | VARCHAR2(150 char)   | 流動資產_其他2                                                                                   |   |
 |    | FOW_ASSET_COL3                           | VARCHAR2(150 char)   | 流動資產_其他3                                                                                   |   |
-|    | FLOW_ASSET_AMT                           | NUMBER(18,3)         | 流動資產_其他(金額)                                                                                |   |
-|    | FLOW_ASSET_AMT2                          | NUMBER(18,3)         | 流動資產_其他2(金額)                                                                               |   |
-|    | FLOW_ASSET_AMT3                          | NUMBER(18,3)         | 流動資產_其他3(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT                           | NUMBER(18, 3)         | 流動資產_其他(金額)                                                                                |   |
+|    | FLOW_ASSET_AMT2                          | NUMBER(18, 3)         | 流動資產_其他2(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT3                          | NUMBER(18, 3)         | 流動資產_其他3(金額)                                                                               |   |
 |    | LONG_INVEST_COL                          | VARCHAR2(150 char)   | 長期投資_其他                                                                                    |   |
 |    | LONG_INVEST_COL2                         | VARCHAR2(150 char)   | 長期投資_其他2                                                                                   |   |
 |    | LONG_INVEST_COL3                         | VARCHAR2(150 char)   | 長期投資_其他3                                                                                   |   |
-|    | LONG_INVEST_AMT                          | NUMBER(18,3)         | 長期投資_其他(金額)                                                                                |   |
-|    | LONG_INVEST_AMT2                         | NUMBER(18,3)         | 長期投資_其他2(金額)                                                                               |   |
-|    | LONG_INVEST_AMT3                         | NUMBER(18,3)         | 長期投資_其他3(金額)                                                                               |   |
+|    | LONG_INVEST_AMT                          | NUMBER(18, 3)         | 長期投資_其他(金額)                                                                                |   |
+|    | LONG_INVEST_AMT2                         | NUMBER(18, 3)         | 長期投資_其他2(金額)                                                                               |   |
+|    | LONG_INVEST_AMT3                         | NUMBER(18, 3)         | 長期投資_其他3(金額)                                                                               |   |
 |    | FIX_ASSET_COL                            | VARCHAR2(150 char)   | 固定資產_其他                                                                                    |   |
 |    | FIX_ASSET_COL2                           | VARCHAR2(150 char)   | 固定資產_其他2                                                                                   |   |
 |    | FIX_ASSET_COL3                           | VARCHAR2(150 char)   | 固定資產_其他3                                                                                   |   |
-|    | FIX_ASSET_AMT                            | NUMBER(18,3)         | 固定資產_其他(金額)                                                                                |   |
-|    | FIX_ASSET_AMT2                           | NUMBER(18,3)         | 固定資產_其他2(金額)                                                                               |   |
-|    | FIX_ASSET_AMT3                           | NUMBER(18,3)         | 固定資產_其他3(金額)                                                                               |   |
+|    | FIX_ASSET_AMT                            | NUMBER(18, 3)         | 固定資產_其他(金額)                                                                                |   |
+|    | FIX_ASSET_AMT2                           | NUMBER(18, 3)         | 固定資產_其他2(金額)                                                                               |   |
+|    | FIX_ASSET_AMT3                           | NUMBER(18, 3)         | 固定資產_其他3(金額)                                                                               |   |
 |    | ASSET_COL                                | VARCHAR2(150 char)   | 其他資產_其他                                                                                    |   |
 |    | ASSET_COL2                               | VARCHAR2(150 char)   | 其他資產_其他2                                                                                   |   |
 |    | ASSET_COL3                               | VARCHAR2(150 char)   | 其他資產_其他3                                                                                   |   |
-|    | ASSET_AMT                                | NUMBER(18,3)         | 其他資產_其他(金額)                                                                                |   |
-|    | ASSET_AMT2                               | NUMBER(18,3)         | 其他資產_其他2(金額)                                                                               |   |
-|    | ASSET_AMT3                               | NUMBER(18,3)         | 其他資產_其他3(金額)                                                                               |   |
+|    | ASSET_AMT                                | NUMBER(18, 3)         | 其他資產_其他(金額)                                                                                |   |
+|    | ASSET_AMT2                               | NUMBER(18, 3)         | 其他資產_其他2(金額)                                                                               |   |
+|    | ASSET_AMT3                               | NUMBER(18, 3)         | 其他資產_其他3(金額)                                                                               |   |
 |    | FOW_DEBT_COL                             | VARCHAR2(150 char)   | 流動負債_其他                                                                                    |   |
 |    | FOW_DEBT_COL2                            | VARCHAR2(150 char)   | 流動負債_其他2                                                                                   |   |
 |    | FOW_DEBT_COL3                            | VARCHAR2(150 char)   | 流動負債_其他3                                                                                   |   |
-|    | FLOW_DEBT_AMT                            | NUMBER(18,3)         | 流動負債_其他(金額)                                                                                |   |
-|    | FLOW_DEBT_AMT2                           | NUMBER(18,3)         | 流動負債_其他2(金額)                                                                               |   |
-|    | FLOW_DEBT_AMT3                           | NUMBER(18,3)         | 流動負債_其他3(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT                            | NUMBER(18, 3)         | 流動負債_其他(金額)                                                                                |   |
+|    | FLOW_DEBT_AMT2                           | NUMBER(18, 3)         | 流動負債_其他2(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT3                           | NUMBER(18, 3)         | 流動負債_其他3(金額)                                                                               |   |
 |    | LONG_DEBT_COL                            | VARCHAR2(150 char)   | 長期負債_其他                                                                                    |   |
 |    | LONG_DEBT_COL2                           | VARCHAR2(150 char)   | 長期負債_其他2                                                                                   |   |
 |    | LONG_DEBT_COL3                           | VARCHAR2(150 char)   | 長期負債_其他3                                                                                   |   |
-|    | LONG_DEBT_AMT                            | NUMBER(18,3)         | 長期負債_其他(金額)                                                                                |   |
-|    | LONG_DEBT_AMT2                           | NUMBER(18,3)         | 長期負債_其他2(金額)                                                                               |   |
-|    | LONG_DEBT_AMT3                           | NUMBER(18,3)         | 長期負債_其他3(金額)                                                                               |   |
+|    | LONG_DEBT_AMT                            | NUMBER(18, 3)         | 長期負債_其他(金額)                                                                                |   |
+|    | LONG_DEBT_AMT2                           | NUMBER(18, 3)         | 長期負債_其他2(金額)                                                                               |   |
+|    | LONG_DEBT_AMT3                           | NUMBER(18, 3)         | 長期負債_其他3(金額)                                                                               |   |
 |    | DEBT_COL                                 | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL2                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL3                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
-|    | DEBT_AMT                                 | NUMBER(18,3)         | 其它負債_其他(金額)                                                                                |   |
-|    | DEBT_AMT2                                | NUMBER(18,3)         | 其它負債_其他2(金額)                                                                               |   |
-|    | DEBT_AMT3                                | NUMBER(18,3)         | 其它負債_其他3(金額)                                                                               |   |
+|    | DEBT_AMT                                 | NUMBER(18, 3)         | 其它負債_其他(金額)                                                                                |   |
+|    | DEBT_AMT2                                | NUMBER(18, 3)         | 其它負債_其他2(金額)                                                                               |   |
+|    | DEBT_AMT3                                | NUMBER(18, 3)         | 其它負債_其他3(金額)                                                                               |   |
 |    | NET_COL                                  | VARCHAR2(150 char)   | 淨值_其他                                                                                      |   |
 |    | NET_COL2                                 | VARCHAR2(150 char)   | 淨值_其他2                                                                                     |   |
 |    | NET_COL3                                 | VARCHAR2(150 char)   | 淨值_其他3                                                                                     |   |
-|    | NET_AMT                                  | NUMBER(18,3)         | 淨值_其他(金額)                                                                                  |   |
-|    | NET_AMT2                                 | NUMBER(18,3)         | 淨值_其他2(金額)                                                                                 |   |
-|    | NET_AMT3                                 | NUMBER(18,3)         | 淨值_其他3(金額)                                                                                 |   |
+|    | NET_AMT                                  | NUMBER(18, 3)         | 淨值_其他(金額)                                                                                  |   |
+|    | NET_AMT2                                 | NUMBER(18, 3)         | 淨值_其他2(金額)                                                                                 |   |
+|    | NET_AMT3                                 | NUMBER(18, 3)         | 淨值_其他3(金額)                                                                                 |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員                                                                                       |   |
@@ -4948,29 +4939,28 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 更新人員                                                                                       |   |
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
-|    | CFAFV                                    | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
-|    | AFIAC                                    | NUMBER(18,3)         | 備供出售金融資產－流動淨額                                                                              |   |
-|    | DERI                                     | NUMBER(18,3)         | 避險之衍生金融資產－流動                                                                               |   |
-|    | IDEBTC                                   | NUMBER(18,3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
-|    | AFIA                                     | NUMBER(18,3)         | 備供出售金融資產－非流動淨額                                                                             |   |
-|    | FIAC                                     | NUMBER(18,3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
-|    | IDEBT                                    | NUMBER(18,3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
-|    | IEQU                                     | NUMBER(18,3)         | 採用權益法之投資淨額                                                                                 |   |
-|    | IPRO                                     | NUMBER(18,3)         | 投資性不動產淨額                                                                                   |   |
-|    | FIFV                                     | NUMBER(18,3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
-|    | HDLC                                     | NUMBER(18,3)         | 避險之衍生金融負債－流動                                                                               |   |
-|    | UNFI                                     | NUMBER(18,3)         | 備供出售金融資產未實現損益                                                                              |   |
-|    | FIASCFHS                                 | NUMBER(18,3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
-|    | FVTOCIF                                  | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFAF                                    | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
-|    | CFAFVNF                                  | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
-|    | FVTOCINF                                 | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFANF                                   | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
-|    | OTHER_PROFIT_LOSS                        | NUMBER(18,3)         | 其他損益                                                                                       |   |
-|    | TS_STOCK                                 | NUMBER(18,3)         | 庫藏股票                                                                                       |   |
-|    | NONCONTROLLING_INTERESTS                 | NUMBER(18,3)         | 非控制權益                                                                                      |   |
+|    | CFAFV                                    | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
+|    | AFIAC                                    | NUMBER(18, 3)         | 備供出售金融資產－流動淨額                                                                              |   |
+|    | DERI                                     | NUMBER(18, 3)         | 避險之衍生金融資產－流動                                                                               |   |
+|    | IDEBTC                                   | NUMBER(18, 3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
+|    | AFIA                                     | NUMBER(18, 3)         | 備供出售金融資產－非流動淨額                                                                             |   |
+|    | FIAC                                     | NUMBER(18, 3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
+|    | IDEBT                                    | NUMBER(18, 3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
+|    | IEQU                                     | NUMBER(18, 3)         | 採用權益法之投資淨額                                                                                 |   |
+|    | IPRO                                     | NUMBER(18, 3)         | 投資性不動產淨額                                                                                   |   |
+|    | FIFV                                     | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
+|    | HDLC                                     | NUMBER(18, 3)         | 避險之衍生金融負債－流動                                                                               |   |
+|    | UNFI                                     | NUMBER(18, 3)         | 備供出售金融資產未實現損益                                                                              |   |
+|    | FIASCFHS                                 | NUMBER(18, 3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
+|    | FVTOCIF                                  | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFAF                                    | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
+|    | CFAFVNF                                  | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
+|    | FVTOCINF                                 | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFANF                                   | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
+|    | OTHER_PROFIT_LOSS                        | NUMBER(18, 3)         | 其他損益                                                                                       |   |
+|    | TS_STOCK                                 | NUMBER(18, 3)         | 庫藏股票                                                                                       |   |
+|    | NONCONTROLLING_INTERESTS                 | NUMBER(18, 3)         | 非控制權益                                                                                      |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_RCK_LOANTR_REPORT_CO_DEBT_R
 
@@ -4985,90 +4975,90 @@ title: E-LOAN 徵審系統(ELEL)
 |    | START_MM                                 | INTEGER              | 月份_起                                                                                       |   |
 |    | END_YY                                   | INTEGER              | 年度_迄                                                                                       |   |
 |    | END_MM                                   | INTEGER              | 月份_迄                                                                                       |   |
-|    | ASSET_TOTAL                              | NUMBER(18,3)         | 資產總額                                                                                       |   |
-|    | NET_TOTAL                                | NUMBER(18,3)         | 負債及淨值總額                                                                                    |   |
-|    | FLOW_ASSET                               | NUMBER(18,3)         | 流動資產                                                                                       |   |
-|    | FLOW_DEBT                                | NUMBER(18,3)         | 流動負債                                                                                       |   |
-|    | CASH                                     | NUMBER(18,3)         | 現金及銀行存款                                                                                    |   |
-|    | SHORT_LOAN                               | NUMBER(18,3)         | 短期借款                                                                                       |   |
-|    | SHORT_INVEST                             | NUMBER(18,3)         | 短期投資                                                                                       |   |
-|    | AP_SHORT_CHECK                           | NUMBER(18,3)         | 應付短期票券                                                                                     |   |
-|    | AR_CHECK                                 | NUMBER(18,3)         | 應收票據淨額                                                                                     |   |
-|    | OWNER_DEBT                               | NUMBER(18,3)         | 股東墊款                                                                                       |   |
-|    | AR_CASH                                  | NUMBER(18,3)         | 應收帳款淨額                                                                                     |   |
-|    | AP_CHECK_CASH                            | NUMBER(18,3)         | 應付票據及帳款                                                                                    |   |
-|    | OTH_AR_CASH                              | NUMBER(18,3)         | 其他應收款                                                                                      |   |
-|    | OTH_AP_CASH                              | NUMBER(18,3)         | 其他應付款                                                                                      |   |
-|    | UNFINISH                                 | NUMBER(18,3)         | 在建工程                                                                                       |   |
-|    | LONG_DEBT_YY                             | NUMBER(18,3)         | 長期負債(一年內)                                                                                  |   |
-|    | OTH_FLOW_ASSET                           | NUMBER(18,3)         | 其他流動資產                                                                                     |   |
-|    | OTH_FLOW_DEBT                            | NUMBER(18,3)         | 其他流動負債                                                                                     |   |
-|    | LONG_INVEST                              | NUMBER(18,3)         | 基金及長期投資                                                                                    |   |
-|    | LONG_DEBT                                | NUMBER(18,3)         | 長期負債                                                                                       |   |
-|    | FIX_INVEST                               | NUMBER(18,3)         | 固定資產                                                                                       |   |
-|    | OTH_DEBT                                 | NUMBER(18,3)         | 其他負債                                                                                       |   |
-|    | LAND                                     | NUMBER(18,3)         | 土地及房屋                                                                                      |   |
-|    | EQUIP                                    | NUMBER(18,3)         | 機器及設備                                                                                      |   |
-|    | GROW_EQUIP                               | NUMBER(18,3)         | 生財器具                                                                                       |   |
-|    | OTH_EQUIP                                | NUMBER(18,3)         | 其他設備                                                                                       |   |
-|    | PRE_PAY_BUILD                            | NUMBER(18,3)         | 預付及未完成工程                                                                                   |   |
-|    | DEPREC                                   | NUMBER(18,3)         | 減:折舊準備                                                                                     |   |
-|    | DEBT_TOTAL                               | NUMBER(18,3)         | 負債總額                                                                                       |   |
-|    | NET_VALUE                                | NUMBER(18,3)         | 淨值                                                                                         |   |
-|    | CAPITAL                                  | NUMBER(18,3)         | 資本                                                                                         |   |
-|    | REC_STOCK                                | NUMBER(18,3)         | 預收股款                                                                                       |   |
-|    | SURPLUS                                  | NUMBER(18,3)         | 公積                                                                                         |   |
-|    | ACM_PROFIT                               | NUMBER(18,3)         | 累積盈虧                                                                                       |   |
-|    | OTH_ASSET                                | NUMBER(18,3)         | 其他資產                                                                                       |   |
-|    | HOME_NET                                 | NUMBER(18,3)         | 本期損益                                                                                       |   |
+|    | ASSET_TOTAL                              | NUMBER(18, 3)         | 資產總額                                                                                       |   |
+|    | NET_TOTAL                                | NUMBER(18, 3)         | 負債及淨值總額                                                                                    |   |
+|    | FLOW_ASSET                               | NUMBER(18, 3)         | 流動資產                                                                                       |   |
+|    | FLOW_DEBT                                | NUMBER(18, 3)         | 流動負債                                                                                       |   |
+|    | CASH                                     | NUMBER(18, 3)         | 現金及銀行存款                                                                                    |   |
+|    | SHORT_LOAN                               | NUMBER(18, 3)         | 短期借款                                                                                       |   |
+|    | SHORT_INVEST                             | NUMBER(18, 3)         | 短期投資                                                                                       |   |
+|    | AP_SHORT_CHECK                           | NUMBER(18, 3)         | 應付短期票券                                                                                     |   |
+|    | AR_CHECK                                 | NUMBER(18, 3)         | 應收票據淨額                                                                                     |   |
+|    | OWNER_DEBT                               | NUMBER(18, 3)         | 股東墊款                                                                                       |   |
+|    | AR_CASH                                  | NUMBER(18, 3)         | 應收帳款淨額                                                                                     |   |
+|    | AP_CHECK_CASH                            | NUMBER(18, 3)         | 應付票據及帳款                                                                                    |   |
+|    | OTH_AR_CASH                              | NUMBER(18, 3)         | 其他應收款                                                                                      |   |
+|    | OTH_AP_CASH                              | NUMBER(18, 3)         | 其他應付款                                                                                      |   |
+|    | UNFINISH                                 | NUMBER(18, 3)         | 在建工程                                                                                       |   |
+|    | LONG_DEBT_YY                             | NUMBER(18, 3)         | 長期負債(一年內)                                                                                  |   |
+|    | OTH_FLOW_ASSET                           | NUMBER(18, 3)         | 其他流動資產                                                                                     |   |
+|    | OTH_FLOW_DEBT                            | NUMBER(18, 3)         | 其他流動負債                                                                                     |   |
+|    | LONG_INVEST                              | NUMBER(18, 3)         | 基金及長期投資                                                                                    |   |
+|    | LONG_DEBT                                | NUMBER(18, 3)         | 長期負債                                                                                       |   |
+|    | FIX_INVEST                               | NUMBER(18, 3)         | 固定資產                                                                                       |   |
+|    | OTH_DEBT                                 | NUMBER(18, 3)         | 其他負債                                                                                       |   |
+|    | LAND                                     | NUMBER(18, 3)         | 土地及房屋                                                                                      |   |
+|    | EQUIP                                    | NUMBER(18, 3)         | 機器及設備                                                                                      |   |
+|    | GROW_EQUIP                               | NUMBER(18, 3)         | 生財器具                                                                                       |   |
+|    | OTH_EQUIP                                | NUMBER(18, 3)         | 其他設備                                                                                       |   |
+|    | PRE_PAY_BUILD                            | NUMBER(18, 3)         | 預付及未完成工程                                                                                   |   |
+|    | DEPREC                                   | NUMBER(18, 3)         | 減: 折舊準備                                                                                     |   |
+|    | DEBT_TOTAL                               | NUMBER(18, 3)         | 負債總額                                                                                       |   |
+|    | NET_VALUE                                | NUMBER(18, 3)         | 淨值                                                                                         |   |
+|    | CAPITAL                                  | NUMBER(18, 3)         | 資本                                                                                         |   |
+|    | REC_STOCK                                | NUMBER(18, 3)         | 預收股款                                                                                       |   |
+|    | SURPLUS                                  | NUMBER(18, 3)         | 公積                                                                                         |   |
+|    | ACM_PROFIT                               | NUMBER(18, 3)         | 累積盈虧                                                                                       |   |
+|    | OTH_ASSET                                | NUMBER(18, 3)         | 其他資產                                                                                       |   |
+|    | HOME_NET                                 | NUMBER(18, 3)         | 本期損益                                                                                       |   |
 |    | FOW_ASSET_COL                            | VARCHAR2(150 char)   | 流動資產_其他                                                                                    |   |
 |    | FOW_ASSET_COL2                           | VARCHAR2(150 char)   | 流動資產_其他2                                                                                   |   |
 |    | FOW_ASSET_COL3                           | VARCHAR2(150 char)   | 流動資產_其他3                                                                                   |   |
-|    | FLOW_ASSET_AMT                           | NUMBER(18,3)         | 流動資產_其他(金額)                                                                                |   |
-|    | FLOW_ASSET_AMT2                          | NUMBER(18,3)         | 流動資產_其他2(金額)                                                                               |   |
-|    | FLOW_ASSET_AMT3                          | NUMBER(18,3)         | 流動資產_其他3(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT                           | NUMBER(18, 3)         | 流動資產_其他(金額)                                                                                |   |
+|    | FLOW_ASSET_AMT2                          | NUMBER(18, 3)         | 流動資產_其他2(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT3                          | NUMBER(18, 3)         | 流動資產_其他3(金額)                                                                               |   |
 |    | LONG_INVEST_COL                          | VARCHAR2(150 char)   | 長期投資_其他                                                                                    |   |
 |    | LONG_INVEST_COL2                         | VARCHAR2(150 char)   | 長期投資_其他2                                                                                   |   |
 |    | LONG_INVEST_COL3                         | VARCHAR2(150 char)   | 長期投資_其他3                                                                                   |   |
-|    | LONG_INVEST_AMT                          | NUMBER(18,3)         | 長期投資_其他(金額)                                                                                |   |
-|    | LONG_INVEST_AMT2                         | NUMBER(18,3)         | 長期投資_其他2(金額)                                                                               |   |
-|    | LONG_INVEST_AMT3                         | NUMBER(18,3)         | 長期投資_其他3(金額)                                                                               |   |
+|    | LONG_INVEST_AMT                          | NUMBER(18, 3)         | 長期投資_其他(金額)                                                                                |   |
+|    | LONG_INVEST_AMT2                         | NUMBER(18, 3)         | 長期投資_其他2(金額)                                                                               |   |
+|    | LONG_INVEST_AMT3                         | NUMBER(18, 3)         | 長期投資_其他3(金額)                                                                               |   |
 |    | FIX_ASSET_COL                            | VARCHAR2(150 char)   | 固定資產_其他                                                                                    |   |
 |    | FIX_ASSET_COL2                           | VARCHAR2(150 char)   | 固定資產_其他2                                                                                   |   |
 |    | FIX_ASSET_COL3                           | VARCHAR2(150 char)   | 固定資產_其他3                                                                                   |   |
-|    | FIX_ASSET_AMT                            | NUMBER(18,3)         | 固定資產_其他(金額)                                                                                |   |
-|    | FIX_ASSET_AMT2                           | NUMBER(18,3)         | 固定資產_其他2(金額)                                                                               |   |
-|    | FIX_ASSET_AMT3                           | NUMBER(18,3)         | 固定資產_其他3(金額)                                                                               |   |
+|    | FIX_ASSET_AMT                            | NUMBER(18, 3)         | 固定資產_其他(金額)                                                                                |   |
+|    | FIX_ASSET_AMT2                           | NUMBER(18, 3)         | 固定資產_其他2(金額)                                                                               |   |
+|    | FIX_ASSET_AMT3                           | NUMBER(18, 3)         | 固定資產_其他3(金額)                                                                               |   |
 |    | ASSET_COL                                | VARCHAR2(150 char)   | 其他資產_其他                                                                                    |   |
 |    | ASSET_COL2                               | VARCHAR2(150 char)   | 其他資產_其他2                                                                                   |   |
 |    | ASSET_COL3                               | VARCHAR2(150 char)   | 其他資產_其他3                                                                                   |   |
-|    | ASSET_AMT                                | NUMBER(18,3)         | 其他資產_其他(金額)                                                                                |   |
-|    | ASSET_AMT2                               | NUMBER(18,3)         | 其他資產_其他2(金額)                                                                               |   |
-|    | ASSET_AMT3                               | NUMBER(18,3)         | 其他資產_其他3(金額)                                                                               |   |
+|    | ASSET_AMT                                | NUMBER(18, 3)         | 其他資產_其他(金額)                                                                                |   |
+|    | ASSET_AMT2                               | NUMBER(18, 3)         | 其他資產_其他2(金額)                                                                               |   |
+|    | ASSET_AMT3                               | NUMBER(18, 3)         | 其他資產_其他3(金額)                                                                               |   |
 |    | FOW_DEBT_COL                             | VARCHAR2(150 char)   | 流動負債_其他                                                                                    |   |
 |    | FOW_DEBT_COL2                            | VARCHAR2(150 char)   | 流動負債_其他2                                                                                   |   |
 |    | FOW_DEBT_COL3                            | VARCHAR2(150 char)   | 流動負債_其他3                                                                                   |   |
-|    | FLOW_DEBT_AMT                            | NUMBER(18,3)         | 流動負債_其他(金額)                                                                                |   |
-|    | FLOW_DEBT_AMT2                           | NUMBER(18,3)         | 流動負債_其他2(金額)                                                                               |   |
-|    | FLOW_DEBT_AMT3                           | NUMBER(18,3)         | 流動負債_其他3(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT                            | NUMBER(18, 3)         | 流動負債_其他(金額)                                                                                |   |
+|    | FLOW_DEBT_AMT2                           | NUMBER(18, 3)         | 流動負債_其他2(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT3                           | NUMBER(18, 3)         | 流動負債_其他3(金額)                                                                               |   |
 |    | LONG_DEBT_COL                            | VARCHAR2(150 char)   | 長期負債_其他                                                                                    |   |
 |    | LONG_DEBT_COL2                           | VARCHAR2(150 char)   | 長期負債_其他2                                                                                   |   |
 |    | LONG_DEBT_COL3                           | VARCHAR2(150 char)   | 長期負債_其他3                                                                                   |   |
-|    | LONG_DEBT_AMT                            | NUMBER(18,3)         | 長期負債_其他(金額)                                                                                |   |
-|    | LONG_DEBT_AMT2                           | NUMBER(18,3)         | 長期負債_其他2(金額)                                                                               |   |
-|    | LONG_DEBT_AMT3                           | NUMBER(18,3)         | 長期負債_其他3(金額)                                                                               |   |
+|    | LONG_DEBT_AMT                            | NUMBER(18, 3)         | 長期負債_其他(金額)                                                                                |   |
+|    | LONG_DEBT_AMT2                           | NUMBER(18, 3)         | 長期負債_其他2(金額)                                                                               |   |
+|    | LONG_DEBT_AMT3                           | NUMBER(18, 3)         | 長期負債_其他3(金額)                                                                               |   |
 |    | DEBT_COL                                 | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL2                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL3                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
-|    | DEBT_AMT                                 | NUMBER(18,3)         | 其它負債_其他(金額)                                                                                |   |
-|    | DEBT_AMT2                                | NUMBER(18,3)         | 其它負債_其他2(金額)                                                                               |   |
-|    | DEBT_AMT3                                | NUMBER(18,3)         | 其它負債_其他3(金額)                                                                               |   |
+|    | DEBT_AMT                                 | NUMBER(18, 3)         | 其它負債_其他(金額)                                                                                |   |
+|    | DEBT_AMT2                                | NUMBER(18, 3)         | 其它負債_其他2(金額)                                                                               |   |
+|    | DEBT_AMT3                                | NUMBER(18, 3)         | 其它負債_其他3(金額)                                                                               |   |
 |    | NET_COL                                  | VARCHAR2(150 char)   | 淨值_其他                                                                                      |   |
 |    | NET_COL2                                 | VARCHAR2(150 char)   | 淨值_其他2                                                                                     |   |
 |    | NET_COL3                                 | VARCHAR2(150 char)   | 淨值_其他3                                                                                     |   |
-|    | NET_AMT                                  | NUMBER(18,3)         | 淨值_其他(金額)                                                                                  |   |
-|    | NET_AMT2                                 | NUMBER(18,3)         | 淨值_其他2(金額)                                                                                 |   |
-|    | NET_AMT3                                 | NUMBER(18,3)         | 淨值_其他3(金額)                                                                                 |   |
+|    | NET_AMT                                  | NUMBER(18, 3)         | 淨值_其他(金額)                                                                                  |   |
+|    | NET_AMT2                                 | NUMBER(18, 3)         | 淨值_其他2(金額)                                                                                 |   |
+|    | NET_AMT3                                 | NUMBER(18, 3)         | 淨值_其他3(金額)                                                                                 |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員                                                                                       |   |
@@ -5078,29 +5068,28 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 更新人員                                                                                       |   |
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
-|    | CFAFV                                    | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
-|    | AFIAC                                    | NUMBER(18,3)         | 備供出售金融資產－流動淨額                                                                              |   |
-|    | DERI                                     | NUMBER(18,3)         | 避險之衍生金融資產－流動                                                                               |   |
-|    | IDEBTC                                   | NUMBER(18,3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
-|    | AFIA                                     | NUMBER(18,3)         | 備供出售金融資產－非流動淨額                                                                             |   |
-|    | FIAC                                     | NUMBER(18,3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
-|    | IDEBT                                    | NUMBER(18,3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
-|    | IEQU                                     | NUMBER(18,3)         | 採用權益法之投資淨額                                                                                 |   |
-|    | IPRO                                     | NUMBER(18,3)         | 投資性不動產淨額                                                                                   |   |
-|    | FIFV                                     | NUMBER(18,3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
-|    | HDLC                                     | NUMBER(18,3)         | 避險之衍生金融負債－流動                                                                               |   |
-|    | UNFI                                     | NUMBER(18,3)         | 備供出售金融資產未實現損益                                                                              |   |
-|    | FIASCFHS                                 | NUMBER(18,3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
-|    | FVTOCIF                                  | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFAF                                    | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
-|    | CFAFVNF                                  | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
-|    | FVTOCINF                                 | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFANF                                   | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
-|    | OTHER_PROFIT_LOSS                        | NUMBER(18,3)         | 其他損益                                                                                       |   |
-|    | TS_STOCK                                 | NUMBER(18,3)         | 庫藏股票                                                                                       |   |
-|    | NONCONTROLLING_INTERESTS                 | NUMBER(18,3)         | 非控制權益                                                                                      |   |
+|    | CFAFV                                    | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
+|    | AFIAC                                    | NUMBER(18, 3)         | 備供出售金融資產－流動淨額                                                                              |   |
+|    | DERI                                     | NUMBER(18, 3)         | 避險之衍生金融資產－流動                                                                               |   |
+|    | IDEBTC                                   | NUMBER(18, 3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
+|    | AFIA                                     | NUMBER(18, 3)         | 備供出售金融資產－非流動淨額                                                                             |   |
+|    | FIAC                                     | NUMBER(18, 3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
+|    | IDEBT                                    | NUMBER(18, 3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
+|    | IEQU                                     | NUMBER(18, 3)         | 採用權益法之投資淨額                                                                                 |   |
+|    | IPRO                                     | NUMBER(18, 3)         | 投資性不動產淨額                                                                                   |   |
+|    | FIFV                                     | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
+|    | HDLC                                     | NUMBER(18, 3)         | 避險之衍生金融負債－流動                                                                               |   |
+|    | UNFI                                     | NUMBER(18, 3)         | 備供出售金融資產未實現損益                                                                              |   |
+|    | FIASCFHS                                 | NUMBER(18, 3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
+|    | FVTOCIF                                  | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFAF                                    | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
+|    | CFAFVNF                                  | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
+|    | FVTOCINF                                 | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFANF                                   | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
+|    | OTHER_PROFIT_LOSS                        | NUMBER(18, 3)         | 其他損益                                                                                       |   |
+|    | TS_STOCK                                 | NUMBER(18, 3)         | 庫藏股票                                                                                       |   |
+|    | NONCONTROLLING_INTERESTS                 | NUMBER(18, 3)         | 非控制權益                                                                                      |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_RCK_LOANTR_REPORT_CO_DEBT_S
 
@@ -5115,107 +5104,107 @@ title: E-LOAN 徵審系統(ELEL)
 |    | START_MM                                 | INTEGER              | 月份_起                                                                                       |   |
 |    | END_YY                                   | INTEGER              | 年度_迄                                                                                       |   |
 |    | END_MM                                   | INTEGER              | 月份_迄                                                                                       |   |
-|    | ASSET_TOTAL                              | NUMBER(18,3)         | 資產總額                                                                                       |   |
-|    | NET_TOTAL                                | NUMBER(18,3)         | 負債及淨值總額                                                                                    |   |
-|    | FLOW_ASSET                               | NUMBER(18,3)         | 流動資產                                                                                       |   |
-|    | FLOW_DEBT                                | NUMBER(18,3)         | 流動負債                                                                                       |   |
-|    | CASH                                     | NUMBER(18,3)         | 現金及銀行存款                                                                                    |   |
-|    | SHORT_LOAN                               | NUMBER(18,3)         | 短期借款                                                                                       |   |
-|    | SHORT_INVEST                             | NUMBER(18,3)         | 短期投資                                                                                       |   |
-|    | AP_SHORT_CHECK                           | NUMBER(18,3)         | 應付短期票券                                                                                     |   |
-|    | AR_CASH                                  | NUMBER(18,3)         | 應收帳款淨額                                                                                     |   |
-|    | AP_CHECK_CASH                            | NUMBER(18,3)         | 應付票據及帳款                                                                                    |   |
-|    | AR_SALE                                  | NUMBER(18,3)         | 應收分期銷貨款                                                                                    |   |
-|    | AP_FEE                                   | NUMBER(18,3)         | 應付費用                                                                                       |   |
-|    | AR_RENT                                  | NUMBER(18,3)         | 應收租賃款                                                                                      |   |
-|    | AP_INCOME                                | NUMBER(18,3)         | 應付所得                                                                                       |   |
-|    | DEBT                                     | NUMBER(18,3)         | 減:備抵呆帳                                                                                     |   |
-|    | PRE_RECEIVE                              | NUMBER(18,3)         | 預收款項                                                                                       |   |
-|    | STOCK                                    | NUMBER(18,3)         | 存貨                                                                                         |   |
-|    | LONG_DEBT_YY                             | NUMBER(18,3)         | 長期負債(一年內)                                                                                  |   |
-|    | OTH_CREDIT                               | NUMBER(18,3)         | 其它金融資產                                                                                     |   |
-|    | DEPOSIT                                  | NUMBER(18,3)         | 存入保證金                                                                                      |   |
-|    | PRE_PAY                                  | NUMBER(18,3)         | 預付款項                                                                                       |   |
-|    | OTH_FLOW_DEBT                            | NUMBER(18,3)         | 其他流動負債                                                                                     |   |
-|    | OTH_FLOW_ASSET                           | NUMBER(18,3)         | 其他流動資產                                                                                     |   |
-|    | LONG_INVEST                              | NUMBER(18,3)         | 基金及長期投資                                                                                    |   |
-|    | LONG_DEBT                                | NUMBER(18,3)         | 長期負債                                                                                       |   |
-|    | LONG_LOAN                                | NUMBER(18,3)         | 長期借款                                                                                       |   |
-|    | OTH_CREDIT_UNFLOW                        | NUMBER(18,3)         | 其它金融資產-非流動                                                                                 |   |
-|    | AP_BOND                                  | NUMBER(18,3)         | 應付公司債                                                                                      |   |
-|    | AP_LONG_CHECK                            | NUMBER(18,3)         | 應付長期票券                                                                                     |   |
-|    | OTH_LONG_DEBT                            | NUMBER(18,3)         | 其他長期負債                                                                                     |   |
-|    | FIX_INVEST                               | NUMBER(18,3)         | 固定資產                                                                                       |   |
-|    | OTH_DEBT                                 | NUMBER(18,3)         | 其他負債                                                                                       |   |
-|    | LAND                                     | NUMBER(18,3)         | 土地及房屋                                                                                      |   |
-|    | BUILD                                    | NUMBER(18,3)         | 房屋及建築                                                                                      |   |
-|    | MACHINE                                  | NUMBER(18,3)         | 機器設備                                                                                       |   |
-|    | SHIPPING                                 | NUMBER(18,3)         | 運輸設備                                                                                       |   |
-|    | OFFICE                                   | NUMBER(18,3)         | 辦公設備                                                                                       |   |
-|    | RENT_EQUIP                               | NUMBER(18,3)         | 租賃設備                                                                                       |   |
-|    | RENT_IMPROVE                             | NUMBER(18,3)         | 租賃改良                                                                                       |   |
-|    | INCREASE                                 | NUMBER(18,3)         | 固定資產重估增值                                                                                   |   |
-|    | PRE_PAY_BUILD                            | NUMBER(18,3)         | 預付房地款                                                                                      |   |
-|    | DEPREC                                   | NUMBER(18,3)         | 減:各項累積折舊                                                                                   |   |
-|    | DEBT_TOTAL                               | NUMBER(18,3)         | 負債總額                                                                                       |   |
-|    | NET_VALUE                                | NUMBER(18,3)         | 淨值                                                                                         |   |
-|    | CAPITAL_STOCK                            | NUMBER(18,3)         | 股本                                                                                         |   |
-|    | REC_STOCK                                | NUMBER(18,3)         | 預收股款                                                                                       |   |
-|    | TS_STOCK                                 | NUMBER(18,3)         | 庫藏股                                                                                        |   |
-|    | SURPLUS                                  | NUMBER(18,3)         | 資本公積                                                                                       |   |
-|    | ACM_PROFIT                               | NUMBER(18,3)         | 累積盈虧                                                                                       |   |
-|    | ADJUST_ITEM                              | NUMBER(18,3)         | 淨值及其他調整項目                                                                                  |   |
-|    | HOME_NET                                 | NUMBER(18,3)         | 本期損益                                                                                       |   |
-|    | OTH_ASSET                                | NUMBER(18,3)         | 其他資產                                                                                       |   |
-|    | LIMIT_NET                                | NUMBER(18,3)         | 受限資產                                                                                       |   |
+|    | ASSET_TOTAL                              | NUMBER(18, 3)         | 資產總額                                                                                       |   |
+|    | NET_TOTAL                                | NUMBER(18, 3)         | 負債及淨值總額                                                                                    |   |
+|    | FLOW_ASSET                               | NUMBER(18, 3)         | 流動資產                                                                                       |   |
+|    | FLOW_DEBT                                | NUMBER(18, 3)         | 流動負債                                                                                       |   |
+|    | CASH                                     | NUMBER(18, 3)         | 現金及銀行存款                                                                                    |   |
+|    | SHORT_LOAN                               | NUMBER(18, 3)         | 短期借款                                                                                       |   |
+|    | SHORT_INVEST                             | NUMBER(18, 3)         | 短期投資                                                                                       |   |
+|    | AP_SHORT_CHECK                           | NUMBER(18, 3)         | 應付短期票券                                                                                     |   |
+|    | AR_CASH                                  | NUMBER(18, 3)         | 應收帳款淨額                                                                                     |   |
+|    | AP_CHECK_CASH                            | NUMBER(18, 3)         | 應付票據及帳款                                                                                    |   |
+|    | AR_SALE                                  | NUMBER(18, 3)         | 應收分期銷貨款                                                                                    |   |
+|    | AP_FEE                                   | NUMBER(18, 3)         | 應付費用                                                                                       |   |
+|    | AR_RENT                                  | NUMBER(18, 3)         | 應收租賃款                                                                                      |   |
+|    | AP_INCOME                                | NUMBER(18, 3)         | 應付所得                                                                                       |   |
+|    | DEBT                                     | NUMBER(18, 3)         | 減: 備抵呆帳                                                                                     |   |
+|    | PRE_RECEIVE                              | NUMBER(18, 3)         | 預收款項                                                                                       |   |
+|    | STOCK                                    | NUMBER(18, 3)         | 存貨                                                                                         |   |
+|    | LONG_DEBT_YY                             | NUMBER(18, 3)         | 長期負債(一年內)                                                                                  |   |
+|    | OTH_CREDIT                               | NUMBER(18, 3)         | 其它金融資產                                                                                     |   |
+|    | DEPOSIT                                  | NUMBER(18, 3)         | 存入保證金                                                                                      |   |
+|    | PRE_PAY                                  | NUMBER(18, 3)         | 預付款項                                                                                       |   |
+|    | OTH_FLOW_DEBT                            | NUMBER(18, 3)         | 其他流動負債                                                                                     |   |
+|    | OTH_FLOW_ASSET                           | NUMBER(18, 3)         | 其他流動資產                                                                                     |   |
+|    | LONG_INVEST                              | NUMBER(18, 3)         | 基金及長期投資                                                                                    |   |
+|    | LONG_DEBT                                | NUMBER(18, 3)         | 長期負債                                                                                       |   |
+|    | LONG_LOAN                                | NUMBER(18, 3)         | 長期借款                                                                                       |   |
+|    | OTH_CREDIT_UNFLOW                        | NUMBER(18, 3)         | 其它金融資產-非流動                                                                                 |   |
+|    | AP_BOND                                  | NUMBER(18, 3)         | 應付公司債                                                                                      |   |
+|    | AP_LONG_CHECK                            | NUMBER(18, 3)         | 應付長期票券                                                                                     |   |
+|    | OTH_LONG_DEBT                            | NUMBER(18, 3)         | 其他長期負債                                                                                     |   |
+|    | FIX_INVEST                               | NUMBER(18, 3)         | 固定資產                                                                                       |   |
+|    | OTH_DEBT                                 | NUMBER(18, 3)         | 其他負債                                                                                       |   |
+|    | LAND                                     | NUMBER(18, 3)         | 土地及房屋                                                                                      |   |
+|    | BUILD                                    | NUMBER(18, 3)         | 房屋及建築                                                                                      |   |
+|    | MACHINE                                  | NUMBER(18, 3)         | 機器設備                                                                                       |   |
+|    | SHIPPING                                 | NUMBER(18, 3)         | 運輸設備                                                                                       |   |
+|    | OFFICE                                   | NUMBER(18, 3)         | 辦公設備                                                                                       |   |
+|    | RENT_EQUIP                               | NUMBER(18, 3)         | 租賃設備                                                                                       |   |
+|    | RENT_IMPROVE                             | NUMBER(18, 3)         | 租賃改良                                                                                       |   |
+|    | INCREASE                                 | NUMBER(18, 3)         | 固定資產重估增值                                                                                   |   |
+|    | PRE_PAY_BUILD                            | NUMBER(18, 3)         | 預付房地款                                                                                      |   |
+|    | DEPREC                                   | NUMBER(18, 3)         | 減: 各項累積折舊                                                                                   |   |
+|    | DEBT_TOTAL                               | NUMBER(18, 3)         | 負債總額                                                                                       |   |
+|    | NET_VALUE                                | NUMBER(18, 3)         | 淨值                                                                                         |   |
+|    | CAPITAL_STOCK                            | NUMBER(18, 3)         | 股本                                                                                         |   |
+|    | REC_STOCK                                | NUMBER(18, 3)         | 預收股款                                                                                       |   |
+|    | TS_STOCK                                 | NUMBER(18, 3)         | 庫藏股                                                                                        |   |
+|    | SURPLUS                                  | NUMBER(18, 3)         | 資本公積                                                                                       |   |
+|    | ACM_PROFIT                               | NUMBER(18, 3)         | 累積盈虧                                                                                       |   |
+|    | ADJUST_ITEM                              | NUMBER(18, 3)         | 淨值及其他調整項目                                                                                  |   |
+|    | HOME_NET                                 | NUMBER(18, 3)         | 本期損益                                                                                       |   |
+|    | OTH_ASSET                                | NUMBER(18, 3)         | 其他資產                                                                                       |   |
+|    | LIMIT_NET                                | NUMBER(18, 3)         | 受限資產                                                                                       |   |
 |    | FOW_ASSET_COL                            | VARCHAR2(150 char)   | 流動資產_其他                                                                                    |   |
 |    | FOW_ASSET_COL2                           | VARCHAR2(150 char)   | 流動資產_其他2                                                                                   |   |
 |    | FOW_ASSET_COL3                           | VARCHAR2(150 char)   | 流動資產_其他3                                                                                   |   |
-|    | FLOW_ASSET_AMT                           | NUMBER(18,3)         | 流動資產_其他(金額)                                                                                |   |
-|    | FLOW_ASSET_AMT2                          | NUMBER(18,3)         | 流動資產_其他2(金額)                                                                               |   |
-|    | FLOW_ASSET_AMT3                          | NUMBER(18,3)         | 流動資產_其他3(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT                           | NUMBER(18, 3)         | 流動資產_其他(金額)                                                                                |   |
+|    | FLOW_ASSET_AMT2                          | NUMBER(18, 3)         | 流動資產_其他2(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT3                          | NUMBER(18, 3)         | 流動資產_其他3(金額)                                                                               |   |
 |    | LONG_INVEST_COL                          | VARCHAR2(150 char)   | 長期投資_其他                                                                                    |   |
 |    | LONG_INVEST_COL2                         | VARCHAR2(150 char)   | 長期投資_其他2                                                                                   |   |
 |    | LONG_INVEST_COL3                         | VARCHAR2(150 char)   | 長期投資_其他3                                                                                   |   |
-|    | LONG_INVEST_AMT                          | NUMBER(18,3)         | 長期投資_其他(金額)                                                                                |   |
-|    | LONG_INVEST_AMT2                         | NUMBER(18,3)         | 長期投資_其他2(金額)                                                                               |   |
-|    | LONG_INVEST_AMT3                         | NUMBER(18,3)         | 長期投資_其他3(金額)                                                                               |   |
+|    | LONG_INVEST_AMT                          | NUMBER(18, 3)         | 長期投資_其他(金額)                                                                                |   |
+|    | LONG_INVEST_AMT2                         | NUMBER(18, 3)         | 長期投資_其他2(金額)                                                                               |   |
+|    | LONG_INVEST_AMT3                         | NUMBER(18, 3)         | 長期投資_其他3(金額)                                                                               |   |
 |    | FIX_ASSET_COL                            | VARCHAR2(150 char)   | 固定資產_其他                                                                                    |   |
 |    | FIX_ASSET_COL2                           | VARCHAR2(150 char)   | 固定資產_其他2                                                                                   |   |
 |    | FIX_ASSET_COL3                           | VARCHAR2(150 char)   | 固定資產_其他3                                                                                   |   |
-|    | FIX_ASSET_AMT                            | NUMBER(18,3)         | 固定資產_其他(金額)                                                                                |   |
-|    | FIX_ASSET_AMT2                           | NUMBER(18,3)         | 固定資產_其他2(金額)                                                                               |   |
-|    | FIX_ASSET_AMT3                           | NUMBER(18,3)         | 固定資產_其他3(金額)                                                                               |   |
+|    | FIX_ASSET_AMT                            | NUMBER(18, 3)         | 固定資產_其他(金額)                                                                                |   |
+|    | FIX_ASSET_AMT2                           | NUMBER(18, 3)         | 固定資產_其他2(金額)                                                                               |   |
+|    | FIX_ASSET_AMT3                           | NUMBER(18, 3)         | 固定資產_其他3(金額)                                                                               |   |
 |    | ASSET_COL                                | VARCHAR2(150 char)   | 其他資產_其他                                                                                    |   |
 |    | ASSET_COL2                               | VARCHAR2(150 char)   | 其他資產_其他2                                                                                   |   |
 |    | ASSET_COL3                               | VARCHAR2(150 char)   | 其他資產_其他3                                                                                   |   |
-|    | ASSET_AMT                                | NUMBER(18,3)         | 其他資產_其他(金額)                                                                                |   |
-|    | ASSET_AMT2                               | NUMBER(18,3)         | 其他資產_其他2(金額)                                                                               |   |
-|    | ASSET_AMT3                               | NUMBER(18,3)         | 其他資產_其他3(金額)                                                                               |   |
+|    | ASSET_AMT                                | NUMBER(18, 3)         | 其他資產_其他(金額)                                                                                |   |
+|    | ASSET_AMT2                               | NUMBER(18, 3)         | 其他資產_其他2(金額)                                                                               |   |
+|    | ASSET_AMT3                               | NUMBER(18, 3)         | 其他資產_其他3(金額)                                                                               |   |
 |    | FOW_DEBT_COL                             | VARCHAR2(150 char)   | 流動負債_其他                                                                                    |   |
 |    | FOW_DEBT_COL2                            | VARCHAR2(150 char)   | 流動負債_其他2                                                                                   |   |
 |    | FOW_DEBT_COL3                            | VARCHAR2(150 char)   | 流動負債_其他3                                                                                   |   |
-|    | FLOW_DEBT_AMT                            | NUMBER(18,3)         | 流動負債_其他(金額)                                                                                |   |
-|    | FLOW_DEBT_AMT2                           | NUMBER(18,3)         | 流動負債_其他2(金額)                                                                               |   |
-|    | FLOW_DEBT_AMT3                           | NUMBER(18,3)         | 流動負債_其他3(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT                            | NUMBER(18, 3)         | 流動負債_其他(金額)                                                                                |   |
+|    | FLOW_DEBT_AMT2                           | NUMBER(18, 3)         | 流動負債_其他2(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT3                           | NUMBER(18, 3)         | 流動負債_其他3(金額)                                                                               |   |
 |    | LONG_DEBT_COL                            | VARCHAR2(150 char)   | 長期負債_其他                                                                                    |   |
 |    | LONG_DEBT_COL2                           | VARCHAR2(150 char)   | 長期負債_其他2                                                                                   |   |
 |    | LONG_DEBT_COL3                           | VARCHAR2(150 char)   | 長期負債_其他3                                                                                   |   |
-|    | LONG_DEBT_AMT                            | NUMBER(18,3)         | 長期負債_其他(金額)                                                                                |   |
-|    | LONG_DEBT_AMT2                           | NUMBER(18,3)         | 長期負債_其他2(金額)                                                                               |   |
-|    | LONG_DEBT_AMT3                           | NUMBER(18,3)         | 長期負債_其他3(金額)                                                                               |   |
+|    | LONG_DEBT_AMT                            | NUMBER(18, 3)         | 長期負債_其他(金額)                                                                                |   |
+|    | LONG_DEBT_AMT2                           | NUMBER(18, 3)         | 長期負債_其他2(金額)                                                                               |   |
+|    | LONG_DEBT_AMT3                           | NUMBER(18, 3)         | 長期負債_其他3(金額)                                                                               |   |
 |    | DEBT_COL                                 | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL2                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL3                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
-|    | DEBT_AMT                                 | NUMBER(18,3)         | 其它負債_其他(金額)                                                                                |   |
-|    | DEBT_AMT2                                | NUMBER(18,3)         | 其它負債_其他2(金額)                                                                               |   |
-|    | DEBT_AMT3                                | NUMBER(18,3)         | 其它負債_其他3(金額)                                                                               |   |
+|    | DEBT_AMT                                 | NUMBER(18, 3)         | 其它負債_其他(金額)                                                                                |   |
+|    | DEBT_AMT2                                | NUMBER(18, 3)         | 其它負債_其他2(金額)                                                                               |   |
+|    | DEBT_AMT3                                | NUMBER(18, 3)         | 其它負債_其他3(金額)                                                                               |   |
 |    | NET_COL                                  | VARCHAR2(150 char)   | 淨值_其他                                                                                      |   |
 |    | NET_COL2                                 | VARCHAR2(150 char)   | 淨值_其他2                                                                                     |   |
 |    | NET_COL3                                 | VARCHAR2(150 char)   | 淨值_其他3                                                                                     |   |
-|    | NET_AMT                                  | NUMBER(18,3)         | 淨值_其他(金額)                                                                                  |   |
-|    | NET_AMT2                                 | NUMBER(18,3)         | 淨值_其他2(金額)                                                                                 |   |
-|    | NET_AMT3                                 | NUMBER(18,3)         | 淨值_其他3(金額)                                                                                 |   |
+|    | NET_AMT                                  | NUMBER(18, 3)         | 淨值_其他(金額)                                                                                  |   |
+|    | NET_AMT2                                 | NUMBER(18, 3)         | 淨值_其他2(金額)                                                                                 |   |
+|    | NET_AMT3                                 | NUMBER(18, 3)         | 淨值_其他3(金額)                                                                                 |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員                                                                                       |   |
@@ -5225,28 +5214,27 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 更新人員                                                                                       |   |
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
-|    | CFAFV                                    | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
-|    | AFIAC                                    | NUMBER(18,3)         | 備供出售金融資產－流動淨額                                                                              |   |
-|    | DERI                                     | NUMBER(18,3)         | 避險之衍生金融資產－流動                                                                               |   |
-|    | IDEBTC                                   | NUMBER(18,3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
-|    | AFIA                                     | NUMBER(18,3)         | 備供出售金融資產－非流動淨額                                                                             |   |
-|    | FIAC                                     | NUMBER(18,3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
-|    | IDEBT                                    | NUMBER(18,3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
-|    | IEQU                                     | NUMBER(18,3)         | 採用權益法之投資淨額                                                                                 |   |
-|    | IPRO                                     | NUMBER(18,3)         | 投資性不動產淨額                                                                                   |   |
-|    | FIFV                                     | NUMBER(18,3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
-|    | HDLC                                     | NUMBER(18,3)         | 避險之衍生金融負債－流動                                                                               |   |
-|    | UNFI                                     | NUMBER(18,3)         | 備供出售金融資產未實現損益                                                                              |   |
-|    | FIASCFHS                                 | NUMBER(18,3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
-|    | FVTOCIF                                  | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFAF                                    | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
-|    | CFAFVNF                                  | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
-|    | FVTOCINF                                 | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFANF                                   | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
-|    | OTHER_PROFIT_LOSS                        | NUMBER(18,3)         | 其他損益                                                                                       |   |
-|    | NONCONTROLLING_INTERESTS                 | NUMBER(18,3)         | 非控制權益                                                                                      |   |
+|    | CFAFV                                    | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
+|    | AFIAC                                    | NUMBER(18, 3)         | 備供出售金融資產－流動淨額                                                                              |   |
+|    | DERI                                     | NUMBER(18, 3)         | 避險之衍生金融資產－流動                                                                               |   |
+|    | IDEBTC                                   | NUMBER(18, 3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
+|    | AFIA                                     | NUMBER(18, 3)         | 備供出售金融資產－非流動淨額                                                                             |   |
+|    | FIAC                                     | NUMBER(18, 3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
+|    | IDEBT                                    | NUMBER(18, 3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
+|    | IEQU                                     | NUMBER(18, 3)         | 採用權益法之投資淨額                                                                                 |   |
+|    | IPRO                                     | NUMBER(18, 3)         | 投資性不動產淨額                                                                                   |   |
+|    | FIFV                                     | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
+|    | HDLC                                     | NUMBER(18, 3)         | 避險之衍生金融負債－流動                                                                               |   |
+|    | UNFI                                     | NUMBER(18, 3)         | 備供出售金融資產未實現損益                                                                              |   |
+|    | FIASCFHS                                 | NUMBER(18, 3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
+|    | FVTOCIF                                  | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFAF                                    | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
+|    | CFAFVNF                                  | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
+|    | FVTOCINF                                 | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFANF                                   | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
+|    | OTHER_PROFIT_LOSS                        | NUMBER(18, 3)         | 其他損益                                                                                       |   |
+|    | NONCONTROLLING_INTERESTS                 | NUMBER(18, 3)         | 非控制權益                                                                                      |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_RCK_LOANTR_REPORT_CO_MAIN
 
@@ -5261,96 +5249,96 @@ title: E-LOAN 徵審系統(ELEL)
 |    | START_MM                                 | INTEGER              | 月份_迄                                                                                       |   |
 |    | END_YY                                   | INTEGER              | 年度_迄                                                                                       |   |
 |    | END_MM                                   | INTEGER              | 月份_迄                                                                                       |   |
-|    | ASSET_TOTAL                              | NUMBER(18,3)         | 資產總額                                                                                       |   |
-|    | NET_TOTAL                                | NUMBER(18,3)         | 負債及淨值總額                                                                                    |   |
-|    | FLOW_ASSET                               | NUMBER(18,3)         | 流動資產                                                                                       |   |
-|    | FLOW_DEBT                                | NUMBER(18,3)         | 流動負債                                                                                       |   |
-|    | CASH                                     | NUMBER(18,3)         | 現金及銀行存款                                                                                    |   |
-|    | SHORT_LOAN                               | NUMBER(18,3)         | 短期借款                                                                                       |   |
-|    | BANK_ASSET                               | NUMBER(18,3)         | 公平價值變動列入損益之金融資產                                                                            |   |
-|    | AP_SHORT_CHECK                           | NUMBER(18,3)         | 應付短期票券                                                                                     |   |
-|    | BOND_INVEST                              | NUMBER(18,3)         | 附買回債券投資                                                                                    |   |
-|    | BOND_DEBT                                | NUMBER(18,3)         | 附買回債券負債                                                                                    |   |
-|    | AR_BR                                    | NUMBER(18,3)         | 應收證券融資款                                                                                    |   |
-|    | BANK_DEBT                                | NUMBER(18,3)         | 公平價值變動列入損益之金融負債                                                                            |   |
-|    | AR_STOCK_GUAR                            | NUMBER(18,3)         | 應收轉融通擔保價款                                                                                  |   |
-|    | STOCK_GUAR_AMT                           | NUMBER(18,3)         | 融券存入保證金                                                                                    |   |
-|    | DEPOSIT                                  | NUMBER(18,3)         | 客戶保證金導戶                                                                                    |   |
-|    | AP_STOCK_GUAR                            | NUMBER(18,3)         | 應付融券擔保價款                                                                                   |   |
-|    | AR                                       | NUMBER(18,3)         | 應收帳款                                                                                       |   |
-|    | FUTURE_RIGHT                             | NUMBER(18,3)         | 期貨交易人權益                                                                                    |   |
-|    | PRE_PAY_OTH                              | NUMBER(18,3)         | 預付款項及其他                                                                                    |   |
-|    | AP                                       | NUMBER(18,3)         | 應付帳款                                                                                       |   |
-|    | OTH_FLOW_ASSET                           | NUMBER(18,3)         | 其他流動資產                                                                                     |   |
-|    | LONG_DEBT_YY                             | NUMBER(18,3)         | 長期負債(ㄧ年內)                                                                                  |   |
-|    | OTH_FLOW_DEBT                            | NUMBER(18,3)         | 其他流動負債                                                                                     |   |
-|    | LONG_INVEST                              | NUMBER(18,3)         | 基金及長期投資                                                                                    |   |
-|    | LONG_DEBT                                | NUMBER(18,3)         | 長期負債                                                                                       |   |
-|    | FIX_INVEST                               | NUMBER(18,3)         | 固定資產                                                                                       |   |
-|    | OTH_DEBT                                 | NUMBER(18,3)         | 其他負債                                                                                       |   |
-|    | LAND                                     | NUMBER(18,3)         | 土地及房屋                                                                                      |   |
-|    | BUILDING                                 | NUMBER(18,3)         | 建物                                                                                         |   |
-|    | PC                                       | NUMBER(18,3)         | 電腦及器具設備                                                                                    |   |
-|    | RENT                                     | NUMBER(18,3)         | 租賃改良                                                                                       |   |
-|    | PRE_PAY_EQUIP                            | NUMBER(18,3)         | 預付設備款                                                                                      |   |
-|    | DEPREC                                   | NUMBER(18,3)         | 減:折舊準備                                                                                     |   |
-|    | DEBT_TOTAL                               | NUMBER(18,3)         | 負債總額                                                                                       |   |
-|    | NET_VALUE                                | NUMBER(18,3)         | 淨值                                                                                         |   |
-|    | CAPITAL                                  | NUMBER(18,3)         | 資本                                                                                         |   |
-|    | TS_STOCK                                 | NUMBER(18,3)         | 庫藏股                                                                                        |   |
-|    | SURPLUS                                  | NUMBER(18,3)         | 公積                                                                                         |   |
-|    | OTH_ASSET                                | NUMBER(18,3)         | 其他資產                                                                                       |   |
-|    | LIMIT_ASSET                              | NUMBER(18,3)         | 受限制資產                                                                                      |   |
-|    | ACM_PROFIT                               | NUMBER(18,3)         | 累積盈虧                                                                                       |   |
-|    | HOME_NET                                 | NUMBER(18,3)         | 本期損益                                                                                       |   |
+|    | ASSET_TOTAL                              | NUMBER(18, 3)         | 資產總額                                                                                       |   |
+|    | NET_TOTAL                                | NUMBER(18, 3)         | 負債及淨值總額                                                                                    |   |
+|    | FLOW_ASSET                               | NUMBER(18, 3)         | 流動資產                                                                                       |   |
+|    | FLOW_DEBT                                | NUMBER(18, 3)         | 流動負債                                                                                       |   |
+|    | CASH                                     | NUMBER(18, 3)         | 現金及銀行存款                                                                                    |   |
+|    | SHORT_LOAN                               | NUMBER(18, 3)         | 短期借款                                                                                       |   |
+|    | BANK_ASSET                               | NUMBER(18, 3)         | 公平價值變動列入損益之金融資產                                                                            |   |
+|    | AP_SHORT_CHECK                           | NUMBER(18, 3)         | 應付短期票券                                                                                     |   |
+|    | BOND_INVEST                              | NUMBER(18, 3)         | 附買回債券投資                                                                                    |   |
+|    | BOND_DEBT                                | NUMBER(18, 3)         | 附買回債券負債                                                                                    |   |
+|    | AR_BR                                    | NUMBER(18, 3)         | 應收證券融資款                                                                                    |   |
+|    | BANK_DEBT                                | NUMBER(18, 3)         | 公平價值變動列入損益之金融負債                                                                            |   |
+|    | AR_STOCK_GUAR                            | NUMBER(18, 3)         | 應收轉融通擔保價款                                                                                  |   |
+|    | STOCK_GUAR_AMT                           | NUMBER(18, 3)         | 融券存入保證金                                                                                    |   |
+|    | DEPOSIT                                  | NUMBER(18, 3)         | 客戶保證金導戶                                                                                    |   |
+|    | AP_STOCK_GUAR                            | NUMBER(18, 3)         | 應付融券擔保價款                                                                                   |   |
+|    | AR                                       | NUMBER(18, 3)         | 應收帳款                                                                                       |   |
+|    | FUTURE_RIGHT                             | NUMBER(18, 3)         | 期貨交易人權益                                                                                    |   |
+|    | PRE_PAY_OTH                              | NUMBER(18, 3)         | 預付款項及其他                                                                                    |   |
+|    | AP                                       | NUMBER(18, 3)         | 應付帳款                                                                                       |   |
+|    | OTH_FLOW_ASSET                           | NUMBER(18, 3)         | 其他流動資產                                                                                     |   |
+|    | LONG_DEBT_YY                             | NUMBER(18, 3)         | 長期負債(ㄧ年內)                                                                                  |   |
+|    | OTH_FLOW_DEBT                            | NUMBER(18, 3)         | 其他流動負債                                                                                     |   |
+|    | LONG_INVEST                              | NUMBER(18, 3)         | 基金及長期投資                                                                                    |   |
+|    | LONG_DEBT                                | NUMBER(18, 3)         | 長期負債                                                                                       |   |
+|    | FIX_INVEST                               | NUMBER(18, 3)         | 固定資產                                                                                       |   |
+|    | OTH_DEBT                                 | NUMBER(18, 3)         | 其他負債                                                                                       |   |
+|    | LAND                                     | NUMBER(18, 3)         | 土地及房屋                                                                                      |   |
+|    | BUILDING                                 | NUMBER(18, 3)         | 建物                                                                                         |   |
+|    | PC                                       | NUMBER(18, 3)         | 電腦及器具設備                                                                                    |   |
+|    | RENT                                     | NUMBER(18, 3)         | 租賃改良                                                                                       |   |
+|    | PRE_PAY_EQUIP                            | NUMBER(18, 3)         | 預付設備款                                                                                      |   |
+|    | DEPREC                                   | NUMBER(18, 3)         | 減: 折舊準備                                                                                     |   |
+|    | DEBT_TOTAL                               | NUMBER(18, 3)         | 負債總額                                                                                       |   |
+|    | NET_VALUE                                | NUMBER(18, 3)         | 淨值                                                                                         |   |
+|    | CAPITAL                                  | NUMBER(18, 3)         | 資本                                                                                         |   |
+|    | TS_STOCK                                 | NUMBER(18, 3)         | 庫藏股                                                                                        |   |
+|    | SURPLUS                                  | NUMBER(18, 3)         | 公積                                                                                         |   |
+|    | OTH_ASSET                                | NUMBER(18, 3)         | 其他資產                                                                                       |   |
+|    | LIMIT_ASSET                              | NUMBER(18, 3)         | 受限制資產                                                                                      |   |
+|    | ACM_PROFIT                               | NUMBER(18, 3)         | 累積盈虧                                                                                       |   |
+|    | HOME_NET                                 | NUMBER(18, 3)         | 本期損益                                                                                       |   |
 |    | FOW_ASSET_COL                            | VARCHAR2(150 char)   | 流動資產_其他                                                                                    |   |
 |    | FOW_ASSET_COL2                           | VARCHAR2(150 char)   | 流動資產_其他2                                                                                   |   |
 |    | FOW_ASSET_COL3                           | VARCHAR2(150 char)   | 流動資產_其他3                                                                                   |   |
-|    | FLOW_ASSET_AMT                           | NUMBER(18,3)         | 流動資產_其他(金額)                                                                                |   |
-|    | FLOW_ASSET_AMT2                          | NUMBER(18,3)         | 流動資產_其他2(金額)                                                                               |   |
-|    | FLOW_ASSET_AMT3                          | NUMBER(18,3)         | 流動資產_其他3(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT                           | NUMBER(18, 3)         | 流動資產_其他(金額)                                                                                |   |
+|    | FLOW_ASSET_AMT2                          | NUMBER(18, 3)         | 流動資產_其他2(金額)                                                                               |   |
+|    | FLOW_ASSET_AMT3                          | NUMBER(18, 3)         | 流動資產_其他3(金額)                                                                               |   |
 |    | LONG_INVEST_COL                          | VARCHAR2(150 char)   | 長期投資_其他                                                                                    |   |
 |    | LONG_INVEST_COL2                         | VARCHAR2(150 char)   | 長期投資_其他2                                                                                   |   |
 |    | LONG_INVEST_COL3                         | VARCHAR2(150 char)   | 長期投資_其他3                                                                                   |   |
-|    | LONG_INVEST_AMT                          | NUMBER(18,3)         | 長期投資_其他(金額)                                                                                |   |
-|    | LONG_INVEST_AMT2                         | NUMBER(18,3)         | 長期投資_其他2(金額)                                                                               |   |
-|    | LONG_INVEST_AMT3                         | NUMBER(18,3)         | 長期投資_其他3(金額)                                                                               |   |
+|    | LONG_INVEST_AMT                          | NUMBER(18, 3)         | 長期投資_其他(金額)                                                                                |   |
+|    | LONG_INVEST_AMT2                         | NUMBER(18, 3)         | 長期投資_其他2(金額)                                                                               |   |
+|    | LONG_INVEST_AMT3                         | NUMBER(18, 3)         | 長期投資_其他3(金額)                                                                               |   |
 |    | FIX_ASSET_COL                            | VARCHAR2(150 char)   | 固定資產_其他                                                                                    |   |
 |    | FIX_ASSET_COL2                           | VARCHAR2(150 char)   | 固定資產_其他2                                                                                   |   |
 |    | FIX_ASSET_COL3                           | VARCHAR2(150 char)   | 固定資產_其他3                                                                                   |   |
-|    | FIX_ASSET_AMT                            | NUMBER(18,3)         | 固定資產_其他(金額)                                                                                |   |
-|    | FIX_ASSET_AMT2                           | NUMBER(18,3)         | 固定資產_其他2(金額)                                                                               |   |
-|    | FIX_ASSET_AMT3                           | NUMBER(18,3)         | 固定資產_其他3(金額)                                                                               |   |
+|    | FIX_ASSET_AMT                            | NUMBER(18, 3)         | 固定資產_其他(金額)                                                                                |   |
+|    | FIX_ASSET_AMT2                           | NUMBER(18, 3)         | 固定資產_其他2(金額)                                                                               |   |
+|    | FIX_ASSET_AMT3                           | NUMBER(18, 3)         | 固定資產_其他3(金額)                                                                               |   |
 |    | ASSET_COL                                | VARCHAR2(150 char)   | 其他資產_其他                                                                                    |   |
 |    | ASSET_COL2                               | VARCHAR2(150 char)   | 其他資產_其他2                                                                                   |   |
 |    | ASSET_COL3                               | VARCHAR2(150 char)   | 其他資產_其他3                                                                                   |   |
-|    | ASSET_AMT                                | NUMBER(18,3)         | 其他資產_其他(金額)                                                                                |   |
-|    | ASSET_AMT2                               | NUMBER(18,3)         | 其他資產_其他2(金額)                                                                               |   |
-|    | ASSET_AMT3                               | NUMBER(18,3)         | 其他資產_其他3(金額)                                                                               |   |
+|    | ASSET_AMT                                | NUMBER(18, 3)         | 其他資產_其他(金額)                                                                                |   |
+|    | ASSET_AMT2                               | NUMBER(18, 3)         | 其他資產_其他2(金額)                                                                               |   |
+|    | ASSET_AMT3                               | NUMBER(18, 3)         | 其他資產_其他3(金額)                                                                               |   |
 |    | FOW_DEBT_COL                             | VARCHAR2(150 char)   | 流動負債_其他                                                                                    |   |
 |    | FOW_DEBT_COL2                            | VARCHAR2(150 char)   | 流動負債_其他2                                                                                   |   |
 |    | FOW_DEBT_COL3                            | VARCHAR2(150 char)   | 流動負債_其他3                                                                                   |   |
-|    | FLOW_DEBT_AMT                            | NUMBER(18,3)         | 流動負債_其他(金額)                                                                                |   |
-|    | FLOW_DEBT_AMT2                           | NUMBER(18,3)         | 流動負債_其他2(金額)                                                                               |   |
-|    | FLOW_DEBT_AMT3                           | NUMBER(18,3)         | 流動負債_其他3(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT                            | NUMBER(18, 3)         | 流動負債_其他(金額)                                                                                |   |
+|    | FLOW_DEBT_AMT2                           | NUMBER(18, 3)         | 流動負債_其他2(金額)                                                                               |   |
+|    | FLOW_DEBT_AMT3                           | NUMBER(18, 3)         | 流動負債_其他3(金額)                                                                               |   |
 |    | LONG_DEBT_COL                            | VARCHAR2(150 char)   | 長期負債_其他                                                                                    |   |
 |    | LONG_DEBT_COL2                           | VARCHAR2(150 char)   | 長期負債_其他2                                                                                   |   |
 |    | LONG_DEBT_COL3                           | VARCHAR2(150 char)   | 長期負債_其他3                                                                                   |   |
-|    | LONG_DEBT_AMT                            | NUMBER(18,3)         | 長期負債_其他(金額)                                                                                |   |
-|    | LONG_DEBT_AMT2                           | NUMBER(18,3)         | 長期負債_其他2(金額)                                                                               |   |
-|    | LONG_DEBT_AMT3                           | NUMBER(18,3)         | 長期負債_其他3(金額)                                                                               |   |
+|    | LONG_DEBT_AMT                            | NUMBER(18, 3)         | 長期負債_其他(金額)                                                                                |   |
+|    | LONG_DEBT_AMT2                           | NUMBER(18, 3)         | 長期負債_其他2(金額)                                                                               |   |
+|    | LONG_DEBT_AMT3                           | NUMBER(18, 3)         | 長期負債_其他3(金額)                                                                               |   |
 |    | DEBT_COL                                 | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL2                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
 |    | DEBT_COL3                                | VARCHAR2(150 char)   | 其它負債_其他                                                                                    |   |
-|    | DEBT_AMT                                 | NUMBER(18,3)         | 其它負債_其他(金額)                                                                                |   |
-|    | DEBT_AMT2                                | NUMBER(18,3)         | 其它負債_其他2(金額)                                                                               |   |
-|    | DEBT_AMT3                                | NUMBER(18,3)         | 其它負債_其他3(金額)                                                                               |   |
+|    | DEBT_AMT                                 | NUMBER(18, 3)         | 其它負債_其他(金額)                                                                                |   |
+|    | DEBT_AMT2                                | NUMBER(18, 3)         | 其它負債_其他2(金額)                                                                               |   |
+|    | DEBT_AMT3                                | NUMBER(18, 3)         | 其它負債_其他3(金額)                                                                               |   |
 |    | NET_COL                                  | VARCHAR2(150 char)   | 淨值_其他                                                                                      |   |
 |    | NET_COL2                                 | VARCHAR2(150 char)   | 淨值_其他2                                                                                     |   |
 |    | NET_COL3                                 | VARCHAR2(150 char)   | 淨值_其他3                                                                                     |   |
-|    | NET_AMT                                  | NUMBER(18,3)         | 淨值_其他(金額)                                                                                  |   |
-|    | NET_AMT2                                 | NUMBER(18,3)         | 淨值_其他2(金額)                                                                                 |   |
-|    | NET_AMT3                                 | NUMBER(18,3)         | 淨值_其他3(金額)                                                                                 |   |
+|    | NET_AMT                                  | NUMBER(18, 3)         | 淨值_其他(金額)                                                                                  |   |
+|    | NET_AMT2                                 | NUMBER(18, 3)         | 淨值_其他2(金額)                                                                                 |   |
+|    | NET_AMT3                                 | NUMBER(18, 3)         | 淨值_其他3(金額)                                                                                 |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
 |    | CREATE_EMPROLE                           | VARCHAR2(3 char)     | 建立角色                                                                                       |   |
 |    | CREATE_EMPID                             | VARCHAR2(5 char)     | 建立人員                                                                                       |   |
@@ -5360,28 +5348,27 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 更新人員                                                                                       |   |
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
-|    | CFAFV                                    | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
-|    | AFIAC                                    | NUMBER(18,3)         | 備供出售金融資產－流動淨額                                                                              |   |
-|    | DERI                                     | NUMBER(18,3)         | 避險之衍生金融資產－流動                                                                               |   |
-|    | IDEBTC                                   | NUMBER(18,3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
-|    | AFIA                                     | NUMBER(18,3)         | 備供出售金融資產－非流動淨額                                                                             |   |
-|    | FIAC                                     | NUMBER(18,3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
-|    | IDEBT                                    | NUMBER(18,3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
-|    | IEQU                                     | NUMBER(18,3)         | 採用權益法之投資淨額                                                                                 |   |
-|    | IPRO                                     | NUMBER(18,3)         | 投資性不動產淨額                                                                                   |   |
-|    | FIFV                                     | NUMBER(18,3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
-|    | HDLC                                     | NUMBER(18,3)         | 避險之衍生金融負債－流動                                                                               |   |
-|    | UNFI                                     | NUMBER(18,3)         | 備供出售金融資產未實現損益                                                                              |   |
-|    | FIASCFHS                                 | NUMBER(18,3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
-|    | FVTOCIF                                  | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFAF                                    | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
-|    | CFAFVNF                                  | NUMBER(18,3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
-|    | FVTOCINF                                 | NUMBER(18,3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
-|    | ACFANF                                   | NUMBER(18,3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
-|    | OTHER_PROFIT_LOSS                        | NUMBER(18,3)         | 其他損益                                                                                       |   |
-|    | NONCONTROLLING_INTERESTS                 | NUMBER(18,3)         | 非控制權益                                                                                      |   |
+|    | CFAFV                                    | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產－流動淨額                                                                      |   |
+|    | AFIAC                                    | NUMBER(18, 3)         | 備供出售金融資產－流動淨額                                                                              |   |
+|    | DERI                                     | NUMBER(18, 3)         | 避險之衍生金融資產－流動                                                                               |   |
+|    | IDEBTC                                   | NUMBER(18, 3)         | 無活絡市場之債務工具投資－流動淨額                                                                          |   |
+|    | AFIA                                     | NUMBER(18, 3)         | 備供出售金融資產－非流動淨額                                                                             |   |
+|    | FIAC                                     | NUMBER(18, 3)         | 以成本衡量之金融資產－非流動淨額                                                                           |   |
+|    | IDEBT                                    | NUMBER(18, 3)         | 無活絡市場之債務工具投資－非流動淨額                                                                         |   |
+|    | IEQU                                     | NUMBER(18, 3)         | 採用權益法之投資淨額                                                                                 |   |
+|    | IPRO                                     | NUMBER(18, 3)         | 投資性不動產淨額                                                                                   |   |
+|    | FIFV                                     | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融負債－流動                                                                        |   |
+|    | HDLC                                     | NUMBER(18, 3)         | 避險之衍生金融負債－流動                                                                               |   |
+|    | UNFI                                     | NUMBER(18, 3)         | 備供出售金融資產未實現損益                                                                              |   |
+|    | FIASCFHS                                 | NUMBER(18, 3)         | 現金流量避險中屬有效避險部分之避險工具利益（損失）                                                                  |   |
+|    | FVTOCIF                                  | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFAF                                    | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-流動                                                                           |   |
+|    | CFAFVNF                                  | NUMBER(18, 3)         | 透過損益按公允價值衡量之金融資產                                                                           |   |
+|    | FVTOCINF                                 | NUMBER(18, 3)         | 透過其他綜合損益按公允價值衡量之金融資產                                                                       |   |
+|    | ACFANF                                   | NUMBER(18, 3)         | 按攤銷後成本衡量之金融資產-非流動                                                                          |   |
+|    | OTHER_PROFIT_LOSS                        | NUMBER(18, 3)         | 其他損益                                                                                       |   |
+|    | NONCONTROLLING_INTERESTS                 | NUMBER(18, 3)         | 非控制權益                                                                                      |   |
 |    | TBL_UPD_TIM                              | TIMESTAMP            | 表格更新時間                                                                                     |   |
-
 
 ### VW_ODS_D_RCK_LOANTR_REPORT_CO_REPORT
 
@@ -5394,14 +5381,14 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LOAN_BASE_DATE                           | TIMESTAMP            | 借款人於本行授信基準日                                                                                |   |
 |    | LOAN_START_DATE                          | TIMESTAMP            | 借款人於本行授信初次往來日                                                                              |   |
 |    | LOAN_CURRENCY                            | VARCHAR2(3 char)     | 借款人於本行授信初次往來金額_幣別                                                                          |   |
-|    | LOAN_START_AMT                           | NUMBER(18,3)         | 借款人於本行授信初次往來金額                                                                             |   |
+|    | LOAN_START_AMT                           | NUMBER(18, 3)         | 借款人於本行授信初次往來金額                                                                             |   |
 |    | SAVE_BASE_DATE                           | TIMESTAMP            | 借款人、關係戶於本行存款往來基準日                                                                          |   |
 |    | SAVE_START_DATE                          | TIMESTAMP            | 借款人、關係戶於本行存款往來初次往來日                                                                        |   |
 |    | INOUT_YEAR                               | INTEGER              | 營業概況年度                                                                                     |   |
 |    | MASTER_MATERIAL                          | VARCHAR2(600 char)   | 主要原料                                                                                       |   |
-|    | MATERIAL_RATE                            | NUMBER(18,4)         | 原料佔銷貨成本之比率                                                                                 |   |
+|    | MATERIAL_RATE                            | NUMBER(18, 4)         | 原料佔銷貨成本之比率                                                                                 |   |
 |    | MASTER_PRDT                              | VARCHAR2(600 char)   | 主要產品                                                                                       |   |
-|    | PRDT_RATE                                | NUMBER(18,4)         | 產品佔銷貨成本之比率                                                                                 |   |
+|    | PRDT_RATE                                | NUMBER(18, 4)         | 產品佔銷貨成本之比率                                                                                 |   |
 |    | FINANCE_DESC                             | VARCHAR2(10 char)    | 財務比率說明                                                                                     |   |
 |    | CIRCLE_DESC                              | VARCHAR2(10 char)    | A/R週轉率、存貨週轉率說明                                                                             |   |
 |    | TRANS_DESC                               | VARCHAR2(10 char)    | 關係人交易分析說明                                                                                  |   |
@@ -5413,16 +5400,16 @@ title: E-LOAN 徵審系統(ELEL)
 |    | CAPITAL_DESC                             | VARCHAR2(10 char)    | 資本額、淨值、負債比率及金融負債情形                                                                         |   |
 |    | INDUSTRY_DESC                            | VARCHAR2(10 char)    | 行業別營運展望                                                                                    |   |
 |    | EVALUATE_DESC                            | VARCHAR2(10 char)    | 綜合評估                                                                                       |   |
-|    | IS_NEGATIVE                              | VARCHAR2(1 char)     | 重大負面消息有無(0:無1:有)                                                                           |   |
+|    | IS_NEGATIVE                              | VARCHAR2(1 char)     | 重大負面消息有無(0: 無1: 有)                                                                           |   |
 |    | NEGATIVE_DESC                            | VARCHAR2(10 char)    | 重大負面消息_說明                                                                                  |   |
-|    | IS_PERSONAL                              | VARCHAR2(1 char)     | 重要人事異動有無(0:無1:有)                                                                           |   |
+|    | IS_PERSONAL                              | VARCHAR2(1 char)     | 重要人事異動有無(0: 無1: 有)                                                                           |   |
 |    | PERSONAL_DESC                            | VARCHAR2(10 char)    | 重要人事異動                                                                                     |   |
 |    | BORROWER_DESC                            | VARCHAR2(10 char)    | 借款人分析                                                                                      |   |
 |    | USEWAY_DESC                              | VARCHAR2(10 char)    | 借款用途分析                                                                                     |   |
 |    | PAYSOURCE_DESC                           | VARCHAR2(10 char)    | 還款來源分析                                                                                     |   |
 |    | DEBT_DESC                                | VARCHAR2(10 char)    | 債權保障分析                                                                                     |   |
 |    | FEATURE_DESC                             | VARCHAR2(10 char)    | 授信展望分析                                                                                     |   |
-|    | REPORT_VERSION                           | VARCHAR2(1 char)     | 財報版本(1:一般2:證卷3:營造4:租賃)                                                                     |   |
+|    | REPORT_VERSION                           | VARCHAR2(1 char)     | 財報版本(1: 一般2: 證卷3: 營造4: 租賃)                                                                     |   |
 |    | JCIC_YY                                  | INTEGER              | 借款人、負責人聯徵中心查詢授信情形(年)                                                                       |   |
 |    | JCIC_MM                                  | INTEGER              | 借款人、負責人聯徵中心查詢授信情形(月)                                                                       |   |
 |    | LANGUAGETYPE                             | VARCHAR2(5 char)     | 語系                                                                                         |   |
@@ -5434,7 +5421,7 @@ title: E-LOAN 徵審系統(ELEL)
 |    | LASTUPDATE_EMPID                         | VARCHAR2(5 char)     | 更新人員                                                                                       |   |
 |    | LASTUPDATE_BRANCHID                      | VARCHAR2(4 char)     | 更新分行                                                                                       |   |
 |    | LASTUPDATE_DATE                          | TIMESTAMP            | 更新日期                                                                                       |   |
-|    | SUBTOTAL                                 | NUMBER(18,3)         | 本行授信往來額度合計                                                                                 |   |
+|    | SUBTOTAL                                 | NUMBER(18, 3)         | 本行授信往來額度合計                                                                                 |   |
 |    | CFRSK_MARK                               | VARCHAR2(1 char)     |                                                                                            |   |
 |    | REPORT_VERSION_SAME_PERIOD               | VARCHAR2(1 char)     |                                                                                            |   |
 |    | LF                                       | VARCHAR2(1 char)     |                                                                                            |   |
@@ -5449,9 +5436,9 @@ title: E-LOAN 徵審系統(ELEL)
 |    | PURPOSE_SMONTH                           | INTEGER              | 增加揭露起始月的401表                                                                               |   |
 |    | PURPOSE_EMONTH                           | INTEGER              | 增加揭露終止月的401表                                                                               |   |
 |    | PURPOSE_GROWTHRECESSION                  | VARCHAR2(1 char)     | 增加揭露401表較前年度同期衰退或成長                                                                        |   |
-|    | PURPOSE_PERCENTAGE                       | NUMBER(7,2)          | 增加揭露401表較前年度同期衰退或成長之百分比                                                                    |   |
-|    | PERSPECTIVE_SRATE                        | NUMBER(7,2)          |                                                                                            |   |
-|    | PERSPECTIVE_ERATE                        | NUMBER(7,2)          |                                                                                            |   |
+|    | PURPOSE_PERCENTAGE                       | NUMBER(7, 2)          | 增加揭露401表較前年度同期衰退或成長之百分比                                                                    |   |
+|    | PERSPECTIVE_SRATE                        | NUMBER(7, 2)          |                                                                                            |   |
+|    | PERSPECTIVE_ERATE                        | NUMBER(7, 2)          |                                                                                            |   |
 |    | CASHFLOW_CURRENCY                        | VARCHAR2(3 char)     |                                                                                            |   |
 |    | CASHFLOW_UNIT                            | VARCHAR2(1 char)     |                                                                                            |   |
 |    | SOLVENCY_CURRENCY                        | VARCHAR2(3 char)     |                                                                                            |   |
@@ -5479,8 +5466,8 @@ title: E-LOAN 徵審系統(ELEL)
 | PK  | LOAN_UID            | VARCHAR2(36 char) | 系統案件PK                                 |    |
 | PK  | CUST_UID            | VARCHAR2(36 char) | 客戶pk                                   |    |
 |     | CREDIT_DOC_NO_C     | VARCHAR2(36 char) | 徵信報告PK                                 |    |
-|     | CREDIT_DOC_TYPE     | VARCHAR2(1 char)  | 徵信報告的種類(1:企業徵信報告2:個人徵信報告)              |    |
-|     | IDENTITY_TYPE       | VARCHAR2(1 char)  | 身份別(1:主要借款人2:共同借款人3:財報分享4:關係戶5:非共同借款人) |    |
+|     | CREDIT_DOC_TYPE     | VARCHAR2(1 char)  | 徵信報告的種類(1: 企業徵信報告2: 個人徵信報告)              |    |
+|     | IDENTITY_TYPE       | VARCHAR2(1 char)  | 身份別(1: 主要借款人2: 共同借款人3: 財報分享4: 關係戶5: 非共同借款人) |    |
 |     | LANGUAGETYPE        | VARCHAR2(5 char)  | 語系                                     |    |
 |     | CREATE_EMPROLE      | VARCHAR2(3 char)  | 建立角色                                   |    |
 |     | CREATE_EMPID        | VARCHAR2(5 char)  | 建立人員                                   |    |
@@ -5499,15 +5486,15 @@ title: E-LOAN 徵審系統(ELEL)
 | Key | 欄位名稱  | 欄位資料型態        | 欄位說明     | 備註 |
 | --- | --------- | ------------------- | ------------ | ---- |
 |     | RECORDYM            | VARCHAR2(6 char)  | 資料年月                            |    |
-|     | REVENUEYEAR         | NUMBER(5,0)       | 營收年份                            |    |
+|     | REVENUEYEAR         | NUMBER(5, 0)       | 營收年份                            |    |
 |     | BRANCHID            | VARCHAR2(4 char)  | 分行別                             |    |
 |     | CUSTOMERID          | VARCHAR2(11 char) | 客戶ID                            |    |
 |     | CNAME               | VARCHAR2(70 char) | 客戶姓名                            |    |
-|     | GETREVENUETYPE      | VARCHAR2(1 char)  | 營收來源1.ELOAN-代入案件編號2.企金部上傳3.AO填寫 |    |
+|     | GETREVENUETYPE      | VARCHAR2(1 char)  | 營收來源1. ELOAN-代入案件編號2. 企金部上傳3. AO填寫 |    |
 |     | CASENO              | VARCHAR2(20 char) | eLoan案件編號                       |    |
 |     | LOAN_UID            | VARCHAR2(36 char) | eLoan案件UID                      |    |
-|     | REVENUE             | NUMBER(18,3)      | 營收(NTD/元)                       |    |
-|     | UNABLETOGET         | VARCHAR2(2 char)  | 無法取得原因01.已與本行無額度02.已逾期          |    |
+|     | REVENUE             | NUMBER(18, 3)      | 營收(NTD/元)                       |    |
+|     | UNABLETOGET         | VARCHAR2(2 char)  | 無法取得原因01. 已與本行無額度02. 已逾期          |    |
 |     | CREATE_EMPROLE      | VARCHAR2(3 char)  | 建立人員角色                          |    |
 |     | CREATE_EMPID        | VARCHAR2(5 char)  | 建立人員員編                          |    |
 |     | CREATE_BRANCHID     | VARCHAR2(4 char)  | 建立人員分行別                         |    |
