@@ -11,10 +11,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   title: 'CVMDoc文件網站',
   // tagline: 'Dinosaurs are cool',
   tagline: 'focus on your content',
-  url: 'https://ayuanhub.github.io',
+  url: 'https://cvmdoc.github.io',
   baseUrl: '/',
-  projectName: 'ayuanhub.github.io', // Usually your repo name.
-  organizationName: 'ayuanhub', // Usually your GitHub org/user name.
+  projectName: 'cvmdoc.github.io', // Usually your repo name.
+  organizationName: 'cvmdoc', // Usually your GitHub org/user name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
