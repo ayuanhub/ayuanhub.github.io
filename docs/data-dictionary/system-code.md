@@ -46,7 +46,6 @@ title: 系統代碼表
 | [OPT ](/docs/data-dictionary/tableschema/OPT)    | 外匯選擇權系統                              |
 | [OTBR ](/docs/data-dictionary/tableschema/OTBR)  | 海外分行                                    |
 | [OTFC ](/docs/data-dictionary/tableschema/OTFC)  | 應收帳款系統                                |
-| [OTJL ](/docs/data-dictionary/tableschema/OTJL)  | 人資系統                                    |
 | [OTXB ](/docs/data-dictionary/tableschema/OTXB)  | 保管箱系統                                  |
 | [RTDM ](/docs/data-dictionary/tableschema/RTDM)  | 策略管理系統                                |
 | [SKFH ](/docs/data-dictionary/tableschema/SKFH)  | EBILL(總行手動提供)                         |
