@@ -119,6 +119,282 @@ title: 行為洞察
 |      | PROD_NUM                | 目前產品往來數(台幣、外幣、基金、保險、房貸、信貸、信用卡)        |              |    |
 |      | GOV_AUTO_IND            | 是否辦理公共事業費代扣繳_上月                       |              |    |
 
+### 近一個月有網銀買外幣次數<br>近一個月有買外幣金額<br>近一個月有網銀賣外幣次數<br>近一個月有網銀賣外幣金額<br>近一個月有行銀買外幣金額<br>近一個月有行銀買外幣金額<br>近一個月有行賣外幣次數<br>近一個月有行銀賣外幣金額<br>近一個月有臨櫃買外幣次數<br>近一個月有臨櫃買外幣金額<br>近一個月有臨櫃賣外幣次數<br>近一個月有臨櫃賣外幣金額<br>近一個月有提領現鈔次數<br> 近一個月有提領現鈔金額<br>近一個月有現鈔存入次數<br>近一個月有現鈔存入金額<br> 
+
+```jsx title="" showLineNumbers
+-- 外匯活存帳戶主檔
+WITH fscst AS (
+    SELECT
+        *
+    FROM
+        ods_d_fscst --個人戶
+    WHERE
+        LENGTH(TRIM(fscst_id_code)) = 10 --1、2為男性/女性；8、9為外來人口(2021年新式)；A、B、C、D為外來人口(2011年舊式)
+        AND Substr(TRIM(fscst_id_code), 1, 1) BETWEEN 'A'
+        AND 'Z'
+        AND Substr(TRIM(fscst_id_code), 2, 1) IN ('1', '2', '8', '9', 'A', 'B', 'C', 'D') -- 帳戶狀態有效
+        AND TRIM(fscst_cust_stat) = '00'
+),
+-- 外匯活存交易明細檔
+fstxn AS (
+    SELECT
+        *
+    FROM
+        ods_d_fstxn -- 近一個月交易時間
+    WHERE
+        DATE(fstxn_busi_date) >= DATE(NOW() at time zone 'Asia/Taipei') + INTERVAL '-1' MONTH
+)
+SELECT
+    -- 身分證字號
+    TRIM(A.fscst_id_code) AS "CUST_ID",
+    -- 網銀買外幣次數
+    SUM(
+        IF (
+            B.fstxn_channel = 'NB'
+            AND B.fstxn_memo_code = '1909',
+            1,
+            0
+        )
+    ) AS "FX_WEBTXN_BUYCNT",
+    -- 網銀買外幣金額
+    SUM(
+        IF (
+            B.fstxn_channel = 'NB'
+            AND B.fstxn_memo_code = '1909',
+            B.fstxn_txn_ntamt,
+            0
+        )
+    ) AS "FX_WEBTXN_BUYTWDAMT",
+    -- 網銀賣外幣次數
+    SUM(
+        IF (
+            B.fstxn_channel = 'NB'
+            AND B.fstxn_memo_code = '1929',
+            1,
+            0
+        )
+    ) AS "FX_WEBTXN_SELLCNT",
+    -- 網銀賣外幣金額
+    SUM(
+        IF (
+            B.fstxn_channel = 'NB'
+            AND B.fstxn_memo_code = '1929',
+            B.fstxn_txn_ntamt,
+            0
+        )
+    ) AS "FX_WEBTXN_SELLTWDAMT",
+    -- 行銀買外幣次數
+    SUM(
+        IF (
+            B.fstxn_channel = 'MB'
+            AND B.fstxn_memo_code = '1909',
+            1,
+            0
+        )
+    ) AS "FX_APPTXN_BUYCNT",
+    -- 行銀買外幣金額
+    SUM(
+        IF (
+            B.fstxn_channel = 'MB'
+            AND B.fstxn_memo_code = '1909',
+            B.fstxn_txn_ntamt,
+            0
+        )
+    ) AS "FX_APPTXN_BUYTWDAMT",
+    -- 行銀賣外幣次數
+    SUM(
+        IF (
+            B.fstxn_channel = 'MB'
+            AND B.fstxn_memo_code = '1929',
+            1,
+            0
+        )
+    ) AS "FX_APPTXN_SELLCNT",
+    -- 行銀賣外幣金額
+    SUM(
+        IF (
+            B.fstxn_channel = 'MB'
+            AND B.fstxn_memo_code = '1929',
+            B.fstxn_txn_ntamt,
+            0
+        )
+    ) AS "FX_APPTXN_SELLTWDAMT",
+    -- 臨櫃買外幣次數
+    SUM(
+        IF (
+            Substr(B.fstxn_txn_tlr, 1, 1) IN ('M', 'N', 'G')
+            AND B.fstxn_memo_code = '1909',
+            1,
+            0
+        )
+    ) AS "FX_BRANCHTXN_BUYCNT",
+    -- 臨櫃買外幣金額
+    SUM(
+        IF (
+            Substr(B.fstxn_txn_tlr, 1, 1) IN ('M', 'N', 'G')
+            AND B.fstxn_memo_code = '1909',
+            B.fstxn_txn_ntamt,
+            0
+        )
+    ) AS "FX_BRANCHTXN_BUYTWDAMT",
+    -- 臨櫃賣外幣次數
+    SUM(
+        IF (
+            Substr(B.fstxn_txn_tlr, 1, 1) IN ('M', 'N', 'G')
+            AND B.fstxn_memo_code = '1929',
+            1,
+            0
+        )
+    ) AS "FX_BRANCHTXN_SELLCNT",
+    -- 臨櫃賣外幣金額
+    SUM(
+        IF (
+            Substr(B.fstxn_txn_tlr, 1, 1) IN ('M', 'N', 'G')
+            AND B.fstxn_memo_code = '1929',
+            B.fstxn_txn_ntamt,
+            0
+        )
+    ) AS "FX_BRANCHTXN_SELLTWDAMT",
+    -- 提領現鈔次數
+    SUM(IF (B.fstxn_memo_code = '1939', 1, 0)) AS "FX_WITHDRAW_CNT",
+    -- 提領現鈔金額
+    SUM(
+        IF (
+            B.fstxn_memo_code = '1939',
+            ROUND(B.fstxn_txn_amt * B.fstxn_txn_xcrt),
+            0
+        )
+    ) AS "FX_WITHDRAW_TWDAMT",
+    -- 現鈔存入次數
+    SUM(IF (B.fstxn_memo_code = '1901', 1, 0)) AS "FX_DEPOSIT_CNT",
+    -- 現鈔存入金額
+    SUM(
+        IF (
+            B.fstxn_memo_code = '1901',
+            ROUND(B.fstxn_txn_amt * B.fstxn_txn_xcrt),
+            0
+        )
+    ) AS "FX_DEPOSIT_TWDAMT"
+FROM
+    fscst A
+    INNER JOIN fstxn B ON A.fscst_acc_id_no = B.fstxn_acc_id_no
+GROUP BY
+    A.fscst_id_code
+```
+
+```mermaid
+erDiagram
+    CUSTOMERS ||--|{ ORDERS : Id
+```
+
+### 最近一筆結構外幣時間<br>最近一筆結構外幣對應之通路<br>最近一筆結構外幣對應之幣別<br>   最近一筆結構外幣對應之折台金額<br>最近一筆結售外幣時間<br>最近一筆結售外幣對應之通路<br>   最近一筆結售外幣對應之幣別<br>最近一筆結售外幣對應之折台金額<br> 
+
+```jsx title="" showLineNumbers
+-- 外匯活存帳戶主檔
+WITH fscst AS (
+    SELECT
+        *
+    FROM
+        ods_d_fscst --個人戶
+    WHERE
+        LENGTH(TRIM(fscst_id_code)) = 10 --1、2為男性/女性；8、9為外來人口(2021年新式)；A、B、C、D為外來人口(2011年舊式)
+        AND Substr(TRIM(fscst_id_code), 1, 1) BETWEEN 'A'
+        AND 'Z'
+        AND Substr(TRIM(fscst_id_code), 2, 1) IN ('1', '2', '8', '9', 'A', 'B', 'C', 'D') -- 帳戶狀態有效
+        AND TRIM(fscst_cust_stat) = '00'
+),
+-- 外匯活存交易明細檔(結構)
+fstxn_buy AS (
+    SELECT
+        1 AS "transflag",
+        CASE
+            fstxn_channel
+            WHEN 'NB' THEN '網銀'
+            WHEN 'MB' THEN '行銀'
+            ELSE IF (
+                Substr(fstxn_txn_tlr, 1, 1) IN ('M', 'N', 'G'),
+                '臨櫃',
+                ''
+            )
+        END AS channel,
+        *
+    FROM
+        ods_d_fstxn
+    WHERE
+        fstxn_memo_code = '1909'
+),
+-- 外匯活存交易明細檔(結售)
+fstxn_sell AS (
+    SELECT
+        2 AS "transflag",
+        CASE
+            fstxn_channel
+            WHEN 'NB' THEN '網銀'
+            WHEN 'MB' THEN '行銀'
+            ELSE IF (
+                Substr(fstxn_txn_tlr, 1, 1) IN ('M', 'N', 'G'),
+                '臨櫃',
+                ''
+            )
+        END AS channel,
+        *
+    FROM
+        ods_d_fstxn
+    WHERE
+        fstxn_memo_code = '1929'
+)
+SELECT
+    -- 身分證字號
+    TRIM(A.fscst_id_code) AS "CUST_ID",
+    -- 最近一筆結構外幣時間
+    MAX(date(IF (transflag = 1, B.fstxn_busi_date))) AS "FX_TRANS_BUYDT",
+    -- 最近一筆結構外幣對應之通路
+    MAX_BY(B.channel, IF (transflag = 1, B.fstxn_busi_date)) AS "FX_CHANNEL_BUYNAME",
+    -- 最近一筆結構外幣對應之幣別
+    MAX_BY(
+        B.fstxn_curcd,
+        IF (transflag = 1, B.fstxn_busi_date)
+    ) AS "FX_CURRENCY_BUYCODE",
+    -- 最近一筆結構外幣對應之折台金額
+    MAX_BY(
+        B.fstxn_txn_ntamt,
+        IF (transflag = 1, B.fstxn_busi_date)
+    ) AS "FX_CURRENCY_BUYAMT",
+    -- 最近一筆結售外幣時間
+    MAX(date(IF (transflag = 2, B.fstxn_busi_date))) AS "FX_TRANS_SELLDT",
+    -- 最近一筆結售外幣對應之通路
+    MAX_BY(B.channel, IF (transflag = 2, B.fstxn_busi_date)) AS "FX_CHANNEL_SELLNAME",
+    -- 最近一筆結售外幣對應之幣別
+    MAX_BY(
+        B.fstxn_curcd,
+        IF (transflag = 2, B.fstxn_busi_date)
+    ) AS "FX_CURRENCY_SELLCODE",
+    -- 最近一筆結售外幣對應之折台金額
+    MAX_BY(
+        B.fstxn_txn_ntamt,
+        IF (transflag = 2, B.fstxn_busi_date)
+    ) AS "FX_CURRENCY_SELLAMT"
+FROM
+    fscst A
+    INNER JOIN (
+        SELECT
+            *
+        FROM
+            fstxn_buy
+        UNION
+        SELECT
+            *
+        FROM
+            fstxn_sell
+    ) B ON A.fscst_acc_id_no = B.fstxn_acc_id_no
+GROUP BY
+    A.fscst_id_code
+```
+
+```mermaid
+erDiagram
+    CUSTOMERS ||--|{ ORDERS : Id
+```
 
 ### 剛買房
 ### 有房人士 
