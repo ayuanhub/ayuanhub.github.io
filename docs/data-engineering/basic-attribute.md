@@ -59,7 +59,7 @@ erDiagram
 ```
 
 ### 年齡
-```jsx title="年齡" showLineNumbers
+```jsx title="定義" showLineNumbers
 WITH sampleCTE (id, name, phoneNumber, age)
 AS
 -- 定義 CTE 的 Query
@@ -78,6 +78,22 @@ WHERE age >= 18
 ```
 
 ### 行業類別
+
+```jsx title="年齡" showLineNumbers
+SELECT
+    count(*) AS 訂單數
+FROM
+    orders
+WHERE
+    customerID = (
+        SELECT
+            id
+        FROM
+            Customers
+        WHERE
+            name = 'apple'
+    )
+```
 
 ### 顧客開戶、異動留存行業類別
 
