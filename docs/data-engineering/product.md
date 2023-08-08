@@ -467,44 +467,89 @@ erDiagram
 */
 select
     A.WM_CUST_ID
-    /*最近一個產品往來 - 共同基金*/ 
-    ,max(case when A.WM_PRODTYPE = '共同基金' then A.WM_TXN_DT  end)     WM_LASTFUND_DT
-    ,case when A.WM_PRODTYPE = '共同基金' then B.FD0010      end      WM_LASTFUND_NAME
-    ,case when A.WM_PRODTYPE = '共同基金' then A.WM_TWD_AMT      end      WM_LASTFUND_TWAMT
+    /*最近一個產品往來 - 共同基金*/
+,
+    max(
+        case
+            when A.WM_PRODTYPE = '共同基金' then A.WM_TXN_DT
+        end
+    ) as WM_LASTFUND_DT,
+case
+        when A.WM_PRODTYPE = '共同基金' then B.FD0010
+    end WM_LASTFUND_NAME,
+case
+        when A.WM_PRODTYPE = '共同基金' then A.WM_TWD_AMT
+    end WM_LASTFUND_TWAMT
     /*最近一個產品往來 - SN*/
-    ,max(case when A.WM_PRODTYPE = 'SN'      then A.WM_TXN_DT  end)     WM_LASTSN_DT
-    ,case when A.WM_PRODTYPE = 'SN'           then C.BD0004 end      WM_LASTSN_NAME
-    ,case when A.WM_PRODTYPE = 'SN'       then A.WM_TWD_AMT     end      WM_LASTSN_TWDAMT
+,
+    max(
+        case
+            when A.WM_PRODTYPE = 'SN' then A.WM_TXN_DT
+        end
+    ) WM_LASTSN_DT,
+case
+        when A.WM_PRODTYPE = 'SN' then C.BD0004
+    end WM_LASTSN_NAME,
+case
+        when A.WM_PRODTYPE = 'SN' then A.WM_TWD_AMT
+    end WM_LASTSN_TWDAMT
     /*最近一個產品往來 - 海外債*/
-    ,max(case when A.WM_PRODTYPE = '海外債'      then A.WM_TXN_DT  end)     WM_LASTOUTDOORBO_DT
-    ,case when A.WM_PRODTYPE = '海外債'           then C.BD0004 end      WM_LASTOUTDOORBO_NAME
-    ,case when A.WM_PRODTYPE = '海外債'       then A.WM_TWD_AMT     end      WM_LASTOUTDOORBO_TWDAMT
+,
+    max(
+        case
+            when A.WM_PRODTYPE = '海外債' then A.WM_TXN_DT
+        end
+    ) WM_LASTOUTDOORBO_DT,
+case
+        when A.WM_PRODTYPE = '海外債' then C.BD0004
+    end WM_LASTOUTDOORBO_NAME,
+case
+        when A.WM_PRODTYPE = '海外債' then A.WM_TWD_AMT
+    end WM_LASTOUTDOORBO_TWDAMT
     /*最近一個產品往來 - 美股*/
-    ,max(case when A.WM_PRODTYPE = '美股'      then A.WM_TXN_DT  end)     WM_LASTUSSTOCK_DT
-    ,case when A.WM_PRODTYPE = '美股'              then C.BD0004 end      WM_LASTUSSTOCK_NAME
-    ,case when A.WM_PRODTYPE = '美股'       then A.WM_TWD_AMT     end      WM_LASTUSSTOCK_TWDAMT
+,
+    max(
+        case
+            when A.WM_PRODTYPE = '美股' then A.WM_TXN_DT
+        end
+    ) WM_LASTUSSTOCK_DT,
+case
+        when A.WM_PRODTYPE = '美股' then C.BD0004
+    end WM_LASTUSSTOCK_NAME,
+case
+        when A.WM_PRODTYPE = '美股' then A.WM_TWD_AMT
+    end WM_LASTUSSTOCK_TWDAMT
     /*最近一個產品往來 - ETF*/
-    ,max(case when A.WM_PRODTYPE = 'ETFs'      then A.WM_TXN_DT  end)     WM_LASTETF_DT
-    ,case when A.WM_PRODTYPE = 'ETFs'           then D.CRM007050 end      WM_LASTETF_NAME
-    ,case when A.WM_PRODTYPE = 'ETFs'       then A.WM_TWD_AMT     end      WM_LASTETF_TWDAMT
+,
+    max(
+        case
+            when A.WM_PRODTYPE = 'ETFs' then A.WM_TXN_DT
+        end
+    ) WM_LASTETF_DT,
+case
+        when A.WM_PRODTYPE = 'ETFs' then D.CRM007050
+    end WM_LASTETF_NAME,
+case
+        when A.WM_PRODTYPE = 'ETFs' then A.WM_TWD_AMT
+    end WM_LASTETF_TWDAMT
     /*最近一個產品往來 - 優先股*/
-    ,max(case when A.WM_PRODTYPE = '優先股'       then A.WM_TXN_DT end)     WM_LASTPSTOCK_DT
-    ,case when A.WM_PRODTYPE = '優先股'           then D.CRM007050 end      WM_LASTPSTOCK_NAME
-    ,case when A.WM_PRODTYPE = '優先股'           then A.WM_TWD_AMT end      WM_LASTPSTOCK_TWDAMT
+,
+    max(
+        case
+            when A.WM_PRODTYPE = '優先股' then A.WM_TXN_DT
+        end
+    ) WM_LASTPSTOCK_DT,
+case
+        when A.WM_PRODTYPE = '優先股' then D.CRM007050
+    end WM_LASTPSTOCK_NAME,
+case
+        when A.WM_PRODTYPE = '優先股' then A.WM_TWD_AMT
+    end WM_LASTPSTOCK_TWDAMT
 from
     WM_TABLE_MAIN A
-left join
-    ODS_D_CRMFUS B
-on
-    A.WM_PID = B.FD0001 -- 基金代碼
-left join
-    ODS_D_CRMBDS C
-on
-    A.WM_PID = TRIM(C.bd0001) -- SN, 海外債, 美股代碼
-left join
-    ODS_D_ZCRM007WA D
-on
-    A.WM_PID = TRIM(D.CRM007050) -- ETF, 優先股代碼
+    left join ODS_D_CRMFUS B on A.WM_PID = B.FD0001             /*基金代碼*/
+    left join ODS_D_CRMBDS C on A.WM_PID = TRIM(C.bd0001)       /*SN, 海外債, 美股代碼*/
+    left join ODS_D_ZCRM007WA D on A.WM_PID = TRIM(D.CRM007050) /*ETF, 優先股代碼*/
 group by
     1, 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18, 19
 ```
@@ -518,98 +563,225 @@ group by
 */
 with AA as (
     select
-        A.*
-        ,B.MIN_DATE
+        A.*,
+        B.MIN_DATE
     from
         WM_TABLE_MAIN as A
-    inner join(
-        select
-            distinct WM_TRST_ID
-            ,min(WM_TXN_DT) as MIN_DATE
-        from
-            WM_TABLE_MAIN
-        group by
-            1
-        ) as B
-    on (A.WM_TRST_ID = B.WM_TRST_ID and A.WM_TXN_DT <> B.MIN_DATE) -- 排除不相等的
+        inner join(
+            select
+                distinct WM_TRST_ID,
+                min(WM_TXN_DT) as MIN_DATE
+            from
+                WM_TABLE_MAIN
+            group by
+                1
+        ) as B on (
+            A.WM_TRST_ID = B.WM_TRST_ID
+            and A.WM_TXN_DT <> B.MIN_DATE
+        ) -- 排除不相等的
     where
-      date_diff('day', A.WM_TXN_DT, current_date) <= 365
-    )
-    ,BB as (
+        date_diff('day', A.WM_TXN_DT, current_date) <= 365
+),
+BB as (
     select
-        C.WM_CUST_ID
-        ,count(case when C.WM_PRODTYPE = '共同基金' and C.WM_TRAD_STATUS = '轉入' then C.WM_PID     end) WM_TRAN_TIMES      -- 近一年基金轉換筆數
-        ,sum(case when C.WM_PRODTYPE = '共同基金' and C.WM_TRAD_STATUS = '轉入'   then C.WM_TWD_AMT end) WM_TRAN_TWDAMT     -- 近一年基金轉換金額
-        ,sum(case when C.WM_PRODTYPE = '共同基金' and C.WM_TRAD_STATUS = '轉入'   then C.WM_BUYFEE_AMT end) WM_TRANFEE_TWD  -- 近一年基金轉換手收
-        ,count(case when C.WM_PRODTYPE = '共同基金' and C.WM_TRAD_STATUS = '轉入' and C.WM_CHANNEL in ('網銀', '行銀', '智能理財') then C.WM_PID end) WM_DTRAN_TIMES        -- 近一年線上基金轉換筆數
-        ,sum(case when C.WM_PRODTYPE = '共同基金' and C.WM_TRAD_STATUS = '轉入' and C.WM_CHANNEL in ('網銀', '行銀', '智能理財') then C.WM_TWD_AMT end) WM_DTRAN_TWDAMT     -- 近一年線上基金轉換金額
-        ,sum(case when C.WM_PRODTYPE = '共同基金' and C.WM_TRAD_STATUS = '轉入' and C.WM_CHANNEL in ('網銀', '行銀', '智能理財') then C.WM_BUYFEE_AMT end) WM_DTRANFEE_TWD  -- 近一年線上基金轉換手收
+        C.WM_CUST_ID,
+        count(
+            case
+                when C.WM_PRODTYPE = '共同基金'
+                and C.WM_TRAD_STATUS = '轉入' then C.WM_PID
+            end
+        ) WM_TRAN_TIMES /*近一年基金轉換筆數*/
+,
+        sum(
+            case
+                when C.WM_PRODTYPE = '共同基金'
+                and C.WM_TRAD_STATUS = '轉入' then C.WM_TWD_AMT
+            end
+        ) WM_TRAN_TWDAMT /*近一年基金轉換金額*/
+,
+        sum(
+            case
+                when C.WM_PRODTYPE = '共同基金'
+                and C.WM_TRAD_STATUS = '轉入' then C.WM_BUYFEE_AMT
+            end
+        ) WM_TRANFEE_TWD /*近一年基金轉換手收*/
+,
+        count(
+            case
+                when C.WM_PRODTYPE = '共同基金'
+                and C.WM_TRAD_STATUS = '轉入'
+                and C.WM_CHANNEL in ('網銀', '行銀', '智能理財') then C.WM_PID
+            end
+        ) WM_DTRAN_TIMES /*近一年線上基金轉換筆數*/
+,
+        sum(
+            case
+                when C.WM_PRODTYPE = '共同基金'
+                and C.WM_TRAD_STATUS = '轉入'
+                and C.WM_CHANNEL in ('網銀', '行銀', '智能理財') then C.WM_TWD_AMT
+            end
+        ) WM_DTRAN_TWDAMT /*近一年線上基金轉換金額*/
+,
+        sum(
+            case
+                when C.WM_PRODTYPE = '共同基金'
+                and C.WM_TRAD_STATUS = '轉入'
+                and C.WM_CHANNEL in ('網銀', '行銀', '智能理財') then C.WM_BUYFEE_AMT
+            end
+        ) WM_DTRANFEE_TWD /*近一年線上基金轉換手收*/
     from
         WM_TABLE_MAIN as C
     where
         date_diff('day', C.WM_TXN_DT, current_date) <= 365
     group by
         1
-    )
-    ,CC as 
-    (select 
-        D.WM_CUST_ID
-        ,count(case when D.WM_PRODTYPE = '共同基金' and D.WM_TRAD_STATUS = '申購' and D.WM_TRST_STATUS = '2:定期'   then D.WM_PID          end) WM_FBUY_TIMES    -- 近一年基金新申購筆數(首扣)
-        ,sum(case when D.WM_PRODTYPE = '共同基金'   and D.WM_TRAD_STATUS = '申購' and D.WM_TRST_STATUS = '2:定期'   then D.WM_TWD_AMT      end) WM_FBUY_TWDAMT   -- 近一年基金新申購金額(首扣)
-        ,sum(case when D.WM_PRODTYPE = '共同基金'   and D.WM_TRAD_STATUS = '申購' and D.WM_TRST_STATUS = '2:定期'   then D.WM_BUYFEE_AMT   end) WM_FBUYFEE_TWD   -- 近一年基金新申購手收(首扣)
-        ,count(case when D.WM_PRODTYPE = '共同基金' and D.WM_TRAD_STATUS = '申購' and D.WM_TRST_STATUS = '2:定期' and D.WM_CHANNEL in ('網銀', '行銀', '智能理財') then D.WM_PID        end) WM_FDBUY_TIMES   -- 近一年線上基金新申購筆數(首扣)
-        ,sum(case when D.WM_PRODTYPE = '共同基金'   and D.WM_TRAD_STATUS = '申購' and D.WM_TRST_STATUS = '2:定期' and D.WM_CHANNEL in ('網銀', '行銀', '智能理財') then D.WM_TWD_AMT    end) WM_FDBUY_TWDAMT -- 近一年線上基金新申購金額(首扣)
-        ,sum(case when D.WM_PRODTYPE = '共同基金'   and D.WM_TRAD_STATUS = '申購' and D.WM_TRST_STATUS = '2:定期' and D.WM_CHANNEL in ('網銀', '行銀', '智能理財') then D.WM_BUYFEE_AMT end) WM_FDBUYFEE_TWD  -- 近一年線上基金新申購手收(首扣)
-    from 
+),
+CC as (
+    select
+        D.WM_CUST_ID,
+        count(
+            case
+                when D.WM_PRODTYPE = '共同基金'
+                and D.WM_TRAD_STATUS = '申購'
+                and D.WM_TRST_STATUS = '2:定期' then D.WM_PID
+            end
+        ) WM_FBUY_TIMES /*近一年基金新申購筆數(首扣)*/
+,
+        sum(
+            case
+                when D.WM_PRODTYPE = '共同基金'
+                and D.WM_TRAD_STATUS = '申購'
+                and D.WM_TRST_STATUS = '2:定期' then D.WM_TWD_AMT
+            end
+        ) WM_FBUY_TWDAMT /*近一年基金新申購金額(首扣)*/
+,
+        sum(
+            case
+                when D.WM_PRODTYPE = '共同基金'
+                and D.WM_TRAD_STATUS = '申購'
+                and D.WM_TRST_STATUS = '2:定期' then D.WM_BUYFEE_AMT
+            end
+        ) WM_FBUYFEE_TWD /*近一年基金新申購手收(首扣)*/
+,
+        count(
+            case
+                when D.WM_PRODTYPE = '共同基金'
+                and D.WM_TRAD_STATUS = '申購'
+                and D.WM_TRST_STATUS = '2:定期'
+                and D.WM_CHANNEL in ('網銀', '行銀', '智能理財') then D.WM_PID
+            end
+        ) WM_FDBUY_TIMES /*近一年線上基金新申購筆數(首扣)*/
+,
+        sum(
+            case
+                when D.WM_PRODTYPE = '共同基金'
+                and D.WM_TRAD_STATUS = '申購'
+                and D.WM_TRST_STATUS = '2:定期'
+                and D.WM_CHANNEL in ('網銀', '行銀', '智能理財') then D.WM_TWD_AMT
+            end
+        ) WM_FDBUY_TWDAMT /*近一年線上基金新申購金額(首扣)*/
+,
+        sum(
+            case
+                when D.WM_PRODTYPE = '共同基金'
+                and D.WM_TRAD_STATUS = '申購'
+                and D.WM_TRST_STATUS = '2:定期'
+                and D.WM_CHANNEL in ('網銀', '行銀', '智能理財') then D.WM_BUYFEE_AMT
+            end
+        ) WM_FDBUYFEE_TWD /*近一年線上基金新申購手收(首扣)*/
+    from
         WM_TABLE_MAIN as D
-    inner join(
-        select 
-            distinct WM_TRST_ID
-            ,min(WM_TXN_DT) as min_date
-        from 
-            WM_TABLE_MAIN
-        group by 
-            1
-        ) as E
-    on (D.WM_TRST_ID = E.WM_TRST_ID and D.WM_TXN_DT= E.MIN_DATE)
+        inner join(
+            select
+                distinct WM_TRST_ID,
+                min(WM_TXN_DT) as min_date
+            from
+                WM_TABLE_MAIN
+            group by
+                1
+        ) as E on (
+            D.WM_TRST_ID = E.WM_TRST_ID
+            and D.WM_TXN_DT = E.MIN_DATE
+        )
     where
         date_diff('day', D.WM_TXN_DT, current_date) <= 365
     group by
         1
-    )
+)
 select
-    AA.WM_CUST_ID
-    ,CC.WM_FBUY_TIMES
-    ,CC.WM_FBUY_TWDAMT
-    ,CC.WM_FBUYFEE_TWD
-    ,CC.WM_FDBUY_TIMES
-    ,CC.WM_FDBUY_TWDAMT
-    ,CC.WM_FDBUYFEE_TWD
-    ,count(case when AA.WM_PRODTYPE = '共同基金' and AA.WM_TRAD_STATUS = '申購' and AA.WM_TRST_STATUS = '2:定期' then AA.WM_PID          end) WM_ABUY_TIMES    -- 近一年基金續扣筆數(續扣)
-    ,sum(case when AA.WM_PRODTYPE = '共同基金'   and AA.WM_TRAD_STATUS = '申購' and AA.WM_TRST_STATUS = '2:定期' then AA.WM_TWD_AMT      end) WM_ABUY_TWDAMT   -- 近一年基金續扣金額(續扣)
-    ,sum(case when AA.WM_PRODTYPE = '共同基金'   and AA.WM_TRAD_STATUS = '申購' and AA.WM_TRST_STATUS = '2:定期' then AA.WM_BUYFEE_AMT   end) WM_ABUYFEE_TWD   -- 近一年基金續扣手收(續扣)
-    ,count(case when AA.WM_PRODTYPE = '共同基金' and AA.WM_CHANNEL in ('網銀', '行銀', '智能理財') and AA.WM_TRAD_STATUS = '申購' and AA.WM_TRST_STATUS = '2:定期'    then AA.WM_PID     end) WM_ADBUY_TIMES   -- 近一年基金線上續扣筆數(續扣)
-    ,sum(case when AA.WM_PRODTYPE = '共同基金'   and AA.WM_CHANNEL in ('網銀', '行銀', '智能理財') and AA.WM_TRAD_STATUS = '申購' and AA.WM_TRST_STATUS = '2:定期'  then AA.WM_TWD_AMT   end) WM_ADBUY_TWDAMT  -- 近一年基金線上續扣金額(續扣)
-    ,sum(case when AA.WM_PRODTYPE = '共同基金'   and AA.WM_CHANNEL in ('網銀', '行銀', '智能理財') and AA.WM_TRAD_STATUS = '申購' and AA.WM_TRST_STATUS = '2:定期' then AA.WM_BUYFEE_AMT end) WM_ADBUYFEE_TWD  -- 近一年基金線上續扣手收(續扣)
-    ,BB.WM_TRAN_TIMES 
-    ,BB.WM_TRAN_TWDAMT
-    ,BB.WM_TRANFEE_TWD
-    ,BB.WM_DTRAN_TIMES
-    ,BB.WM_DTRAN_TWDAMT
-    ,BB.WM_DTRANFEE_TWD
-    ,AA.WM_CUR_CODE -- 幣別
-    ,AA.WM_MARKET_CODE -- 1:境內基金/ 2:境外基金
-    ,AA.WM_INVEST_TARGET -- 投資標的
+    AA.WM_CUST_ID,
+    CC.WM_FBUY_TIMES,
+    CC.WM_FBUY_TWDAMT,
+    CC.WM_FBUYFEE_TWD,
+    CC.WM_FDBUY_TIMES,
+    CC.WM_FDBUY_TWDAMT,
+    CC.WM_FDBUYFEE_TWD,
+    count(
+        case
+            when AA.WM_PRODTYPE = '共同基金'
+            and AA.WM_TRAD_STATUS = '申購'
+            and AA.WM_TRST_STATUS = '2:定期' then AA.WM_PID
+        end
+    ) WM_ABUY_TIMES /*近一年基金續扣筆數(續扣)*/
+,
+    sum(
+        case
+            when AA.WM_PRODTYPE = '共同基金'
+            and AA.WM_TRAD_STATUS = '申購'
+            and AA.WM_TRST_STATUS = '2:定期' then AA.WM_TWD_AMT
+        end
+    ) WM_ABUY_TWDAMT /*近一年基金續扣金額(續扣)*/
+,
+    sum(
+        case
+            when AA.WM_PRODTYPE = '共同基金'
+            and AA.WM_TRAD_STATUS = '申購'
+            and AA.WM_TRST_STATUS = '2:定期' then AA.WM_BUYFEE_AMT
+        end
+    ) WM_ABUYFEE_TWD /*近一年基金續扣手收(續扣)*/
+,
+    count(
+        case
+            when AA.WM_PRODTYPE = '共同基金'
+            and AA.WM_CHANNEL in ('網銀', '行銀', '智能理財')
+            and AA.WM_TRAD_STATUS = '申購'
+            and AA.WM_TRST_STATUS = '2:定期' then AA.WM_PID
+        end
+    ) WM_ADBUY_TIMES /*近一年基金線上續扣筆數(續扣)*/
+,
+    sum(
+        case
+            when AA.WM_PRODTYPE = '共同基金'
+            and AA.WM_CHANNEL in ('網銀', '行銀', '智能理財')
+            and AA.WM_TRAD_STATUS = '申購'
+            and AA.WM_TRST_STATUS = '2:定期' then AA.WM_TWD_AMT
+        end
+    ) WM_ADBUY_TWDAMT /*近一年基金線上續扣金額(續扣)*/
+,
+    sum(
+        case
+            when AA.WM_PRODTYPE = '共同基金'
+            and AA.WM_CHANNEL in ('網銀', '行銀', '智能理財')
+            and AA.WM_TRAD_STATUS = '申購'
+            and AA.WM_TRST_STATUS = '2:定期' then AA.WM_BUYFEE_AMT
+        end
+    ) WM_ADBUYFEE_TWD /*近一年基金線上續扣手收(續扣)*/
+,
+    BB.WM_TRAN_TIMES,
+    BB.WM_TRAN_TWDAMT,
+    BB.WM_TRANFEE_TWD,
+    BB.WM_DTRAN_TIMES,
+    BB.WM_DTRAN_TWDAMT,
+    BB.WM_DTRANFEE_TWD,
+    AA.WM_CUR_CODE -- 幣別
+,
+    AA.WM_MARKET_CODE -- 1:境內基金/ 2:境外基金
+,
+    AA.WM_INVEST_TARGET -- 投資標的
 from
     AA
-left join
-    BB
-on
-    AA.WM_CUST_ID = BB.WM_CUST_ID
-left join
-    CC
-on
-    AA.WM_CUST_ID = CC.WM_CUST_ID
+    left join BB on AA.WM_CUST_ID = BB.WM_CUST_ID
+    left join CC on AA.WM_CUST_ID = CC.WM_CUST_ID
 group by
     1, 2, 3, 4, 5, 6, 7, 14, 15, 16, 17, 18, 19, 20, 21, 22
 ```
@@ -625,42 +797,73 @@ group by
 /*共同基金、海外債、SN組合式商品*/
 with A as (
     select
-        trim(AC0001)  as CUST_ID       -- 客戶ID
-        ,AC0005 as UNIT          -- 持有單位數
-        ,AC0021 as PRODVAL_TWAMT -- 台幣現值
-        ,trim(AC0017) as PROD_CODE     -- 產品代碼
+        trim(AC0001) as CUST_ID   /*客戶ID*/
+,
+        AC0005 as UNIT            /*持有單位數*/
+,
+        AC0021 as PRODVAL_TWAMT   /*台幣現值*/
+,
+        trim(AC0017) as PROD_CODE /*產品代碼*/
     from
         ODS_D_CRMAC1
     where
-        AC0009 <> 0 -- 排除贖回
-        and
-        AC0021 <> 0 -- 排除贖回
+        AC0009 <> 0     /*排除贖回*/
+        and AC0021 <> 0 /*排除贖回*/
 )
 /*美股、ETFs、優先股*/
-, B as (
+,
+B as (
     select
-        trim(CRM007030)  as CUST_ID    -- 客戶ID
-        ,CRM007170 as PRODVAL_TWAMT -- 投資現值
-        ,trim(CRM007050) as PROD_CODE  -- 產品代碼
+        trim(CRM007030) as CUST_ID /*客戶ID*/
+,
+        CRM007170 as PRODVAL_TWAMT /*投資現值*/
+,
+        trim(CRM007050) as PROD_CODE /*產品代碼*/
     from
         ODS_D_ZCRM007WA
     where
         CRM007200 <> 0
 )
 select
-    A.CUST_ID
-    ,sum(case when substr(A.PROD_CODE, 1, 1) not in ('A', 'B', 'P', 'S', 'E') then A.PRODVAL_TWAMT end)            as WM_CURRENTFUND_TWDAMT      -- 目前基金庫存現值(加總)
-    ,sum(case when substr(A.PROD_CODE, 1, 1) = 'A' then A.PRODVAL_TWAMT end)                                       as WM_CURRENTSN_TWDAMT        -- 目前SN庫存現值(加總)
-    ,sum(case when substr(A.PROD_CODE, 1, 1) = 'B' then A.PRODVAL_TWAMT end)                                       as WM_CURRENTOUTDOORBO_TWDAMT -- 目前海外債庫存現值(加總)
-    ,sum(case when substr(B.PROD_CODE, 1, 1) = 'P' then B.PRODVAL_TWAMT end)                                       as WM_PSTOCK_TWDAMT           -- 目前優先股庫存現值(加總)
-    ,sum(case when substr(B.PROD_CODE, 1, 1) = 'S' then B.PRODVAL_TWAMT end)                                       as WM_USSTOCK_TWDAMT          -- 目前美股庫存現值(加總)
-    ,sum(case when substr(B.PROD_CODE, 1, 1) = 'E' then B.PRODVAL_TWAMT end)                                       as WM_CURRENTETF_TWDAMT       -- 目前ETF庫存現值(加總)
+    A.CUST_ID,
+    sum(
+        case
+            when substr(A.PROD_CODE, 1, 1) not in ('A', 'B', 'P', 'S', 'E') then A.PRODVAL_TWAMT
+        end
+    ) as WM_CURRENTFUND_TWDAMT /*目前基金庫存現值(加總)*/
+,
+    sum(
+        case
+            when substr(A.PROD_CODE, 1, 1) = 'A' then A.PRODVAL_TWAMT
+        end
+    ) as WM_CURRENTSN_TWDAMT /*目前SN庫存現值(加總)*/
+,
+    sum(
+        case
+            when substr(A.PROD_CODE, 1, 1) = 'B' then A.PRODVAL_TWAMT
+        end
+    ) as WM_CURRENTOUTDOORBO_TWDAMT /*目前海外債庫存現值(加總)*/
+,
+    sum(
+        case
+            when substr(B.PROD_CODE, 1, 1) = 'P' then B.PRODVAL_TWAMT
+        end
+    ) as WM_PSTOCK_TWDAMT /*目前優先股庫存現值(加總)*/
+,
+    sum(
+        case
+            when substr(B.PROD_CODE, 1, 1) = 'S' then B.PRODVAL_TWAMT
+        end
+    ) as WM_USSTOCK_TWDAMT /*目前美股庫存現值(加總)*/
+,
+    sum(
+        case
+            when substr(B.PROD_CODE, 1, 1) = 'E' then B.PRODVAL_TWAMT
+        end
+    ) as WM_CURRENTETF_TWDAMT /*目前ETF庫存現值(加總)*/
 from
     A
-left join
-    B
-on
-    A.CUST_ID = B.CUST_ID
+    left join B on A.CUST_ID = B.CUST_ID
 group by
     1
 ```
