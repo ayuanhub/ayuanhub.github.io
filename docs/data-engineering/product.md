@@ -81,7 +81,7 @@ title: 產品往來
 | WM   | WM_ETF_TWDAMT           | 目前海外股票/ETF餘額(折合台幣)                    |              |    |
 | WM   | WM_SN_TWDAMT            | 目前SN餘額(折合台幣)                          |              |    |
 | WM   | WM_INS_TWDAMT           | 目前保險餘額(折合台幣)                          |              |    |
-| WM   | WM_LASTGDTXN_AMT        | 最近一日黃金存摺交易總金額交易包含:買/賣、提領現貨、轉帳、定期定額扣款" |              |    |
+| WM   | WM_LASTGDTXN_AMT        | 最近一日黃金存摺交易總金額交易包含:買/賣、提領現貨、轉帳、定期定額扣款 |              |    |
 | WM   | WM_LASTGDTXN_DT         | 最近一筆黃金存摺交易日期交易包含:買/賣、提領現貨、轉帳、定期定額扣款   |              |    |
 | WM   | WM_PRODNAME             | 最近一個基金往來商品(商品名稱)                      |              |    |
 | WM   | WM_TXN_DT               | 最近一個基金往來日                             |              |    |
