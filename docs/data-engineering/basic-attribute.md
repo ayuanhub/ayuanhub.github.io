@@ -119,8 +119,82 @@ WHERE
 
 ### AUM_台幣定存月平均餘額
 
-### AUM_外幣活存月平均餘額
-### AUM_外幣定存月平均餘額
+### AUM_外幣活存月平均餘額、AUM_外幣定存月平均餘額
+``` jsx title="外幣活定存月平均餘額" showLineNumbers
+/*
+- 表格名稱：基本屬性標籤 [BASIC_TABLE_FSACC]
+- MAIN TABLE：ODS_D_FSBLD (外幣帳戶庫存檔), ODS_D_FSCST (外匯活存帳戶主檔) 
+- PK：ACC_NO
+- TEMP VIEW：ACC_NO(帳戶ID), CUR_CODE(幣別代碼), CSTFG(活定存判斷式), FS_AVG_AMT(外幣帳戶平均工作日)))
+- MATERIALIZE VIEW: CUST_ID(客戶ID), CUR_CODE(幣別代碼), BASIC_FD_AUM(AUM_外幣定存前1個月平均餘額), BASIC_MY_AUM(AUM_外幣活存前1個月平均餘額))
+*/
+with A as 
+(
+    select
+        FSBLD_ACC_ID_NO       as ACC_NO
+        ,FSBLD_CURCD          as CUR_CODE
+        ,date(FSBLD_YYMMDD)   as DATE_VAL
+        ,trim(FSBLD_CSTFG)    as CSTFG
+        ,FSBLD_AVBAL_INT      as FS_AVBAL_AMT
+    from
+        ODS_D_FSBLD
+    where
+        /*4週工作日的每一筆資料但實際資料會依照國定假日為主*/
+        date(FSBLD_YYMMDD) >= date_add('month', -1 , current_date) 
+)
+/*計算總計幾個工作日*/
+,B as
+(
+    select
+        A.ACC_NO
+        ,A.CUR_CODE
+        ,A.CSTFG
+        ,COUNT(A.ACC_NO) as DVD_NBR
+    from
+        A
+    group by
+        1, 2, 3
+)
+,C as
+(
+select
+    AA.ACC_NO
+    ,AA.CUR_CODE
+    ,AA.CSTFG
+    ,FS_TOTAL_AMT/ B.DVD_NBR as FS_AVG_AMT
+from
+    (
+    select
+        A.ACC_NO
+        ,A.CUR_CODE
+        ,A.CSTFG            /*0:活存 | 1:定存*/
+        ,sum(A.FS_AVBAL_AMT) as FS_TOTAL_AMT /*依帳戶的加總值*/
+    from
+        A
+    group by
+        1, 2, 3
+    ) AA
+join
+    B
+on
+    AA.ACC_NO = B.ACC_NO
+    and
+    AA.CUR_CODE = B.CUR_CODE
+    and
+    AA.CSTFG = B.CSTFG
+)
+select
+    D.FSCST_ID_CODE as CUST_ID
+    ,C.CUR_CODE
+    ,coalesce(case when C.CSTFG = '0' then C.FS_AVG_AMT end, 0) as BASIC_FD_AUM
+    ,coalesce(case when C.CSTFG = '1' then C.FS_AVG_AMT end, 0) as BASIC_FS_ACCAVG
+from
+    ODS_D_FSCST D
+join
+    C
+on
+    trim(D.FSCST_ACC_ID_NO) = trim(C.ACC_NO)
+```
 ### AUM_理財(月底餘額)
 ### AUM_理財(月底現值)
 
