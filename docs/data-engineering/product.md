@@ -26,30 +26,30 @@ title: 產品往來
 | FD   | FD_CPA                  | 最近一筆台幣定存金額                            |              |    |
 | FD   | FD_START                | 最近一筆台幣定存起始日                           |              |    |
 | FD   | FD_END                  | 最近一筆台幣定存到期日                           |              |    |
-| FX   | FX_WEBTXN_BUYCNT        | 近一個月有網銀買外幣次數                          |              | [連結](/docs/data-dictionary/product#近一個月有網銀買外幣次數)   |
-| FX   | FX_WEBTXN_BUYTWDAMT     | 近一個月有買外幣金額                            |              |    |
-| FX   | FX_WEBTXN_SELLCNT       | 近一個月有網銀賣外幣次數                          |              |    |
-| FX   | FX_WEBTXN_SELLTWDAMT    | 近一個月有網銀賣外幣金額                          |              |    |
-| FX   | FX_APPTXN_BUYCNT        | 近一個月有行銀買外幣金額                          |              |    |
-| FX   | FX_APPTXN_BUYTWDAMT     | 近一個月有行銀買外幣金額                          |              |    |
-| FX   | FX_APPTXN_SELLCNT       | 近一個月有行銀賣外幣次數                          |              |    |
-| FX   | FX_APPTXN_SELLTWDAMT    | 近一個月有行銀賣外幣金額                          |              |    |
-| FX   | FX_BRANCHTXN_BUYCNT     | 近一個月有臨櫃買外幣次數                          |              |    |
-| FX   | FX_BRANCHTXN_BUYTWDAMT  | 近一個月有臨櫃買外幣金額                          |              |    |
-| FX   | FX_BRANCHTXN_SELLCNT    | 近一個月有臨櫃賣外幣次數                          |              |    |
-| FX   | FX_BRANCHTXN_SELLTWDAMT | 近一個月有臨櫃賣外幣金額                          |              |    |
-| FX   | FX_WITHDRAW_CNT         | 近一個月有提領現鈔次數                           |              |    |
-| FX   | FX_WITHDRAW_TWDAMT      | 近一個月有提領現鈔金額                           |              |    |
-| FX   | FX_DEPOSIT_CNT          | 近一個月有現鈔存入次數                           |              |    |
-| FX   | FX_DEPOSIT_TWDAMT       | 近一個月有現鈔存入金額                           |              |    |
-| FX   | FX_TRANS_BUYDT          | 最近一筆結構外幣時間                            |              |    |
-| FX   | FX_CHANNEL_BUYNAME      | 最近一筆結構外幣對應之通路                         |              |    |
-| FX   | FX_CURRENCY_BUYCODE     | 最近一筆結構外幣對應之幣別                         |              |    |
-| FX   | FX_CURRENCY_BUYAMT      | 最近一筆結構外幣對應之折台金額                       |              |    |
-| FX   | FX_TRANS_SELLDT         | 最近一筆結售外幣時間                            |              |    |
-| FX   | FX_CHANNEL_SELLNAME     | 最近一筆結售外幣對應之通路                         |              |    |
-| FX   | FX_CURRENCY_SELLCODE    | 最近一筆結售外幣對應之幣別                         |              |    |
-| FX   | FX_CURRENCY_SELLAMT     | 最近一筆結售外幣對應之折台金額                       |              |    |
+| FX   | FX_WEBTXN_BUYCNT        | 近一個月有網銀買外幣次數                          |              | [連結](#近一個月有網銀買外幣次數)   |
+| FX   | FX_WEBTXN_BUYTWDAMT     | 近一個月有買外幣金額                            |              | [連結](#近一個月有買外幣金額)   |
+| FX   | FX_WEBTXN_SELLCNT       | 近一個月有網銀賣外幣次數                          |              | [連結](#近一個月有網銀賣外幣次數)   |
+| FX   | FX_WEBTXN_SELLTWDAMT    | 近一個月有網銀賣外幣金額                          |              | [連結](#近一個月有網銀賣外幣金額)   |
+| FX   | FX_APPTXN_BUYCNT        | 近一個月有行銀買外幣金額                          |              | [連結](#近一個月有行銀買外幣金額)   |
+| FX   | FX_APPTXN_BUYTWDAMT     | 近一個月有行銀買外幣金額                          |              | [連結](#近一個月有行銀買外幣金額)  |
+| FX   | FX_APPTXN_SELLCNT       | 近一個月有行銀賣外幣次數                          |              | [連結](#近一個月有行銀賣外幣次數)   |
+| FX   | FX_APPTXN_SELLTWDAMT    | 近一個月有行銀賣外幣金額                          |              | [連結](#近一個月有行銀賣外幣金額)   |
+| FX   | FX_BRANCHTXN_BUYCNT     | 近一個月有臨櫃買外幣次數                          |              | [連結](#近一個月有臨櫃買外幣次數)   |
+| FX   | FX_BRANCHTXN_BUYTWDAMT  | 近一個月有臨櫃買外幣金額                          |              | [連結](#近一個月有臨櫃買外幣金額)   |
+| FX   | FX_BRANCHTXN_SELLCNT    | 近一個月有臨櫃賣外幣次數                          |              | [連結](#近一個月有臨櫃賣外幣次數)   |
+| FX   | FX_BRANCHTXN_SELLTWDAMT | 近一個月有臨櫃賣外幣金額                          |              | [連結](#近一個月有臨櫃賣外幣金額)   |
+| FX   | FX_WITHDRAW_CNT         | 近一個月有提領現鈔次數                           |              | [連結](#近一個月有提領現鈔次數)   |
+| FX   | FX_WITHDRAW_TWDAMT      | 近一個月有提領現鈔金額                           |              | [連結](#近一個月有提領現鈔金額)   |
+| FX   | FX_DEPOSIT_CNT          | 近一個月有現鈔存入次數                           |              | [連結](#近一個月有現鈔存入次數)   |
+| FX   | FX_DEPOSIT_TWDAMT       | 近一個月有現鈔存入金額                           |              | [連結](#近一個月有現鈔存入金額)   |
+| FX   | FX_TRANS_BUYDT          | 最近一筆結構外幣時間                            |              | [連結](#最近一筆結構外幣時間)   |
+| FX   | FX_CHANNEL_BUYNAME      | 最近一筆結構外幣對應之通路                         |              | [連結](#最近一筆結構外幣對應之通路)   |
+| FX   | FX_CURRENCY_BUYCODE     | 最近一筆結構外幣對應之幣別                         |              | [連結](#最近一筆結構外幣對應之幣別)   |
+| FX   | FX_CURRENCY_BUYAMT      | 最近一筆結構外幣對應之折台金額                       |              | [連結](#最近一筆結構外幣對應之折台金額)   |
+| FX   | FX_TRANS_SELLDT         | 最近一筆結售外幣時間                            |              |  [連結](#最近一筆結售外幣時間)  |
+| FX   | FX_CHANNEL_SELLNAME     | 最近一筆結售外幣對應之通路                         |              | [連結](#最近一筆結售外幣對應之通路)   |
+| FX   | FX_CURRENCY_SELLCODE    | 最近一筆結售外幣對應之幣別                         |              | [連結](#最近一筆結售外幣對應之幣別)   |
+| FX   | FX_CURRENCY_SELLAMT     | 最近一筆結售外幣對應之折台金額                       |              | [連結](#最近一筆結售外幣對應之折台金額)   |
 | FY   | FY_CUR                  | 最近一筆外幣定存商品(幣別)                        |              |    |
 | FY   | FY_CPA                  | 最近一筆外幣定存金額(換算台幣)                      |              |    |
 | FY   | FY_START                | 最近一筆外幣定存起始日                           |              |    |
