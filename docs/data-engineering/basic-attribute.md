@@ -46,7 +46,7 @@ title: 基本屬性
 
 ### 性別、年齡、行業類別
 
-```jsx title="此處可以撰寫一些業務邏輯定義" showLineNumbers
+```sql title="此處可以撰寫一些業務邏輯定義" showLineNumbers
 SELECT customers.Name, orders.Order_No
 FROM customers
 INNER JOIN orders
@@ -59,7 +59,7 @@ erDiagram
 ```
 
 ### 年齡
-```jsx title="定義" showLineNumbers
+```sql title="定義" showLineNumbers
 WITH sampleCTE (id, name, phoneNumber, age)
 AS
 -- 定義 CTE 的 Query
@@ -79,7 +79,7 @@ WHERE age >= 18
 
 ### 行業類別
 
-```jsx title="年齡" showLineNumbers
+```sql title="年齡" showLineNumbers
 SELECT
     count(*) AS 訂單數
 FROM
@@ -120,7 +120,7 @@ WHERE
 ### AUM_台幣定存月平均餘額
 
 ### AUM_外幣活存月平均餘額、AUM_外幣定存月平均餘額
-``` jsx title="外幣活定存月平均餘額" showLineNumbers
+``` sql title="外幣活定存月平均餘額" showLineNumbers
 /*
 - 表格名稱：基本屬性標籤 [BASIC_TABLE_FSACC]
 - MAIN TABLE：ODS_D_FSBLD (外幣帳戶庫存檔), ODS_D_FSCST (外匯活存帳戶主檔) 
