@@ -10,5 +10,13 @@
 - [Day02-網頁三兄弟：HTML、CSS、JavaScript](https://ithelp.ithome.com.tw/articles/10202326)
 - [Day03-深入理解網頁架構：DOM](https://ithelp.ithome.com.tw/articles/10202689)
 
+### JS vs. JQUERY vs. 前端框架
+- [JavaScript基本觀念介紹](https://ithelp.ithome.com.tw/articles/10206255)
+- [Day15-淺談JS版本差異！ES5、ES6](https://ithelp.ithome.com.tw/articles/10206587)
+- [Day16-JavaScript必會函式庫！jQuery](https://ithelp.ithome.com.tw/articles/10206892)
+
+### Docusaurus專案結構
+- npm initital project
+
 ### ※ 推薦新手入門學習資源
 - [MDN Web Docs](https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web)
