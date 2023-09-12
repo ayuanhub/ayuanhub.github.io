@@ -54,8 +54,8 @@ title: 產品往來
 | FY   | FY_CPA                  | 最近一筆外幣定存金額(換算台幣)                      |              |    |
 | FY   | FY_START                | 最近一筆外幣定存起始日                           |              |    |
 | FY   | FY_END                  | 最近一筆外幣定存到期日                           |              |    |
-| INS  | INS_NAME                | 最近一個保險往來商品(商品名稱)                      |              |    |
-| INS  | INS_RECENT_DT           | 最近一個保險商品往來日                           |              |    |
+| INS  | INS_NAME                | 最近一個保險往來商品(商品名稱)                      |              |    | [連結](#最近一個保險往來商品(商品名稱)最近一個保險商品往來日)
+| INS  | INS_RECENT_DT           | 最近一個保險商品往來日                           |              |    | [連結](#最近一個保險往來商品(商品名稱)最近一個保險商品往來日)
 | LN   | LN_HU_DT                | 最近一筆房貸往來日                             |              |    |
 | LN   | LN_HU_AMT               | 最近一筆房貸往來金額                            |              |    |
 | LN   | LN_HU_RATE              | 最近一筆房貸往來利率                            |              |    |
@@ -390,6 +390,74 @@ GROUP BY
 ```mermaid
 erDiagram
     CUSTOMERS ||--|{ ORDERS : Id
+```
+### 最近一個保險往來商品(商品名稱)、最近一個保險商品往來日
+```sql title="保險相關標籤" showLineNumbers
+/*
+- 表格名稱：產品往來標籤
+- 母體：VW_MASK_ODH_M_INSIN (因檔案過大後修正)
+- PK：INS_PROP_ID <=> 要保人ID
+- 所包含欄位：INS_PROP_ID, INS_RECENT_DT, INS_PROD_TYPE, INS_PAYTYPE, INS_CUR_CODE, INS_CUR_RATE,
+            　INS_ACCPAY_FC, INS_ACCPAY_TWD, INS_PRODNAME, INS_TPYE_CODE, INS_CUR_RATE, 
+            　INS_INSURED_ID, INS_INSURED_BIRTHDAY, INS_ACCPAY_TWD, INS_ACCPAY_FC, INS_INSAMT_TWD,
+            　INS_AUTOPAY_IND, INS_PIRELATION_CODE, INS_PIRELATION
+*/
+with A as
+(
+select
+    trim(PCID)                      as INS_PROP_ID       -- 要保人
+    ,date(INSSDATE)                 as INS_RECENT_DT     -- 以保險生效日為基準
+    ,INSTYPENAME                    as INS_PRODNAME      -- 險種名稱
+    ,CURID                          as INS_CUR_CODE      -- 幣別(排除空值)
+    ,PDTYPE                         as INS_TPYE_CODE     -- 險種類別
+    ,PAYTYPE                        as INS_PAYTYPE       -- 繳費方式
+    ,INSPAYTOTAL                    as INS_ACCPAY_TWD    -- 累積已繳保費(台幣)
+    ,ACC_PREMIUM_FC                 as INS_ACCPAY_FC     -- 累積已繳保費(原幣)
+    ,INSPROTECT                     as INS_INSAMT_TWD    -- 保額(台幣)
+from
+    (select * from VW_MASK_ODS_D_INSREAL limit 300000) A
+where
+    /*找最近一期的保單交易日*/
+    date(INSSDATE) = 
+    (select
+        max(date(INSSDATE))
+     from
+        (select * from VW_MASK_ODS_D_INSREAL limit 300000) B
+     where
+        trim(A.INSNO) = trim(B.INSNO))
+    and
+    A.CURID is not null
+)
+,B as
+(
+select
+    INS_PROP_ID         /*判斷為CUST_ID - 繳款人*/
+    ,INS_RECENT_DT      /*最近一期往來日期*/
+    ,INS_PRODNAME       /*近一期往來保險商品名稱*/
+    ,WM_INS_TWDAMT      /*加總往來金額*/
+    ,dense_rank() over (partition by INS_PROP_ID, INS_PRODNAME order by INS_RECENT_DT desc, WM_INS_TWDAMT desc) p_ranking
+from
+    (
+    select
+        INS_PROP_ID
+        ,INS_RECENT_DT
+        ,INS_PRODNAME
+        ,sum(INS_ACCPAY_TWD) as WM_INS_TWDAMT
+    from
+        A
+    group by
+        1, 2, 3
+    )
+)
+select
+    INS_PROP_ID
+    ,WM_INS_TWDAMT
+    ,INS_RECENT_DT
+    ,INS_PRODNAME
+from
+    B
+where
+    p_ranking = 1
 ```
 
 ### 最近一個海外債商品金額、最近一個海外債商品往來日、最近一個海外股票/ETF商品往來日、最近一個海外股票/ETF商品金額、最近一個SN往來日、最近一個SN金額
