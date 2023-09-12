@@ -499,145 +499,147 @@ group by
 */
 with WM_MAIN_BASE as
 (
-select
-    (WM_TRST_ID || WM_PID || WM_TRAD_STATUS) as UQ_TRST_ID
-    ,*
-from  
-(
+select AA.*
+,dense_rank() Over (Partition by UQ_TRST_ID order by WM_TXN_DT)  as wm_txn_times
+from(
     select
-        trim(TN0001) WM_CUST_ID             -- 客戶ID
-        ,trim(A.TN0002) WM_TRST_ID          -- 信託ID
-        ,trim(A.TN0023) WM_ACCT_ID          -- 存款帳戶ID
-        ,date(TN0003) WM_TXN_DT             -- 產品往來日
-        ,case
-            when substring(trim(TN0019), 1, 1) = 'A' then 'SN'
-            when substring(trim(TN0019), 1, 1) = 'D' or substring(trim(TN0019), 1, 1) = 'C' then '海外債'
-            when substring(trim(TN0019), 1, 1) = 'P' then '優先股'
-            when substring(trim(TN0019), 1, 1) = 'E' then 'ETFs'
-            when substring(trim(TN0019), 1, 1) = 'S' then '美股'
-            else '共同基金'
-        end WM_PRODTYPE
-        ,trim(TN0019) WM_PID                -- 產品ID
-        ,case
-            when substring(trim(TN0013), 5, 1) = 'I' then '網銀'
-            when substring(trim(TN0013), 5, 1) = '1' then 'GEB'
-            when substring(trim(TN0013), 5, 1) = '2' then '電話下單'
-            when substring(trim(TN0013), 5, 1) = '3' then '行銀'
-            when substring(trim(TN0013), 5, 1) = '8' then '智能理財'
-            else '臨櫃'
-        end WM_CHANNEL
-        ,case
-            when trim(A.TN0024) = '1' then '1:單筆'
-            when trim(A.TN0024) = '2' then '2:定期'
-            else '未定義'
-        end WM_TRST_STATUS                  -- 單筆 = 1/ 小額(定期定額) = 2
-        ,case
-            when (date(A.TN0030) is null) and (trim(A.TN0004) = '配息' or TRIM(A.TN0004) = '除息') then '在途中'
-            else trim(A.TN0004)
-        end WM_TRAD_STATUS                  -- 交易情況
-        ,trim(TN0005) WM_INVEST_TARGET      -- 投資標的
-        ,trim(TN0006) WM_CUR_CODE           -- 幣別代碼
-        ,TN0012 WM_BUYFEE_AMT               -- 手續費
-        ,TN0007 WM_UNIT                     -- 單位數
-        ,TN0008 WM_FUND_VAL                 -- 淨值
-        ,TN0009 WM_FOR_CURR                 -- 外幣金額
-        /*TN0009 * TN0020 = TN0010*/
-        ,TN0010 WM_TWD_AMT                  -- 台幣金額
-        ,TN0032 WM_MARKET_CODE              -- 1:境內, 2:境外
-    from
-        ODS_D_CRMTR1 A
-)
-where
-    WM_TRAD_STATUS = '申購'
-    or
-    WM_TRAD_STATUS = '轉入'
-)
-,WM_TABLE_SUB1 as
-(/*WM_TABLE_SUB1*/
-select
-    WM_CUST_ID
-    ,max(WM_LASTFUND_DT)            WM_LASTFUND_DT
-    ,max(WM_LASTFUND_NAME)          WM_LASTFUND_NAME
-    ,max(WM_LASTFUND_TWAMT)         WM_LASTFUND_TWAMT
-    ,max(WM_LASTSN_DT)              WM_LASTSN_DT
-    ,max(WM_LASTSN_NAME)            WM_LASTSN_NAME
-    ,max(WM_LASTSN_TWDAMT)          WM_LASTSN_TWDAMT
-    ,max(WM_LASTOUTDOORBO_DT)       WM_LASTOUTDOORBO_DT
-    ,max(WM_LASTOUTDOORBO_NAME)     WM_LASTOUTDOORBO_NAME
-    ,max(WM_LASTOUTDOORBO_TWDAMT)   WM_LASTOUTDOORBO_TWDAMT
-    ,max(WM_LASTUSSTOCK_DT)         WM_LASTUSSTOCK_DT
-    ,max(WM_LASTUSSTOCK_NAME)       WM_LASTUSSTOCK_NAME
-    ,max(WM_LASTUSSTOCK_TWDAMT)     WM_LASTUSSTOCK_TWDAMT
-    ,max(WM_LASTETF_DT)             WM_LASTETF_DT
-    ,max(WM_LASTETF_NAME)           WM_LASTETF_NAME
-    ,max(WM_LASTETF_TWDAMT)         WM_LASTETF_TWDAMT
-    ,max(WM_LASTPSTOCK_DT)          WM_LASTPSTOCK_DT
-    ,max(WM_LASTPSTOCK_NAME)        WM_LASTPSTOCK_NAME    
-    ,max(WM_LASTPSTOCK_TWDAMT)      WM_LASTPSTOCK_TWDAMT 
-from
+        (WM_TRST_ID || WM_PID || WM_TRAD_STATUS) as UQ_TRST_ID --uni key
+        ,*
+    from  
     (
         select
-            A.WM_CUST_ID
-            -- ,A.UQ_TRST_ID
-            /*最近一個產品往來 - 共同基金*/ 
-            ,case when A.WM_PRODTYPE = '共同基金' then A.WM_TXN_DT  end     WM_LASTFUND_DT
-            ,case when A.WM_PRODTYPE = '共同基金' then B.FD0010     end     WM_LASTFUND_NAME
-            ,case when A.WM_PRODTYPE = '共同基金' then A.WM_TWD_AMT end      WM_LASTFUND_TWAMT
-            /*最近一個產品往來 - SN*/
-            ,case when A.WM_PRODTYPE = 'SN'       then A.WM_TXN_DT   end   WM_LASTSN_DT
-            ,case when A.WM_PRODTYPE = 'SN'       then C.BD0004      end   WM_LASTSN_NAME
-            ,case when A.WM_PRODTYPE = 'SN'       then A.WM_TWD_AMT  end   WM_LASTSN_TWDAMT
-            /*最近一個產品往來 - 海外債*/
-            ,case when A.WM_PRODTYPE = '海外債'      then A.WM_TXN_DT   end    WM_LASTOUTDOORBO_DT
-            ,case when A.WM_PRODTYPE = '海外債'      then C.BD0004      end    WM_LASTOUTDOORBO_NAME
-            ,case when A.WM_PRODTYPE = '海外債'      then A.WM_TWD_AMT  end    WM_LASTOUTDOORBO_TWDAMT
-            /*最近一個產品往來 - 美股*/
-            ,case when A.WM_PRODTYPE = '美股'      then A.WM_TXN_DT   end      WM_LASTUSSTOCK_DT
-            ,case when A.WM_PRODTYPE = '美股'          then C.BD0004  end      WM_LASTUSSTOCK_NAME
-            ,case when A.WM_PRODTYPE = '美股'       then A.WM_TWD_AMT end      WM_LASTUSSTOCK_TWDAMT
-            /*最近一個產品往來 - ETF*/
-            ,case when A.WM_PRODTYPE = 'ETFs'      then A.WM_TXN_DT     end     WM_LASTETF_DT
-            ,case when A.WM_PRODTYPE = 'ETFs'      then D.CRM007220     end     WM_LASTETF_NAME
-            ,case when A.WM_PRODTYPE = 'ETFs'       then A.WM_TWD_AMT   end     WM_LASTETF_TWDAMT
-            /*最近一個產品往來 - 優先股*/
-            ,case when A.WM_PRODTYPE = '優先股'       then A.WM_TXN_DT  end     WM_LASTPSTOCK_DT
-            ,case when A.WM_PRODTYPE = '優先股'           then D.CRM007220  end      WM_LASTPSTOCK_NAME
-            ,case when A.WM_PRODTYPE = '優先股'           then A.WM_TWD_AMT end      WM_LASTPSTOCK_TWDAMT
+            trim(TN0001) WM_CUST_ID     -- 客戶ID
+            ,trim(A.TN0002) WM_TRST_ID  -- 信託ID
+            ,trim(A.TN0023) WM_ACCT_ID  -- 存款帳戶ID
+            ,date(TN0003) WM_TXN_DT     -- 產品往來日
+            ,case
+                when substring(trim(TN0019), 1, 1) = 'A' then 'SN'
+                when substring(trim(TN0019), 1, 1) = 'D' or substring(trim(TN0019), 1, 1) = 'C' then '海外債'
+                when substring(trim(TN0019), 1, 1) = 'P' then '優先股'
+                when substring(trim(TN0019), 1, 1) = 'E' then 'ETFs'
+                when substring(trim(TN0019), 1, 1) = 'S' then '美股'
+                else '共同基金'
+            end WM_PRODTYPE
+            ,trim(TN0019) WM_PID -- 產品ID
+            ,case
+                when substring(trim(TN0013), 5, 1) = 'I' then '網銀'
+                when substring(trim(TN0013), 5, 1) = '1' then 'GEB'
+                when substring(trim(TN0013), 5, 1) = '2' then '電話下單'
+                when substring(trim(TN0013), 5, 1) = '3' then '行銀'
+                when substring(trim(TN0013), 5, 1) = '8' then '智能理財'
+                else '臨櫃'
+            end WM_CHANNEL
+            ,case
+                when trim(A.TN0024) = '1' then '1:單筆'
+                when trim(A.TN0024) = '2' then '2:定期'
+                else '未定義'
+            end WM_TRST_STATUS  -- 單筆 = 1/ 小額(定期定額) = 2
+            ,case
+                when (date(A.TN0030) is null) and (trim(A.TN0004) = '配息' or TRIM(A.TN0004) = '除息') then '在途中'
+                else trim(A.TN0004)
+            end WM_TRAD_STATUS -- 交易情況
+            ,trim(TN0005) WM_INVEST_TARGET -- 投資標的
+            ,trim(TN0006) WM_CUR_CODE -- 幣別代碼
+            ,TN0012 WM_BUYFEE_AMT -- 手續費
+            ,TN0007 WM_UNIT     -- 單位數
+            ,TN0008 WM_FUND_VAL -- 淨值
+            ,TN0009 WM_FOR_CURR -- 外幣金額
+            /*TN0009 * TN0020 = TN0010*/
+            ,TN0010 WM_TWD_AMT   -- 台幣金額
+            ,TN0032 WM_MARKET_CODE -- 1:境內, 2:境外
         from
-            WM_MAIN_BASE A
-        left join
-        (
-            select
-                FD0001
-                ,FD0010
-            from 
-                ODS_D_CRMFUS
-        ) B
-        on
-            A.WM_PID = B.FD0001             -- 基金代碼
-        left join
-        (
-            select
-                bd0001
-                ,BD0004
-            from
-                ODS_D_CRMBDS
-        ) C
-        on
-            A.WM_PID = TRIM(C.bd0001)       -- SN, 海外債, 美股代碼
-        left join
-        (
-            select
-                CRM007050
-                ,CRM007220
-            from
-                ODS_D_ZCRM007WA
-        ) D
-        on
-            A.WM_PID = TRIM(D.CRM007050)    -- ETF, 優先股代碼
+            ODS_D_CRMTR1 A
     )
-group by
-    1
+    where
+        WM_TRAD_STATUS = '申購'
+        or
+        WM_TRAD_STATUS = '轉入'
+    ) as AA
+)
+,WM_SUB_BASE_1 as
+(
+select
+    A.WM_CUST_ID
+    -- ,A.UQ_TRST_ID
+    /*最近一個產品往來 - 共同基金*/ 
+    ,case when A.WM_PRODTYPE = '共同基金' then A.WM_TXN_DT  end     WM_LASTFUND_DT
+    ,case when A.WM_PRODTYPE = '共同基金' then B.FD0010     end     WM_LASTFUND_NAME
+    ,case when A.WM_PRODTYPE = '共同基金' then A.WM_TWD_AMT end      WM_LASTFUND_TWAMT
+    /*最近一個產品往來 - SN*/
+    ,case when A.WM_PRODTYPE = 'SN'       then A.WM_TXN_DT   end   WM_LASTSN_DT
+    ,case when A.WM_PRODTYPE = 'SN'       then C.BD0004      end   WM_LASTSN_NAME
+    ,case when A.WM_PRODTYPE = 'SN'       then A.WM_TWD_AMT  end   WM_LASTSN_TWDAMT
+    /*最近一個產品往來 - 海外債*/
+    ,case when A.WM_PRODTYPE = '海外債'      then A.WM_TXN_DT   end    WM_LASTOUTDOORBO_DT
+    ,case when A.WM_PRODTYPE = '海外債'      then C.BD0004      end    WM_LASTOUTDOORBO_NAME
+    ,case when A.WM_PRODTYPE = '海外債'      then A.WM_TWD_AMT  end    WM_LASTOUTDOORBO_TWDAMT
+    /*最近一個產品往來 - 美股*/
+    ,case when A.WM_PRODTYPE = '美股'      then A.WM_TXN_DT   end      WM_LASTUSSTOCK_DT
+    ,case when A.WM_PRODTYPE = '美股'          then C.BD0004  end      WM_LASTUSSTOCK_NAME
+    ,case when A.WM_PRODTYPE = '美股'       then A.WM_TWD_AMT end      WM_LASTUSSTOCK_TWDAMT
+    /*最近一個產品往來 - ETF*/
+    ,case when A.WM_PRODTYPE = 'ETFs'      then A.WM_TXN_DT     end     WM_LASTETF_DT
+    ,case when A.WM_PRODTYPE = 'ETFs'      then D.CRM007220     end     WM_LASTETF_NAME
+    ,case when A.WM_PRODTYPE = 'ETFs'       then A.WM_TWD_AMT   end     WM_LASTETF_TWDAMT
+    /*最近一個產品往來 - 優先股*/
+    ,case when A.WM_PRODTYPE = '優先股'       then A.WM_TXN_DT  end     WM_LASTPSTOCK_DT
+    ,case when A.WM_PRODTYPE = '優先股'           then D.CRM007220  end      WM_LASTPSTOCK_NAME
+    ,case when A.WM_PRODTYPE = '優先股'           then A.WM_TWD_AMT end      WM_LASTPSTOCK_TWDAMT
+from
+    (
+    select *
+    from( 
+        select *
+            ,dense_rank() Over (Partition by wm_cust_id,wm_prodtype order by WM_TXN_DT desc,wm_twd_amt desc,wm_pid desc)  as last_txn_times
+        from(
+            select 
+                wm_cust_id
+                ,wm_txn_dt
+                ,wm_pid
+                ,wm_prodtype
+                ,sum(wm_twd_amt) as wm_twd_amt
+            from 
+                WM_MAIN_BASE as A 
+            where 
+                WM_TXN_TIMES = 1 --先抓首扣
+                and 
+                WM_TRAD_STATUS = '申購' --再抓申購
+                and 
+                length(WM_TRST_ID) = 11 --排掉空值(只有1筆)
+            group by 
+                1, 2, 3, 4
+            )
+        )    
+    where 
+        last_txn_times = 1 --抓出最靠近一筆的資料     
+    ) as A    
+left join
+    (
+    select
+        FD0001
+        ,FD0010
+    from 
+        ODS_D_CRMFUS) as B
+    on 
+        (A.WM_PID = B.FD0001) -- 基金代碼
+    left join
+    (
+    select
+        bd0001
+        ,BD0004
+    from 
+        ODS_D_CRMBDS) as C
+    on 
+        (A.WM_PID = TRIM(C.bd0001)) -- SN, 海外債, 美股代碼
+    left join
+    (
+    select
+        CRM007050
+        ,CRM007220
+    from 
+        ODS_D_ZCRM007WA) as D
+    on 
+        (A.WM_PID = TRIM(D.CRM007050)) -- ETF, 優先股代碼
 )
 ,AA as 
 (/*近一年轉換系列*/
@@ -743,9 +745,9 @@ group by
 (/*共同基金、海外債、SN組合式商品*/
     select
         trim(AC0001)  as WM_CUST_ID       -- 客戶ID
-        ,AC0005 as UNIT                   -- 持有單位數
-        ,AC0021 as PRODVAL_TWAMT          -- 台幣現值
-        ,trim(AC0017) as PROD_CODE        -- 產品代碼
+        ,AC0005 as UNIT          -- 持有單位數
+        ,AC0021 as PRODVAL_TWAMT -- 台幣現值
+        ,trim(AC0017) as PROD_CODE     -- 產品代碼
     from
         ODS_D_CRMAC1
     where
@@ -756,9 +758,9 @@ group by
 ,EE as
 (/*美股、ETFs、優先股*/
     select
-        trim(CRM007030)  as WM_CUST_ID      -- 客戶ID
-        ,CRM007170 as PRODVAL_TWAMT         -- 投資現值
-        ,trim(CRM007050) as PROD_CODE       -- 產品代碼
+        trim(CRM007030)  as WM_CUST_ID    -- 客戶ID
+        ,CRM007170 as PRODVAL_TWAMT -- 投資現值
+        ,trim(CRM007050) as PROD_CODE  -- 產品代碼
     from
         ODS_D_ZCRM007WA
     where
@@ -768,7 +770,7 @@ group by
 (/*WM_TABLE_SUB2*/
     select
         DD.WM_CUST_ID
-        ,sum(case when length(DD.PROD_CODE) <= 4        then DD.PRODVAL_TWAMT end)                                       as WM_CURRENTFUND_TWDAMT      -- 目前基金庫存現值(加總)
+        ,sum(case when substr(DD.PROD_CODE, 1, 1) not in ('A', 'B', 'P', 'S', 'E') then DD.PRODVAL_TWAMT end)            as WM_CURRENTFUND_TWDAMT      -- 目前基金庫存現值(加總)
         ,sum(case when substr(DD.PROD_CODE, 1, 1) = 'A' then DD.PRODVAL_TWAMT end)                                       as WM_CURRENTSN_TWDAMT        -- 目前SN庫存現值(加總)
         ,sum(case when substr(DD.PROD_CODE, 1, 1) = 'B' then DD.PRODVAL_TWAMT end)                                       as WM_CURRENTOUTDOORBO_TWDAMT -- 目前海外債庫存現值(加總)
         ,sum(case when substr(DD.PROD_CODE, 1, 1) = 'P' then EE.PRODVAL_TWAMT end)                                       as WM_CURRENTPSTOCK_TWDAMT    -- 目前優先股庫存現值(加總)
@@ -783,90 +785,50 @@ group by
     group by
         1
 )
-/*主表為：CUST_ID*/
 select
-    A.CUST_ID
-    ,B.WM_LASTFUND_DT           -- 最近一個基金往來日
-    ,B.WM_LASTFUND_NAME         -- 最近一個基金往來商品名稱
-    ,B.WM_LASTFUND_TWAMT        -- 最近一個基金金額
-    ,B.WM_LASTSN_DT             -- 最近一個SN日期
-    ,B.WM_LASTSN_NAME           -- 最近一個SN商品名稱
-    ,B.WM_LASTSN_TWDAMT         -- 最近一個SN金額
-    ,B.WM_LASTOUTDOORBO_DT      -- 最近一個海外債往來日
-    ,B.WM_LASTOUTDOORBO_NAME    -- 最近一個海外債商品名稱
-    ,B.WM_LASTOUTDOORBO_TWDAMT  -- 最近一個海外債金額
-    ,B.WM_LASTUSSTOCK_DT        -- 最近一個美股日期
-    ,B.WM_LASTUSSTOCK_NAME      -- 最近一個美股名稱
-    ,B.WM_LASTUSSTOCK_TWDAMT    -- 最近一個美股金額
-    ,B.WM_LASTETF_DT            -- 最近一個ETF日期
-    ,B.WM_LASTETF_NAME          -- 最近一個ETF名稱
-    ,B.WM_LASTETF_TWDAMT        -- 最近一個ETF金額
-    ,B.WM_LASTPSTOCK_DT         -- 最近一個優先股日期
-    ,B.WM_LASTPSTOCK_NAME       -- 最近一個優先股名稱
-    ,B.WM_LASTPSTOCK_TWDAMT     -- 最近一個優先股金額
-    /*將無購買行為調整為count = null*/
-    ,case 
-        when AA.WM_TRAN_TIMES = 0 then null 
-        else AA.WM_TRAN_TIMES 
-     end as WM_TRAN_TIMES       -- 近一年基金轉換筆數
-    ,AA.WM_TRAN_TWDAMT          -- 近一年基金轉換金額
-    ,AA.WM_TRANFEE_TWD          -- 近一年基金轉換手收
-    ,case 
-        when AA.WM_DTRAN_TIMES = 0 then null 
-        else AA.WM_DTRAN_TIMES 
-    end as WM_DTRAN_TIMES       -- 近一年線上基金轉換筆數
-    ,AA.WM_DTRAN_TWDAMT         -- 近一年線上基金轉換金額
-    ,AA.WM_DTRANFEE_TWD         -- 近一年線上基金轉換手收
-    ,case 
-        when BB.WM_FBUY_TIMES = 0 then null 
-        else BB.WM_FBUY_TIMES 
-    end as WM_FBUY_TIMES        -- 近一年基金新申購筆數(首扣)
-    ,BB.WM_FBUY_TWDAMT          -- 近一年基金新申購金額(首扣)
-    ,BB.WM_FBUYFEE_TWD          -- 近一年基金新申購手收(首扣)
-    ,case 
-        when BB.WM_FDBUY_TIMES = 0 then null 
-        else BB.WM_FDBUY_TIMES 
-    end as WM_FDBUY_TIMES       -- 近一年線上基金新申購筆數(首扣)
-    ,BB.WM_FDBUY_TWDAMT         -- 近一年線上基金新申購金額(首扣)
-    ,BB.WM_FDBUYFEE_TWD         -- 近一年線上基金新申購手收(首扣)
-    ,case 
-        when CC.WM_ABUY_TIMES = 0 then null 
-        else CC.WM_ABUY_TIMES 
-    end as WM_ABUY_TIMES        -- 近一年基金新申購筆數(續扣)
-    ,CC.WM_ABUY_TWDAMT          -- 近一年基金新申購金額(續扣)
-    ,CC.WM_ABUYFEE_TWD          -- 近一年基金新申購手收(續扣)
-    ,case 
-        when CC.WM_ADBUY_TIMES = 0 then null 
-        else CC.WM_ADBUY_TIMES 
-    end as WM_ADBUY_TIMES       -- 近一年線上基金新申購筆數(續扣)
-    ,CC.WM_ADBUY_TWDAMT         -- 近一年線上基金新申購金額(續扣)
-    ,CC.WM_ADBUYFEE_TWD         -- 近一年線上基金新申購手收(續扣)
-    ,C.WM_CURRENTFUND_TWDAMT    
-    ,C.WM_CURRENTSN_TWDAMT
-    ,C.WM_CURRENTOUTDOORBO_TWDAMT
-    ,C.WM_CURRENTPSTOCK_TWDAMT
-    ,C.WM_CURRENTUSSTOCK_TWDAMT
-    ,C.WM_CURRENTETF_TWDAMT
+    A.WM_CUST_ID
+    ,A.WM_LASTFUND_DT
+    ,A.WM_LASTFUND_NAME
+    ,A.WM_LASTFUND_TWAMT
+    ,A.WM_LASTSN_DT
+    ,A.WM_LASTSN_NAME
+    ,A.WM_LASTSN_TWDAMT
+    ,A.WM_LASTOUTDOORBO_DT
+    ,A.WM_LASTOUTDOORBO_NAME
+    ,A.WM_LASTOUTDOORBO_TWDAMT
+    ,A.WM_LASTUSSTOCK_DT
+    ,A.WM_LASTUSSTOCK_NAME
+    ,A.WM_LASTUSSTOCK_TWDAMT
+    ,A.WM_LASTETF_DT
+    ,A.WM_LASTETF_NAME
+    ,A.WM_LASTETF_TWDAMT
+    ,A.WM_LASTPSTOCK_DT
+    ,A.WM_LASTPSTOCK_NAME
+    ,A.WM_LASTPSTOCK_TWDAMT
+    ,AA.WM_TRAN_TIMES
+    ,AA.WM_TRAN_TWDAMT
+    ,AA.WM_TRANFEE_TWD
+    ,AA.WM_DTRAN_TIMES
+    ,AA.WM_DTRAN_TWDAMT
+    ,AA.WM_DTRANFEE_TWD
+    ,BB.WM_FBUY_TIMES
+    ,BB.WM_FBUY_TWDAMT
+    ,BB.WM_FBUYFEE_TWD
+    ,BB.WM_FDBUY_TIMES
+    ,BB.WM_FDBUY_TWDAMT
+    ,BB.WM_FDBUYFEE_TWD
+    ,CC.WM_ABUY_TIMES
+    ,CC.WM_ABUY_TWDAMT
+    ,CC.WM_ABUYFEE_TWD
+    ,CC.WM_ADBUY_TIMES
+    ,CC.WM_ADBUY_TWDAMT
+    ,CC.WM_ADBUYFEE_TWD
+    ,B.WM_CURRENTFUND_TWDAMT
+    ,B.WM_CURRENTSN_TWDAMT
+    ,B.WM_CURRENTOUTDOORBO_TWDAMT
+    ,B.WM_CURRENTPSTOCK_TWDAMT
+    ,B.WM_CURRENTUSSTOCK_TWDAMT
+    ,B.WM_CURRENTETF_TWDAMT
 from
-    CUST360_01_pop A
-left join
-    WM_TABLE_SUB1 B
-on
-    A.CUST_ID = B.WM_CUST_ID
-left join
-    AA
-on
-    A.CUST_ID = AA.WM_CUST_ID
-left join
-    BB
-on
-    A.CUST_ID = BB.WM_CUST_ID
-left join
-    CC
-on
-    A.CUST_ID = CC.WM_CUST_ID
-left join
-    WM_TABLE_SUB2 C
-on
-    A.CUST_ID = C.WM_CUST_ID
+    WM_TABLE_SUB1 A
 ```
