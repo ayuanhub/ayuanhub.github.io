@@ -75,9 +75,9 @@ title: 產品往來
 | LN   | LN_TOLPL_AMT            | 行內有擔保總餘額                              |              |    |
 | MD   | MD_LASTSTART            | 最近台幣帳戶開戶日                             |              |    |
 | MY   | MY_LASTSTART            | 最近外幣帳戶開戶日                             |              |    |
-| WM   | WM_OUTDOORBO_TWDAMT     | 目前海外債餘額(折合台幣)                         |              |    |
-| WM   | WM_ETF_TWDAMT           | 目前海外股票/ETF餘額(折合台幣)                    |              |    |
-| WM   | WM_SN_TWDAMT            | 目前SN餘額(折合台幣)                          |              |    |
+| WM   | WM_OUTDOORBO_TWDAMT     | 目前海外債餘額(折合台幣)                         |              |    | [連結](#最近海外債餘額(折合台幣)目前海外股票/ETF餘額(折合台幣)目前SN餘額(折合台幣))
+| WM   | WM_ETF_TWDAMT           | 目前海外股票/ETF餘額(折合台幣)                    |              |    | [連結](#最近海外債餘額(折合台幣)目前海外股票/ETF餘額(折合台幣)目前SN餘額(折合台幣))
+| WM   | WM_SN_TWDAMT            | 目前SN餘額(折合台幣)                          |              |    | [連結](#最近海外債餘額(折合台幣)目前海外股票/ETF餘額(折合台幣)目前SN餘額(折合台幣))
 | WM   | WM_INS_TWDAMT           | 目前保險餘額(折合台幣)                          |              |    |
 | WM   | WM_PRODNAME             | 最近一個基金往來商品(商品名稱)                      |              |[連結](#最近一個海外債商品金額最近一個海外債商品往來日最近一個海外股票etf商品往來日最近一個海外股票etf商品金額最近一個sn往來日最近一個sn金額)    |
 | WM   | WM_TXN_DT               | 最近一個基金往來日                             |              |[連結](#最近一個海外債商品金額最近一個海外債商品往來日最近一個海外股票etf商品往來日最近一個海外股票etf商品金額最近一個sn往來日最近一個sn金額)    |
@@ -390,6 +390,66 @@ GROUP BY
 ```mermaid
 erDiagram
     CUSTOMERS ||--|{ ORDERS : Id
+```
+### 最近海外債餘額(折合台幣)、目前海外股票/ETF餘額(折合台幣)、目前SN餘額(折合台幣)
+```sql title="目前產品現值" showLineNumbers
+/*Distinct後 自然人 CUST360_01_POP*/
+with A as
+(
+select
+    trim(AC0001)  as CUST_ID
+    ,case when AC0025 <> null then 1 else 0 end as ENROUTE_IND -- 在途中(1,0)
+    ,case
+        when substring(trim(AC0017), 1, 1) = 'A' then 'SN'
+        when substring(trim(AC0017), 1, 1) = 'D' or substring(trim(AC0017), 1, 1) = 'C' then '海外債'
+        when substring(trim(AC0017), 1, 1) = 'P' then '優先股'
+        when substring(trim(AC0017), 1, 1) = 'E' then 'ETFs'
+        when substring(trim(AC0017), 1, 1) = 'S' then '美股'
+        else '共同基金'
+    end           as WM_PRODTYPE
+    ,truncate(round(AC0021))                    as WM_TWD_AMT
+from
+    ODS_D_CRMAC1
+)
+,B as
+(
+select
+    trim(CRM007B030)                             as CUST_ID
+    ,case
+        when substring(trim(CRM007B050), 1, 1) = 'A' then 'SN'
+        when substring(trim(CRM007B050), 1, 1) = 'D' 
+             or 
+             substring(trim(CRM007B050), 1, 1) = 'C' then '海外債'
+        when substring(trim(CRM007B050), 1, 1) = 'P' then '優先股'
+        when substring(trim(CRM007B050), 1, 1) = 'E' then 'ETFs'
+        when substring(trim(CRM007B050), 1, 1) = 'S' then '美股'
+        else '共同基金'
+    end                                          as WM_PRODTYPE
+    ,truncate(round(CRM007B170*CRM007B160))      as WM_TWD_AMT
+
+from
+    ODS_D_ZCRM007WB
+)
+select
+    C.CUST_ID
+    ,sum(case when A.WM_PRODTYPE = '共同基金' then A.WM_TWD_AMT end) as WM_MF_TWDAMT
+    ,sum(case when A.WM_PRODTYPE = 'SN'       then A.WM_TWD_AMT end) as WM_SN_TWDAMT
+    ,sum(case when A.WM_PRODTYPE = '海外債'   then A.WM_TWD_AMT end) as WM_OB_TWDAMT
+    ,sum(case when B.WM_PRODTYPE = '優先股'   then B.WM_TWD_AMT end) as WM_PSTOCK_TWDAMT
+    ,sum(case when B.WM_PRODTYPE = '美股'     then B.WM_TWD_AMT end) as WM_STOCK_TWDAMT
+    ,sum(case when B.WM_PRODTYPE = 'ETFs'     then B.WM_TWD_AMT end) as WM_ETF_TWDAMT
+from
+    CUST360_01_POP C
+left join
+    A
+on
+    C.CUST_ID = A.CUST_ID
+left join
+    B
+on
+    C.CUST_ID = B.CUST_ID
+group by
+    1
 ```
 ### 最近一個保險往來商品(商品名稱)、最近一個保險商品往來日
 ```sql title="保險相關標籤" showLineNumbers
