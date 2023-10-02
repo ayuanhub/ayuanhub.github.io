@@ -42,7 +42,7 @@ SELECT count(*) FROM roboteloan_sasva
 
 ### 實際核准金額
 ```sql showLineNumbers
-SELECT SUM(IF("首筆撥貸日" IS NOT NULL, "實際核撥金額")) FROM roboteloan_sasva
+SELECT SUM(IF("首筆撥貸日" IS NOT NULL, "實際核准額度")) FROM roboteloan_sasva
 ``` 
 
 ## 中小信保不代位清償(`workspace：CompanyDA`)
