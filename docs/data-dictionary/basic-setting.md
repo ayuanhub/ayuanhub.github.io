@@ -273,3 +273,16 @@ title: 欄位代碼表
 |------|-------|------------|
 | C83 | 1    | 正常交割  |
 | C83 | 2    | 展期交割       |
+
+### VW_ODS_D_CFKYC
+
+#### CFKYC_YEAR_SAL_RG
+
+| 欄位名稱 | 值域 ID | 值域中文說明     |
+|------|-------|------------|
+| CFKYC_YEAR_SAL_RG | 1    | 未達50萬元 |
+| CFKYC_YEAR_SAL_RG | 2    | 50萬元（含）～100萬元以下 | 
+| CFKYC_YEAR_SAL_RG | 3    | 100萬元（含）～200萬元以下 |
+| CFKYC_YEAR_SAL_RG | 4    | 200萬元（含）～300萬元以下 |
+| CFKYC_YEAR_SAL_RG | 5    | 300萬元（含）～500萬元以下 |
+| CFKYC_YEAR_SAL_RG | 6    | 500萬元（含）以上 |      
