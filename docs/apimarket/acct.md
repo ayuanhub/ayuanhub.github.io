@@ -4,7 +4,7 @@ title: 存款
 ---
 
 ### Web API
-- Method : `Get`
+- Method : Get
 - 測試url : https://tiumcanner01/api/data_engineering_63116/acct?cust_id={id}
 - 正式url : https://piuxhoddvd01/api/data_engineering_80320/acct?cust_id={id}
 
