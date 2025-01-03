@@ -40,7 +40,7 @@ title: 基本屬性
 | BASIC | BASIC_ARCHITECT_IND       | 建築師               |              |     |
 | BASIC | BASIC_ENGINNER_IND        | 工程師               |              |     |
 | BASIC | BASIC_SALARY_PROXY_INCOME | 月收入推估             |              |     |
-| BASIC | BASIC_WALLET_SHARE        | wallet share(%)   |   t           |     |
+| BASIC | BASIC_WALLET_SHARE        | wallet share(%)   |              |     |
 
 
 
