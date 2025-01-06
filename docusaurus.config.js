@@ -63,7 +63,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: '數據工程科',
+            label: '新人資系統',
           },
         ],
       },
@@ -72,7 +72,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         darkTheme: darkCodeTheme,
       },
       footer:{
-        copyright:`Copyright © ${new Date().getFullYear()} 客群經營部<br>檔案為機密文件，請勿外流！`,
+        copyright:`Copyright © ${new Date().getFullYear()} 平台應用科<br>檔案為機密文件，請勿外流！`,
       },
     }),
 });
