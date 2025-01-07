@@ -3,6 +3,18 @@ sidebar_position: 1
 title: 總表
 ---
 
+```mermaid
+timeline
+    title SQL JOB時序圖
+    section 10.240.9.20
+    AM 0點 : eHRMS_Daily
+    section 10.240.6.51
+    AM 3點~4點半 : JOB-109081-Batch_InsertToHRISDB
+    section 10.240.9.26
+    AM 6點半 : JOB-114313-SC1_SP_PU1010_HR2DBEPSys 
+```
+
+
 | 資料庫    | 資料表                   | 資料表名稱                                     |
 |--------|-----------------------|-------------------------------------------|
 | HRISDB | [CEmpFlowShare](/docs/data-dictionary/tableschema/HRISDB#cempflowshare---永豐中國-員工簽核公用檔)     | 永豐中國-員工簽核公用檔     |

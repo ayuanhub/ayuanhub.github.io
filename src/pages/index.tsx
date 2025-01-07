@@ -1,13 +1,12 @@
-import React from 'react';
-import Layout from '@theme/Layout';
+import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import HomepageFeatures from '../components/HomepageFeatures';
+import Layout from '@theme/Layout';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
-
   return (
     <div className="hero shadow--lw cs-height">
       <div className="container">
@@ -24,8 +23,8 @@ function HomepageHeader() {
             </div>
           </div>
           <div className="col col--4"></div>
-          <div className="col col--4">
-            <img className="cs-image" src={useBaseUrl('/img/index/performance-increase-svgrepo-com.png')} />
+          <div className="col col--4">          
+            <img className="cs-image" src={useBaseUrl('/img/performance-increase-svgrepo-com.png')} />            
           </div>
         </div>
       </div>
@@ -33,7 +32,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home() {
+export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
