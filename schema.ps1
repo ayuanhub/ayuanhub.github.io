@@ -8,7 +8,13 @@ $servers = @(
         databaseName = "HRISDB"
         uid = "DataDictionary_User"
         pwd = "1qaz!QAZ"
-    }
+    },
+    @{
+        serverName = "10.11.144.172"
+        databaseName = "EF_Data"
+        uid = "EFUser"
+        pwd = "efuser"
+    }            
 )
 
 # 查詢所有表格及其欄位資訊的SQL語句
@@ -66,13 +72,15 @@ WHERE t.name IN (
 'Position',
 'vw_EmpShare',
 'WorkType',
-'WorkSite'
+'WorkSite',
+'EF001'
 )
 ORDER BY 
     t.name, 
     c.column_id;
 "@
 
+$count = 1
 foreach ($server in $servers) {
     $serverName = $server.serverName
     $databaseName = $server.databaseName
@@ -95,7 +103,8 @@ foreach ($server in $servers) {
     # 格式化日期為 "yyyy/MM/dd HH:mm"
     $formattedDate = $currentDate.ToString("yyyy/MM/dd HH:mm")
 
-    $markdownContent += "---`nsidebar_position: 1`ntitle: HRISDB`n---`n`n#### 修改日期：$formattedDate`n`n"
+    $markdownContent += "---`nsidebar_position: $count`ntitle: $databaseName`n---`n`n#### 修改日期：$formattedDate`n`n"
+    $count += 1
 
     # 迭代每個表格
     foreach ($tableInfo in $tableInfos) {
@@ -126,7 +135,8 @@ foreach ($server in $servers) {
     }
 
     # 將Markdown內容寫入檔案
-    $outputFilePath = "D:\$databaseName.md"
+    # $outputFilePath = "D:\$databaseName.md"
+    $outputFilePath = "./docs/data-dictionary/tableschema/$databaseName.md"
     [System.IO.File]::WriteAllText($outputFilePath, $markdownContent, [System.Text.Encoding]::UTF8)
 
     Write-Output "Markdown file has been generated at $outputFilePath"
