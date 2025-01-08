@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "powershell": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./schema.ps1",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",

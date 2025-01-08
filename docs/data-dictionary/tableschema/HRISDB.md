@@ -1,7 +1,9 @@
----
-sidebar_position: 2
+﻿---
+sidebar_position: 1
 title: HRISDB
 ---
+
+#### 修改日期：2025/01/08 12:11
 
 ### CEmpFlowShare - 永豐中國-員工簽核公用檔
 序號 | 欄位名稱 | 欄位中文 | 資料型態 | 長度 | 是否為主鍵 | 是否允許null| 備註 | 
@@ -227,7 +229,7 @@ title: HRISDB
 | 34 | LoginTime | 登入時間 | datetime | 8 |  |  |  |
 | 35 | AOCode | AOCode | varchar | 6 |  |  |  |
 | 36 | WorkSiteCode | 工作地點郵遞區號 | varchar | 5 |  |  |  |
-| 37 | NameN | 中文姓名(Unicode,難字) | nvarchar | 24 |  |  | 顯示為  柯”?”宇<br/>依統一各系統行員姓名顯示規則，建議使用此欄 |
+| 37 | NameN | 中文姓名(Unicode,難字) | nvarchar | 24 |  |  | 顯示為  柯”畊”宇<br/>依統一各系統行員姓名顯示規則，建議使用此欄 |
 | 38 | EmpIDOld | 員工編號Old | varchar | 6 |  |  |  |
 | 39 | PositionID | 職位代碼 | varchar | 50 |  |  | 030003|030004 |
 | 40 | Position | 職位 | nvarchar | 400 |  |  | 系統設計人員|程式設計人員 |
@@ -314,7 +316,7 @@ title: HRISDB
 |-----------|-----------|------------|------------|------------|------------|------------|-----------|
 | 1 | CompID | 公司代碼 | char | 6 |  |  |  |
 | 2 | EmpID | 員工編號 | char | 6 |  |  |  |
-| 3 | NameN | 中文姓名(Unicode,難字) | nvarchar | 24 |  |  | 顯示為  柯”?”宇<br/>依統一各系統行員姓名顯示規則，建議使用此欄 |
+| 3 | NameN | 中文姓名(Unicode,難字) | nvarchar | 24 |  |  | 顯示為  柯”畊”宇<br/>依統一各系統行員姓名顯示規則，建議使用此欄 |
 | 4 | EngName | 英文姓名 | varchar | 20 |  |  |  |
 | 5 | Sex | 性別 | char | 1 |  |  |  1 : 男 <br/>2 : 女 |
 | 6 | WorkStatus | 任職狀況 | char | 1 |  |  | 1 ─ 在職<br/>2 ─ 留停<br/>3 ─ 離退<br/>7 ─ 跨公司任職 |
@@ -375,3 +377,4 @@ title: HRISDB
 | 3 | Remark | 說明 | varchar | 22 |  |  |  |
 | 4 | InValidFlag | 無效註記 | char | 1 |  |  | 0有效<br/>1無效 |
 | 5 | SortOrder | 排序 | varchar | 1 |  |  |  |
+
