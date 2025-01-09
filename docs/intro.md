@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
-title: 前言
+title: SQL JOB執行狀況
 ---
+
+<Button label="取得更新" variant="secondary" size="lg" outline />
 
 ```bash
 HRISDB
