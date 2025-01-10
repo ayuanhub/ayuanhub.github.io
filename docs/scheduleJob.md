@@ -1,11 +1,10 @@
 ---
-sidebar_position: 2
-title: SQL Job執行時間
+sidebar_position: 1
+title: SQL Job排程時間
 ---
 
 ```mermaid
 gantt
-    tickInterval 1hour
     dateFormat  HH:mm
     axisFormat %H:%M
     title       SQL JOB執行時間

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: SQL JOB執行狀況
+sidebar_position: 2
+title: SQL Job執行狀況
 ---
 
 <Button label="取得更新" variant="secondary" size="lg" eventName="jobStatus" outline />

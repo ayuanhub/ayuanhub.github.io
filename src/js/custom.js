@@ -1,4 +1,4 @@
-export default function getAPI(name) {
+export default function getAPI(name) {  
   const getJobStatus = async () => {
     try {
       const response = await fetch('http://localhost:3001/getSQLJobStatus', {
@@ -18,7 +18,7 @@ export default function getAPI(name) {
 
       // 創建 table 元素
       var table = document.createElement('table');
-
+      
       // 創建 thead 元素
       var thead = document.createElement('thead');
       var headerRow = document.createElement('tr');
@@ -35,12 +35,16 @@ export default function getAPI(name) {
 
       // 創建 tbody 元素
       var tbody = document.createElement('tbody');
-
-      // alert(result);
+      
       // 創建並添加表格內容
-      result.forEach(rowData => {   
-        console.log('a');     
+      result.forEach(rowData => {           
         var row = document.createElement('tr');
+        if (rowData.JobStatus == '成功')
+          row.className = "success";
+        else if (rowData.JobStatus == '失敗')
+          row.className = 'failure';
+        else
+          row.className = 'nothing';
 
         var jobNameCell = document.createElement('td');
         jobNameCell.textContent = rowData.JobName;
@@ -67,7 +71,7 @@ export default function getAPI(name) {
 
       table.appendChild(tbody);
   
-      document.getElementById("jobStatus").appendChild(table);    
+      document.getElementById(name).appendChild(table);    
     }
     catch (error) {
       console.error('Fetch error:', error);
@@ -76,7 +80,7 @@ export default function getAPI(name) {
 
   if (name == 'jobStatus')  
     getJobStatus();
-
+  
   // const runPowerShell = async () => {
   //   try {
   //     const response = await fetch('http://localhost:3001/run-powershell', {
