@@ -47,7 +47,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true ,
@@ -60,7 +59,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'jobStatus',
           position: 'left',
           label: '新人資系統',
         },

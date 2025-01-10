@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import getAPI from '@site/src/js/custom';
 
 // Build the Button component with the specified props
 const Button = ({ 
@@ -12,7 +13,8 @@ const Button = ({
     className, // Custom classes for the button
     style, // Custom styles for the button
     link, // The URL the button should link to
-    label // The text of the button
+    label, // The text of the button
+    eventName,
 }) => {
     const sizeMap = {
         sm: 'sm',
@@ -28,7 +30,8 @@ const Button = ({
     const blockClass = block ? 'button--block' : '';
     const disabledClass = disabled ? 'disabled' : '';
     // If the button is disabled, set the destination to null.
-    const destination = disabled ? null : link;
+    const destination = disabled ? null : link;    
+     
     return (
         <Link to={destination}>
             <button
@@ -36,10 +39,12 @@ const Button = ({
                 style={style}
                 role="button"
                 aria-disabled={disabled}
+                onClick={() => getAPI(eventName)}  
             >
                 {label}
             </button>
-        </Link>
+            <br/>           
+        </Link>        
     );
 };
 

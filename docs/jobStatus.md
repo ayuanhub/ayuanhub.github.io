@@ -3,9 +3,13 @@ sidebar_position: 1
 title: SQL JOB執行狀況
 ---
 
-<Button label="取得更新" variant="secondary" size="lg" outline />
+<Button label="取得更新" variant="secondary" size="lg" eventName="jobStatus" outline />
+<br/>
+<div id = "jobStatus"></div>
 
-```bash
+
+
+<!-- ```bash
 HRISDB
 ├── 資料字典
 │   ├── 系統代碼表
@@ -17,4 +21,4 @@ HRISDB
 │   ├── 基本屬性
 │   ├── 產品往來
 │   ├── 行為洞察
-```
+``` -->

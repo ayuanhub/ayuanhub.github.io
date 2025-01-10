@@ -9,7 +9,8 @@ const port = 3001;
 
 // 使用cors中介軟體
 app.use(cors({
-  origin: 'https://sinooa35sit.test' // 允許的來源
+  // origin: 'https://sinooa35sit.test' // 允許的來源
+  origin: 'http://localhost:3000' // 允許的來源
 }));
 
 // 解析 JSON 請求
@@ -49,32 +50,34 @@ const dbConfig = {
 app.get('/getSQLJobStatus', async (req, res) => {
   try {
       await sql.connect(dbConfig);
-      const result = await sql.query`use msdb; SELECT 
+      const result = await sql.query`use msdb; SELECT
     j.name AS JobName,
-	CASE
-	   WHEN j.name = 'JOB-109081-Batch_InsertToHRISDB' THEN '將組織員工等資料由HRISDB暫存檔更新到HRISDB主檔'
-	END AS JobNameChinese,
+    CASE
+        WHEN j.name = 'JOB-109081-Batch_InsertToHRISDB' THEN '將組織員工等資料由HRISDB暫存檔更新到HRISDB主檔'
+    END AS JobNameChinese,
     --h.run_date AS RunDate,
     --h.run_time AS RunTime,
-	CONVERT(DATETIME, 
-        STUFF(STUFF(STUFF(CAST(h.run_date AS CHAR(8)) + RIGHT('000000' + CAST(h.run_time AS VARCHAR(6)), 6), 13, 0, ':'), 11, 0, ':'), 9, 0, ' ')
+    FORMAT(
+        CONVERT(DATETIME,
+            STUFF(STUFF(STUFF(CAST(h.run_date AS CHAR(8)) + RIGHT('000000' + CAST(h.run_time AS VARCHAR(6)), 6), 13, 0, ':'), 11, 0, ':'), 9, 0, ' ')
+        ), 'yyyy-MM-dd HH:mm:ss'
     ) AS RunDateTime,
-	h.run_duration,
-    CASE 
+    h.run_duration,
+    CASE
         WHEN h.run_status = 0 THEN '失敗'
         WHEN h.run_status = 1 THEN '成功'
         WHEN h.run_status = 2 THEN '重試'
         WHEN h.run_status = 3 THEN '取消'
         WHEN h.run_status = 4 THEN '進行中'        
     END AS JobStatus
-FROM 
+FROM
     sysjobs j
-Left JOIN 
+LEFT JOIN
     sysjobhistory h ON j.job_id = h.job_id
-WHERE 
-    --h.step_id = 0 -- 只查詢 Job 的最終狀態
-	j.name = 'JOB-109081-Batch_InsertToHRISDB'
-ORDER BY 
+WHERE
+    h.step_id = 0 -- 只查詢 Job 的最終狀態
+    --j.name = 'JOB-109081-Batch_InsertToHRISDB'
+ORDER BY
     h.run_date DESC, h.run_time DESC;`;
       res.json(result.recordset);
   } catch (err) {
