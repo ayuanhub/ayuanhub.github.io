@@ -1,21 +1,12 @@
 ﻿# 載入SQL Server模組
 Import-Module SqlServer
 
-# 設定多筆SQL Server連線資訊
-$servers = @(
-    @{
-        serverName = "10.11.42.34"
-        databaseName = "HRISDB"
-        uid = "DataDictionary_User"
-        pwd = "1qaz!QAZ"
-    },
-    @{
-        serverName = "10.11.144.172"
-        databaseName = "EF_Data"
-        uid = "EFUser"
-        pwd = "efuser"
-    }            
-)
+# 讀取 params.txt 檔案內容，存放資料庫參數位置
+$paramsContent = Get-Content -Path "params.txt" -Raw
+
+# 將內容轉換為可操作的powershell物件
+$servers = $paramsContent | ConvertFrom-Json
+
 
 # 查詢所有表格及其欄位資訊的SQL語句
 $query = @"
@@ -80,12 +71,19 @@ ORDER BY
     c.column_id;
 "@
 
+
 $count = 1
 foreach ($server in $servers) {
     $serverName = $server.serverName
     $databaseName = $server.databaseName
     $uid = $server.uid
-    $pwd = $server.pwd
+
+    $encryptedPassword = Get-Content ".\$databaseName.txt"   
+    $securePassword = ConvertTo-SecureString $encryptedPassword
+    $pwd = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword))
+
+    # $connectionString = "Data Source="+$DBip+";Initial Catalog=HRISDB;User ID=DataDictionary_User;Password="+$originalString+";" 
+
     $connectionString = "Server=$serverName;Database=$databaseName;uid=$uid;pwd=$pwd;"
 
     # 執行查詢並取得結果

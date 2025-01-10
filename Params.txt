@@ -1,0 +1,7 @@
+[
+    {
+        "serverName": "10.11.42.34",
+        "databaseName": "HRISDB",
+        "uid": "DataDictionary_User"        
+    }
+]
