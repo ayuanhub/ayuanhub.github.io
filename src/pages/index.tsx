@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <div className="hero shadow--lw cs-height">
+    <div className="hero shadow--lw">
       <div className="container">
         <div className="row">
           <div className="col col--4">
@@ -17,14 +17,14 @@ function HomepageHeader() {
             <div>
               <Link
                 className="button button--secondary button--outline button--lg"
-                to ="/docs/jobStatus">
+                to ="/docs/scheduleJob">
                 GET STARTED
               </Link>
             </div>
           </div>
           <div className="col col--4"></div>
           <div className="col col--4">          
-            <img className="cs-image" src={useBaseUrl('/img/performance-increase-svgrepo-com.png')} />            
+            <img className="cs-image" src={useBaseUrl('/img/data.png')} />            
           </div>
         </div>
       </div>
