@@ -64,7 +64,19 @@ WHERE t.name IN (
 'vw_EmpShare',
 'WorkType',
 'WorkSite',
-'EF001'
+'PS_UserProxy',
+'PU_CodeMap',
+'SE_Company',
+'SE_Dept',
+'SE_EmpAddition',
+'SE_NonHRSysUser',
+'SE_Organ',
+'SE_Property',
+'SE_User',
+'SE_WorkType',
+'DocUser',
+'OCProxy',
+'WorkDay'
 )
 ORDER BY 
     t.name, 

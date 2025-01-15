@@ -3,5 +3,15 @@
         "serverName": "10.11.42.34",
         "databaseName": "HRISDB",
         "uid": "DataDictionary_User"        
+    },
+    {
+        "serverName": "10.11.42.111",
+        "databaseName": "DB_EPSys",
+        "uid": "123558"        
+    },
+    {
+        "serverName": "10.11.42.111",
+        "databaseName": "DB_Share",
+        "uid": "123558"        
     }
 ]
