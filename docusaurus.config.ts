@@ -30,11 +30,7 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  plugins: [[ require.resolve('docusaurus-lunr-search'), {
-    languages: ['en', 'zh'] // language codes
-  }]],
-
+  plugins: ['@orama/plugin-docusaurus-v3'],
   presets: [
     [
       '@docusaurus/preset-classic',
