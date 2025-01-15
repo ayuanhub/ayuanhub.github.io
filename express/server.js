@@ -3,15 +3,8 @@ const express = require('express');
 const sql = require('mssql');
 const { exec } = require('child_process');
 const path = require('path');
-const cors = require('cors');
-const app = express();
-const port = 3001;
 
-// 使用cors中介軟體
-app.use(cors({
-  // origin: 'https://sinooa35sit.test' // 允許的來源
-  origin: 'http://localhost:3000' // 允許的來源
-}));
+const app = express();
 
 // 解析 JSON 請求
 app.use(express.json());
@@ -19,6 +12,19 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello, this is your Node.js server!');
 });
+
+// SQL Server 連接配置
+const dbConfig = {
+    user: 'DataDictionary_User',
+    password: '1qaz!QAZ',
+    server: '10.11.42.34',
+    database: 'HRISDB',
+    options: {
+        encrypt: false,
+        trustServerCertificate: true,
+        // enableArithAbort: true
+    }
+  };
 
 // 定義一個 POST 路由來處理 PowerShell 腳本執行
 app.post('/run-powershell', (req, res) => {
@@ -34,20 +40,7 @@ app.post('/run-powershell', (req, res) => {
   });
 });
 
-// SQL Server 連接配置
-const dbConfig = {
-  user: 'DataDictionary_User',
-  password: '1qaz!QAZ',
-  server: '10.11.42.34',
-  database: 'HRISDB',
-  options: {
-      encrypt: false,
-      trustServerCertificate: true,
-      // enableArithAbort: true
-  }
-};
-
-app.get('/getSQLJobStatus', async (req, res) => {
+app.get('/api/express/getSQLJobStatus', async (req, res) => {
   try {
       await sql.connect(dbConfig);
       const result = await sql.query`use msdb; SELECT
@@ -87,7 +80,4 @@ ORDER BY
 });
 
 
-// 啟動伺服器
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(process.env.PORT);
