@@ -11,8 +11,10 @@ const config: Config = {
   themes: ['@docusaurus/theme-mermaid'],
   title: '資料字典網站',
   tagline: 'focus on your content',
-  url: 'https://hrisdb-uat.test',
-  baseUrl: '/doc',
+  url: 'https://cvmdoc.github.io/',
+  baseUrl: '/',
+  // url: 'https://hrisdb-uat.test',
+  // baseUrl: '/doc',
   projectName: 'cvmdoc.github.io', // Usually your repo name.
   organizationName: 'cvmdoc', // Usually your GitHub org/user name.
   onBrokenLinks: 'throw',
