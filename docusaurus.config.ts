@@ -29,7 +29,9 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: ['@orama/plugin-docusaurus-v3'],
+  plugins: [[ require.resolve('docusaurus-lunr-search'), {
+    languages: ['en', 'zh'] // language codes
+  }]],
 
   presets: [
     [
