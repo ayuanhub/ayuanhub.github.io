@@ -1,7 +1,7 @@
 export default function getAPI(name) {  
   const getJobStatus = async () => {
     try {
-      const response = await fetch('http://localhost:3001/getSQLJobStatus', {
+      const response = await fetch('https://hrisdb-uat.test/api/express/getSQLJobStatus', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
