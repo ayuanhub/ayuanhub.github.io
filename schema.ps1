@@ -28,24 +28,24 @@ SELECT
 	ep.value AS Note,
     tbl_desc.name AS TableDescription    
 FROM 
-    (SELECT object_id, name FROM sys.tables
+    (SELECT object_id, name FROM sys.tables WITH (NOLOCK)
      UNION ALL
-     SELECT object_id, name FROM sys.views) t
-    INNER JOIN sys.columns c ON t.object_id = c.object_id
-    INNER JOIN sys.types tp ON c.user_type_id = tp.user_type_id
-    LEFT JOIN sys.extended_properties ep ON t.object_id = ep.major_id AND c.column_id = ep.minor_id AND ep.class = 1
-    LEFT JOIN sys.extended_properties tbl_desc ON t.object_id = tbl_desc.major_id AND tbl_desc.minor_id = 0 AND tbl_desc.class = 1
+     SELECT object_id, name FROM sys.views WITH (NOLOCK)) t
+    INNER JOIN sys.columns  c WITH (NOLOCK)ON t.object_id = c.object_id
+    INNER JOIN sys.types tp WITH (NOLOCK) ON c.user_type_id = tp.user_type_id
+    LEFT JOIN sys.extended_properties ep WITH (NOLOCK) ON t.object_id = ep.major_id AND c.column_id = ep.minor_id AND ep.class = 1
+    LEFT JOIN sys.extended_properties tbl_desc WITH (NOLOCK) ON t.object_id = tbl_desc.major_id AND tbl_desc.minor_id = 0 AND tbl_desc.class = 1
     LEFT JOIN (
         SELECT 
             idx_col.object_id,
             idx_col.column_id,
             idx.index_id
         FROM 
-            sys.indexes idx
-            INNER JOIN sys.index_columns idx_col ON idx.object_id = idx_col.object_id AND idx.index_id = idx_col.index_id
+            sys.indexes idx WITH (NOLOCK)
+            INNER JOIN sys.index_columns idx_col WITH (NOLOCK) ON idx.object_id = idx_col.object_id AND idx.index_id = idx_col.index_id
         WHERE 
             idx.is_primary_key = 1
-    ) pk ON c.object_id = pk.object_id AND c.column_id = pk.column_id
+    ) pk  ON c.object_id = pk.object_id AND c.column_id = pk.column_id
 WHERE t.name IN (
 'CEmpFlowShare',
 'CEmpShare',
