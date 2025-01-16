@@ -30,7 +30,14 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: ['@orama/plugin-docusaurus-v3'],
+  plugins: [
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {        
+        language: ["en", "zh"],
+      },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
