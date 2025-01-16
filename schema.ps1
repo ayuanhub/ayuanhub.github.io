@@ -16,7 +16,10 @@ SELECT
     c.name AS ColumnName,
     ep.name AS ColumnNameChinese,
     tp.name AS DataType,
-    c.max_length AS Length,
+    CASE 
+        WHEN tp.name IN ('nvarchar', 'nchar') THEN c.max_length / 2
+        ELSE c.max_length
+    END AS Length,
     CASE 
         WHEN pk.index_id IS NOT NULL THEN 'V'
         ELSE NULL
