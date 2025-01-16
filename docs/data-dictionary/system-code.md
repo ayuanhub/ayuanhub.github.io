@@ -20,7 +20,7 @@ title: 總表
 | HRISDB | [OrgFlowShare](/docs/data-dictionary/tableschema/HRISDB#orgflowshare---簽核流程組織公用檔)      | 簽核流程組織公用檔                   |
 | HRISDB | [OrgShare](/docs/data-dictionary/tableschema/HRISDB#orgshare---組織公用檔)          | 組織公用檔                           |
 | HRISDB | [Position](/docs/data-dictionary/tableschema/HRISDB#position---職位代碼檔)          | 職位代碼檔                            |
-| HRISDB | [vw_EmpShare](/docs/data-dictionary/tableschema/HRISDB#vw_empshare---員工公用VIEW檔)       | 員工公用VIEW檔                    |
+| HRISDB | [vw_EmpShare](/docs/data-dictionary/tableschema/HRISDB#vw_empshare---員工公用view檔)       | 員工公用VIEW檔                    |
 | HRISDB | [WorkType](/docs/data-dictionary/tableschema/HRISDB#worktype---工作性質代碼檔)          | 工作性質代碼檔                          |
 | HRISDB | [WorkSite](/docs/data-dictionary/tableschema/HRISDB#worksite---工作地點代碼檔)           | 工作地點代碼檔                          |
 | DB_EPSys | [PS_UserProxy](/docs/data-dictionary/tableschema/DB_EPSys#ps_userproxy---代理人資料檔)    | 代理人資料檔              |
@@ -30,7 +30,7 @@ title: 總表
 | DB_EPSys | [SE_EmpAddition](/docs/data-dictionary/tableschema/DB_EPSys#se_empaddition---員工調兼現況檔)  | 員工調兼現況檔            |
 | DB_EPSys | [SE_NonHRSysUser](/docs/data-dictionary/tableschema/DB_EPSys#se_nonhrsysuser---非組織人員資料檔) | 非組織人員資料檔          |
 | DB_EPSys | [SE_Organ](/docs/data-dictionary/tableschema/DB_EPSys#se_organ---科組課資料檔)        | 科組課資料檔              |
-| DB_EPSys | [SE_Property](/docs/data-dictionary/tableschema/DB_EPSys#se_property---NetAP個人常用字彙資料檔)     | NetAP個人常用字彙資料檔   |
+| DB_EPSys | [SE_Property](/docs/data-dictionary/tableschema/DB_EPSys#se_property---netap個人常用字彙資料檔)     | NetAP個人常用字彙資料檔   |
 | DB_EPSys | [SE_User](/docs/data-dictionary/tableschema/DB_EPSys#se_user---組織人員資料檔)         | 組織人員資料檔            |
 | DB_EPSys | [SE_WorkType](/docs/data-dictionary/tableschema/DB_EPSys#se_worktype---工作性質資料檔)     | 工作性質資料檔            |
 | DB_Share | [DocUser](/docs/data-dictionary/tableschema/DB_Share#docuser---公文收發資料檔)           | 公文收發資料檔     |
@@ -41,7 +41,7 @@ title: 總表
 | DB_Share | [SE_EmpAddition](/docs/data-dictionary/tableschema/DB_Share#se_empaddition---員工調兼現況檔)    | 員工調兼現況檔     |
 | DB_Share | [SE_NonHRSysUser](/docs/data-dictionary/tableschema/DB_Share#se_nonhrsysuser---非組織人員資料檔)   | 非組織人員資料檔   |
 | DB_Share | [SE_Organ](/docs/data-dictionary/tableschema/DB_Share#se_organ---科組課資料檔)          | 科組課資料檔       |
-| DB_Share | [SE_Property](/docs/data-dictionary/tableschema/DB_Share#se_property---NetAP個人常用字彙資料檔) | NetAP個人常用字彙資料檔 |
+| DB_Share | [SE_Property](/docs/data-dictionary/tableschema/DB_Share#se_property---netap個人常用字彙資料檔) | NetAP個人常用字彙資料檔 |
 | DB_Share | [SE_User](/docs/data-dictionary/tableschema/DB_Share#se_user---組織人員資料檔)           | 組織人員資料檔     |
 | DB_Share | [SE_WorkType](/docs/data-dictionary/tableschema/DB_Share#se_worktype---工作性質資料檔)       | 工作性質資料檔     |
 | DB_Share | [WorkDay](/docs/data-dictionary/tableschema/DB_Share#workday---工作日資料檔)           | 工作日資料檔       |
