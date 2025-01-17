@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "powershell": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./schema.ps1",
-    "deploy": "npm run powershell && npm run build",
+    "schema": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./schema.ps1",
+    "job": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./jobStatus.ps1",
+    "deployschema": "npm run schema && npm run build",
+    "deployjob": "npm run job && npm run build",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",

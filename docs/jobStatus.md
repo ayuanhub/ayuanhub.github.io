@@ -1,24 +1,180 @@
----
+﻿---
 sidebar_position: 2
 title: SQL Job執行狀況
 ---
 
-<Button label="取得更新" variant="secondary" size="lg" eventName="jobStatus" outline />
-<br/>
-<div id = "jobStatus"></div>
+#### 修改日期：2025/01/17 13:55
 
+SQL Job | 名稱 | 上次執行時間 | 執行時間(秒) | 狀態 | 
+|-----------|-----------|------------|------------|------------|
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-17 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-17 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-17 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-16 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-16 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-16 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-16 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-16 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-15 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-15 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-113699-Daily_EmpShare |  | 2025-01-15 17:01:47 | 319 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-15 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-15 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-15 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-14 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-14 18:00:00 | 2 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-14 06:30:00 | 0 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-14 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-14 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-13 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-13 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-13 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-13 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-13 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-12 22:00:00 | 7 | <span class="failure">失敗</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-12 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-12 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-12 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-11 22:00:00 | 8 | <span class="failure">失敗</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-11 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-11 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-11 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-10 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-10 18:00:00 | 2 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-10 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-10 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-10 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-09 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-09 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-09 06:30:00 | 0 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-09 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-09 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-08 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-08 18:00:00 | 2 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertBehavToHRISDB |  | 2025-01-08 06:30:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-08 05:20:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-08 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-07 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-07 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-07 05:20:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-07 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-06 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-06 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-06 05:20:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-06 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-05 22:00:00 | 8 | <span class="failure">失敗</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-05 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-05 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-04 22:00:00 | 7 | <span class="failure">失敗</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-04 05:20:01 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-04 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-03 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-03 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-03 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-03 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-02 22:00:00 | 8 | <span class="failure">失敗</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2025-01-02 18:25:09 | 0 | <span class="success">成功</span> |
+| DBBackUp |  | 2025-01-02 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-02 05:20:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-02 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2025-01-01 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2025-01-01 18:00:00 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2025-01-01 07:30:00 | 0 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2025-01-01 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2025-01-01 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-31 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-31 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2024-12-31 05:20:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-31 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-30 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-30 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2024-12-30 05:20:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-30 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-29 22:00:00 | 8 | <span class="failure">失敗</span> |
+| JOB-108131-Batch_InsertAttenToHRISDB |  | 2024-12-29 05:20:00 | 2 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-29 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-28 22:00:00 | 8 | <span class="failure">失敗</span> |
+| syspolicy_purge_history |  | 2024-12-28 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-27 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-27 18:00:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-27 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-26 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-26 18:00:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-26 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-25 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-25 18:00:00 | 1 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-25 02:00:00 | 19 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-24 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-24 18:00:00 | 0 | <span class="success">成功</span> |
+| syspolicy_purge_history |  | 2024-12-24 02:00:00 | 18 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-23 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-23 18:00:00 | 2 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-22 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-21 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-20 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-20 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-19 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-19 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-18 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-18 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-17 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-17 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-16 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-16 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-15 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-14 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-13 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-13 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-12 22:00:01 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-12 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-11 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-11 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-10 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-10 18:00:00 | 2 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-09 22:00:00 | 8 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-09 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-08 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-07 22:00:00 | 5 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-06 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-06 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-05 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-05 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-04 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-04 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-03 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-03 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-02 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-12-02 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-12-01 22:00:00 | 6 | <span class="failure">失敗</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-12-01 07:30:00 | 0 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-11-30 22:00:00 | 7 | <span class="failure">失敗</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-11-29 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-11-29 18:00:00 | 1 | <span class="success">成功</span> |
+| DBA-Backup-AllDB.Subplan_1 |  | 2024-11-28 22:00:00 | 6 | <span class="failure">失敗</span> |
+| DBBackUp |  | 2024-11-28 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-27 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-26 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-25 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-22 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-21 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-20 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-19 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-18 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-15 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-11-15 16:42:10 | 0 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-14 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-13 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-12 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-11 18:00:00 | 1 | <span class="success">成功</span> |
+| DBBackUp |  | 2024-11-08 18:00:00 | 1 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-11-01 07:30:00 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-09 12:03:06 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-04 16:16:11 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-04 15:58:26 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-04 15:58:23 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-04 15:58:17 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-04 15:48:09 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-10-01 07:30:00 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-09-18 10:30:51 | 0 | <span class="success">成功</span> |
+| JOB-108131-sAtten_ES_Batch |  | 2024-09-18 10:21:17 | 0 | <span class="success">成功</span> |
 
-
-<!-- ```bash
-HRISDB
-├── 資料字典
-│   ├── 系統代碼表
-│   └── Table Schema
-│   └────HRISDB 
-│   └────DB_SYS
-│   └────DB_Share
-├── 特徵工程
-│   ├── 基本屬性
-│   ├── 產品往來
-│   ├── 行為洞察
-``` -->
